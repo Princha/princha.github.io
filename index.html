@@ -1,51 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
 
-    <title>Princha Blog</title>
-  </head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Welcome - Home page of princha</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+</head>
 
-  <body>
+<body>
+    <div class="vi">
+        <div class="sidebar">
+            <div class="header">
+                <h1>Welcome</h1>
+                <div class="quote">
+                    <p class="quote-text animate-init">Fly in the sky</p>
+                    <p class="quote-author animate-init">《Motto》—— <strong>princha</strong></p>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="https://github.com/princha" class="animate-init"><img src="images/favicon.ico" alt="GitHub"/><div><span>GitHub</span></div></a>
+                <a href="http://princha.github.io/blog" class="animate-init"><div><span>Blog</span></div></a>
+                <a href="https://twitter.com" class="animate-init"><div><span>Twitter</span></div></a>
+                <a href="http://baidu.com" class="animate-init"><div><span>Weibo</span></div></a>
+            </div>
+            <div class="location">
+                <i class="location-icon"></i>
+                <span class="location-text animate-init">Canton - China</span>
+            </div>
+            <div class="relocating">
+                Navigating to: <span class="relocate-location"></span>...
+            </div>
+        </div>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>铁锚CSDN博客 - GitHub.io</h1>
-            <h2>铁锚CSDN博客</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <div id="no-downloads">
-        <span class="inner">
-        </span>
-      </div>
-
-
-      <span class="banner-fix"></span>
-
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>Projects by <a href="https://github.com/tiemaocsdn">tiemaocsdn</a> can be found on <a href="https://github.com/tiemaocsdn">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-<p>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000461034'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1000461034%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
-</p>
-        <span class="octocat"></span>
-      </footer>
-
+        <div class="content">
+            <span class="close">close</span>
+        </div>
     </div>
+    <script type="text/javascript" src="javascripts/jquery-3.2.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var delay = 1;
+            var DELAY_STEP = 200;
+            var animationOptions = { opacity: 1, top: 0 };
 
-    
-  </body>
+            $('h1').animate(animationOptions).promise()
+                .pipe(animateMain)
+                .pipe(animateLocationIcon);
+
+            function animateMain() {
+                var dfd = $.Deferred();
+                var els = $('.animate-init');
+                var size = els.length;
+
+                els.each(function (index, el) {
+                    delay++;
+                    $(el).delay(index * DELAY_STEP)
+                        .animate(animationOptions);
+                    (size - 1 === index) && dfd.resolve();
+                });
+                return dfd.promise();
+            }
+
+            function animateLocationIcon() {
+                $('.location-icon').delay(delay * DELAY_STEP).animate({
+                    opacity: 1,
+                    top: 0
+                }).promise().done(animationQuote);
+            }
+
+            function animationQuote() { }
+
+            $(document.body).on('keydown', function (event) {
+                // Press 'b' key
+                if (event.which === 66) {
+                    $('.relocate-location').text('Bookmark Page');
+                    $('.relocating').css('opacity', 1);
+
+                    window.setTimeout(function () {
+                        window.location.href = '/bookmarks.html';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+
 </html>
