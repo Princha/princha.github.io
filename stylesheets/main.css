@@ -90,7 +90,7 @@ ul, ol {
 }
 
 .menu {
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
     font-size: 14px;
 }
@@ -101,6 +101,11 @@ ul, ol {
     margin-left: 10px;
     text-decoration: none;
     border-bottom: 1px solid #ccc;
+}
+
+.menu img{
+    height:16px;
+    width:16px;
 }
 
 .menu a:hover {
@@ -127,9 +132,24 @@ ul, ol {
 }
 
 .location {
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
 }
+
+.about {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.about a{
+    border: 1px solid #AAA;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+}
+
 .location-icon {
     position: relative;
     top: 10px;
