@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;IE=8;IE=9;IE=10;IE=11;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Princha Kei">
+    <title>Market</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"
+                    class="navbar-toggle collapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://www.echartsjs.com/index.html" class="navbar-brand">
+                    <img src="./images/logo.png" alt="echarts logo" class="navbar-logo">
+                </a>
+            </div>
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li id="nav-index"><a href="http://www.echartsjs.com/index.html">首页</a></li>
+                    <li id="nav-doc" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">文档<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.echartsjs.com/feature.html">特性</a></li>
+                            <li><a href="http://www.echartsjs.com/tutorial.html">教程</a></li>
+                            <li><a href="http://www.echartsjs.com/api.html">API</a></li>
+                            <li><a href="http://www.echartsjs.com/option.html">配置项手册</a></li>
+                            <li><a href="http://www.echartsjs.com/option-gl.html">GL 配置项手册</a></li>
+                            <li><a href="http://www.echartsjs.com/faq.html">常见问题</a></li>
+                            <li><a href="http://www.echartsjs.com/changelog.html">版本记录</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-download" class="dropdown"><a href="#" data-toggle="dropdown"
+                            class="dropdown-toggle">下载<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.echartsjs.com/download.html">下载</a></li>
+                            <li><a href="http://www.echartsjs.com/download-theme.html">主题下载</a></li>
+                            <li><a href="http://www.echartsjs.com/download-map.html">地图下载</a></li>
+                            <li><a href="http://www.echartsjs.com/download-extension.html">扩展下载</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-examples" class="active"><a href="#" data-toggle="dropdown" class="dropdown-toggle">实例<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.echartsjs.com/examples/">官方实例</a></li>
+                            <li><a href="http://www.echartsjs.com/examples/index.html#chart-type-globe">GL 实例</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-community"><a href="#" data-toggle="dropdown" class="dropdown-toggle">社区<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://gallery.echartsjs.com">GALLERY</a></li>
+                            <li><a href="http://efe.baidu.com/tags/ECharts/">博客</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-tool"><a href="#" data-toggle="dropdown" class="dropdown-toggle">工具<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.echartsjs.com/spreadsheet.html">表格工具</a></li>
+                            <li><a href="https://ecomfe.github.io/echarts-map-tool/">地图数据在线工具</a></li>
+                            <li><a href="https://echarts.baidu.com/theme-builder/">主题构建工具</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-about"><a href="#" data-toggle="dropdown" class="dropdown-toggle">关于<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.echartsjs.com/about.html">关于我们</a></li>
+                            <li><a href="https://github.com/ecomfe/echarts/blob/master/LICENSE">版权声明</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="nav-github"><a href="https://github.com/ecomfe/echarts" target="_blank"><img
+                                src="http://www.echartsjs.com/images/github.png" width="18"></a></li>
+                    <li id="nav-2" class="0"><a href="https://echarts.baidu.com/echarts2/">2.0</a></li>
+                    <li id="nav-homeen"><a href="https://echarts.apache.org/">EN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript">var selector = window.EC_DEMO_LANG === 'en' ? 'nav-start' : 'nav-examples';
+        var menu = document.getElementById(selector);
+        if (menu) {
+            menu.className = 'active';
+        }
+    </script>
+    <div id="left-chart-nav">
+        <ul></ul>
+    </div>
+    <div id="explore-container">
+        <div id="toolbar">
+            <div id="theme"><span>Theme:</span><a href="./index.html" title="default"
+                    class="default"><span></span></a><a href="./index.html?theme=light" title="light"
+                    class="light"><span></span></a><a href="./index.html?theme=dark" title="dark"
+                    class="dark"><span></span></a></div>
+        </div>
+        <div class="chart-list-panel"></div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="./vendors/lodash.js"></script>
+    <script type="text/javascript" src="./vendors/waypoint.js"></script>
+    <!-- <div id="chart" style="width: 600px;height:400px;"></div> -->
+    <!-- <script>
+        $(document).ready(function () {
+            var base = +new Date(1968, 9, 3);
+            var oneDay = 24 * 3600 * 1000;
+            var date = [];
+
+            var data = [Math.random() * 300];
+
+            for (var i = 1; i < 40; i++) {
+                var now = new Date(base += oneDay);
+                date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+                data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+            }
+
+            var chart = echarts.init(document.getElementById('chart'))
+
+            option = {
+                tooltip: {
+                    trigger: 'axis',
+                    position: function (pt) {
+                        return [pt[0], '10%'];
+                    }
+                },
+                title: {
+                    left: 'center',
+                    text: '大数据量面积图',
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: date
+                },
+                yAxis: {
+                    type: 'value',
+                    boundaryGap: [0, '100%']
+                },
+                dataZoom: [{
+                    type: 'inside',
+                    start: 0,
+                    end: 10
+                }, {
+                    start: 0,
+                    end: 10,
+                    handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                    handleSize: '80%',
+                    handleStyle: {
+                        color: '#fff',
+                        shadowBlur: 3,
+                        shadowColor: 'rgba(0, 0, 0, 0.6)',
+                        shadowOffsetX: 2,
+                        shadowOffsetY: 2
+                    }
+                }],
+                series: [
+                    {
+                        name: '价格',
+                        type: 'line',
+                        smooth: false,
+                        symbol: 'none',
+                        sampling: 'average',
+                        itemStyle: {
+                            color: 'rgb(255, 70, 131)'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(255, 158, 68)'
+                            }, {
+                                offset: 1,
+                                color: 'rgb(255, 70, 131)'
+                            }])
+                        },
+                        data: data
+                    }
+                ]
+            };
+            chart.setOption(option);
+        });
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-store">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta http-equiv="Expires" content="0" />
+<meta name="description" itemprop="description" content="感谢您能抽出几分钟时间来参加本次答题，现在我们就马上开始吧！！">
+
+<meta itemprop="image" content="https://cdn.wenjuan.com/static/images/rspd_share_wenjuan.png?v=f918e5c67478d2b734134a075483aa16">
+
+<title>大学生在校消费调查表</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.wenjuan.com/static/css/jquery-ui.css?v=1274298e82c469798e4b636ce4e36abc">
+<link href="https://cdn.wenjuan.com/static/css/survey_mobile/style_v2.css?v=97adf6e3f9fe1ea77d60437775f93d89" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.wenjuan.com/static/js/plug-in/mobiscroll/css/mobiscroll.min.css?v=30dc425faa1744ee6d9e2f3900736da4" rel="stylesheet" type="text/css" />
+<!--加载提示-->
+<link type="text/css" rel="stylesheet" href="https://cdn.wenjuan.com/static/js/plug-in/load/load.css?v=bf1fb60788943f2da66cad2f1a021043" />
+<link href="https://cdn.wenjuan.com/static/js/plug-in/toast/main.css?v=d5bfc4904fcdd5df301b17133c07e694" rel="stylesheet" type="text/css" />
+<!--拖拽插件-->
+<link href="https://cdn.wenjuan.com/static/css/dragula.css?v=bdba35ac8821cbb5d800088a8868c561" rel="stylesheet">
+<script defer src="https://cdn.wenjuan.com/static/js/dragula.js?v=b46d585a5ffb0829125970d16fe750b7"></script>
+<!-- <script src="https://cdn.bootcss.com/Sortable/1.10.0-rc2/Sortable.min.js"></script> -->
+
+</head>
+
+
+
+
+
+
+
+<body class="body_preview hide_cover surveyMobilePage ">
+<div id="appearset_cover">
+<!-- 有封面的时候会先占位置有空白页加个loading -->
+<div style="text-align: center;" id="cover_loader" class="maxtop">
+<img alt="" src="https://cdn.wenjuan.com/static/img/survey_mobile/loader.gif?v=b256d80f54c1415d7a6a6fdec39769f4" width="31" height="31">
+<br>加载中...
+</div>
+</div>
+<div id="appearset_bg"></div>
+<!-- 参数preview=new 用于 新版编辑预览手机页面可以显示题目 -->
+
+<div class="phone_content_wrap">
+
+<div class="cover_wrap">
+
+<div style="display:none"><img alt="" src="/static/images/rspd_share_wenjuan.png" /></div>
+
+
+<div class="preview_model">
+<p><a class="preview_close" title="关闭" href="javascript:;"></a>当前为预览页面，回答将不记入结果</p>
+</div>
+
+<div id="appearset_logo"></div>
+<div id="appearset_header"></div>
+<div class="survey_cover">
+<div class="appear_header"></div>
+
+<div class="TopBgLogo" style="display:none;">
+</div>
+
+<div class="survey_cover_text">
+
+<div class="TopBgTitle">
+<div class="wj_title"><p style="text-align:center">大学生在校消费调查表</p></div>
+</div>
+<div class="header clear project_title" id="begin_content">
+<div class="mtop desc_begin">
+<p>感谢您能抽出几分钟时间来参加本次答题，现在我们就马上开始吧！！</p>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="phone_content">
+<div class="Phone_zon" id="survey_page">
+
+<div class="Phone_con" id="question_box">
+<!-- Append question's html code here. -->
+<div style="text-align: center;" id="loader_div" class="maxtop">
+<img alt="" src="https://cdn.wenjuan.com/static/img/survey_mobile/loader.gif?v=b256d80f54c1415d7a6a6fdec39769f4" width="31" height="31">
+<br>加载中...
+</div>
+</div>
+
+<div id="gt">
+<p class="bt">您需要完成以下验证才可提交</p>
+</div>
+</div>
+<div class="Phone_bon" id="control_panel">
+<span href="javascript:;" class="prev_button" id="prev_button" style="display:none;">上一页</span>
+<span href="javascript:;" class="button WJ_an wj_color_gray" id="time_count" style="display:none;background: #cccccd; border-color: #cccccd;"></span>
+<span href="javascript:;" class="button WJ_an" id="next_button" style="display:none;">下一页</span>
+<span href="javascript:;" class="button WJ_an" id="confirm_verify_btn" style="display:none;">确认</span>
+</div>
+<form action="#" method="post" id="upload_form">
+<input type="hidden" name="_xsrf" value="7f0d67c18038453fb36ec058766a9532"/>
+<input type="hidden" name="total_answers_str" id="total_answers_str"/>
+<input type="hidden" name="finish_status" id="finish_status"/>
+<input type="hidden" name="timestr" value="2019-08-07 19:04:24" />
+<input type="hidden" name="idy_uuid" value="e7a497dc6f0faa3028e041be737413e8" />
+<input type="hidden" name="version" value="2" />
+<input type="hidden" name="s_func_id" value="82" />
+<input type="hidden" name="vvv" value="e0def64a287fe646a8b7a8ca59473d45" />
+<input type="hidden" name="rand_int" value="94" />
+<input type="hidden" name="pconvert_data" id="pconvert_data" />
+<input type="hidden" name="svc" id="svc" />
+<input type="hidden" name="s_code" id="s_code" />
+<input type="hidden" name="from_form" value="1" />
+</form>
+<div class="maxtop btns" style="display:none;" id="vcode_panel">
+<img src="">
+<input type="input" name="vcode" id="vcode">
+<div class="WJButton" id="vcode_confirm">OK</div>
+</div>
+<div class="maxtop btns title" id="saver_div" style="display:none; text-align:center;">
+<img src="https://cdn.wenjuan.com/static/img/survey_mobile/loader2.gif?v=138cfa779cd1d64a04315256dac636c5" alt="" />
+<br />
+<div id="loader_text">正在保存...</div>
+</div>
+<div class="phone_end" id="end_page" style="display:none;">
+<div class="enc_desc_wrap">
+<p id="end_desc" class="retract"></p>
+<div class="end-desc-layer"></div>
+<div class="end-desc-extend-wrapper">
+<div class="end-desc-extend"></div>
+</div>
+<p id="seq_content"></p>
+<!-- 查看结果 -->
+
+<div class="su_draw envelope_draw">
+<a target="_blank" class="su_create_btn" href=""></a>
+</div>
+</div>
+<!-- 问卷网抽奖 -->
+<p class="luck_draw_tip" style="display:none;">真遗憾，红包与你擦肩而过</p>
+<div class="wj_luck_draw" id="wj_luck_draw" style="display:none;">
+</div>
+<!--运气红包哭脸-->
+<div class="envelope_draw" id="no_EnvelopeDiv_box" style="display: none;">
+<center><img src="https://cdn.wenjuan.com/static/images/plugin_center/no_money.png?v=f85696c34e24f8379cad69034f5e8c80" width="80%" /></center>
+
+<a class="draw_btn" href="javascript:;">别灰心 再试一次</a>
+
+</div>
+<!-- 红包抽奖 抽奖 -->
+<!-- <div class="envelope_draw red_weixin" id="lucydrawDiv" style="display:none;">
+<p>恭喜！您获得 <span class="text_pink">1次</span> 抽奖机会</p>
+<a class="red_code_btn" href="">立即抽奖</a>
+</div> -->
+<!-- 红包抽奖 wrap-->
+<div class="envelope_draw red_wrap" id="envelopeZdiv" style="display:none;">
+<p>恭喜！您获得 <span class="text_pink">1个</span> 红包</p>
+<div class="red_code_box">
+<img src="" class="red_code" width="100%" />
+</div>
+<div class="red_info">
+<p>1.请使用手机截屏保存本图</p>
+<p>2.在微信中打开 “扫一扫”</p>
+<p>3.点击右上角从 “相册” 选择本截图</p>
+</div>
+</div>
+<!-- 运气红包 -->
+<div class="envelope_draw" id="envelopeDiv_box" style="display:none;">
+
+<center class="go_draw_btn_box"><img src="https://cdn.wenjuan.com/static/images/plugin_center/hongbao.png?v=b1a978c49df2b302e3892a416bce1159" width="100%"></center>
+
+<!-- <span>试试手气</span> -->
+</div>
+</div>
+<!-- 转盘抽奖 iframe -->
+<div class="envelope_draw red_weixin" id="lucydrawIframe" style="display:none;">
+<button>按钮</button>
+<iframe name="iframe" src="" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div style="display:none"><img alt="" src="/static/images/rspd_share_wenjuan.png" /></div>
+
+<div class="Error_message" id="error_msg_box" style="display:none;">
+<span class="error_text">提交失败，错误类型</span>
+<p class="error_code">(081)</p>
+<a class="button white WJ_an" id="reupload_answer">重新提交</a>
+<a href="tel:4006188166" class="button white WJ_an" id="fankui">马上联系我们</a>
+</div>
+</div>
+<div class="MobileServeyFooter">
+
+
+<div class="ma_auto">
+
+
+<div class="footer_content">
+
+
+<a class="jubao" target="blank" href="/project/allegation/?project_id=5c23206ad357806028c7292e">举报</a>
+
+<div class='wjtext'><a href='http://www.wenjuan.com?utm_source=rspd_logo' target='_blank'>问卷网提供技术支持</a></div>
+
+<a style="display: none;" class="btn_link_dc">关闭</a>
+
+
+
+<!-- 免费创建 -->
+<a target="_blank" href="https://www.wenjuan.com/?utm_source=rspd&utm_shortid=jUZJV3Rhmsr=%E7%AD%94%E9%A2%98%E9%A1%B5&hmpl=WAP&hmcu=&hmkw=&hmci=" class="end_create_btn inline-block new_create_style" style="display:none">我也要免费创建问卷</a>
+
+</div>
+
+</div>
+
+
+
+<div class="wjprogress_new" id="progress_bar" style="display:none;">
+<em class="progress_txt"></em>
+<div class="barbox"><span style="width: 60%;"></span></div>
+</div>
+</div>
+<div class="Error_message" id="error_msg_box" style="display:none;">
+<span class="error_text">提交失败，错误类型</span>
+<p class="error_code">(081)</p>
+<a class="button white WJ_an" id="reupload_answer">重新提交</a>
+<a href="tel:4006188166" class="button white WJ_an" id="fankui">马上联系我们</a>
+</div>
+</div>
+
+<style>
+.assess_header_div {
+position: relative;
+}
+.header_img {
+height: auto;
+width: 100%
+}
+.cover_img{
+content: '';
+display: block;
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 0;
+background-size: cover;
+background-position: center center;
+overflow: hidden;
+}
+</style>
+<script type="text/template" id="appearance_cover">
+
+<div class="assess_header_div" style="height:100%">
+{@if cover && cover.coverImgUrl && cover.coverSetting != 'color'}
+<div style="background-image:url(&{cover.coverImgUrl})" class="cover_img"></div>
+{@else if cover && cover.coverColor && cover.coverSetting == 'color'}
+<div style="background-color:&{cover.coverColor}" class="cover_img"></div>
+{@/if}
+{@if logo && logo.logoUrl}
+<div class="img_div">
+<div class="logo_div" {@if logo.logoPosition=='right'}style="text-align:right"{@else if logo.logoPosition=='center'}style="left:50%;transform: translateX(-50%);text-align:center;"{@else}style="text-align:left"{@/if}>
+<img src="&{logo.logoUrl}" class="logo_img">
+</div>
+</div>
+{@/if}
+{@if !cover || (cover && cover.beginBtnStyle != 'begin_btn')}
+<div class="cover_div">
+<div class="cover_title">上滑开始</div>
+<i class="cover_slide_img"></i>
+</div>
+{@else}
+<div class="cover_btn">
+<button>{@if cover && cover.beginBtnText}&{cover.beginBtnText}{@else}立即开启{@/if}</button>
+</div>
+{@/if}
+{@if cover && cover.titleShowOnCover == "1"}
+<div class="wj_title{@if cover && cover.titlePosition} &{cover.titlePosition}{@else} upper{@/if}">
+&&{porject_title}
+</div>
+{@/if}
+</div>
+</script>
+<script type="text/template" id="appearance_header_template">
+
+<div class="assess_header_div">
+<img src="&{headerImgUrl}" class="header_img">
+{@if ((!cover || (cover && (cover.coverSetting != 'color' && !cover.coverImgUrl) || (cover.coverSetting == 'color' && !cover.coverColor))) && logo && logo.logoUrl)}
+<div class="img_div">
+<div class="logo_div" {@if logo.logoPosition=='right'}style="text-align:right"{@else if logo.logoPosition=='center'}style="left:50%;transform: translateX(-50%);text-align:center;"{@else}style="text-align:left"{@/if}>
+<img src="&{logo.logoUrl}" class="logo_img">
+</div>
+</div>
+{@/if}
+</div>
+</script>
+<script type="text/template" id="appearance_logo_template">
+
+<div class="assess_header_div">
+{@if logo && logo.logoUrl}
+<div class="only_img_div">
+<div class="logo_div"{@if logo.logoPosition=='right'}style="text-align:right"{@else if logo.logoPosition=='center'}style="left:50%;transform: translateX(-50%);text-align:center;"{@else}style="text-align:left"{@/if}>
+<img src="&{logo.logoUrl}" class="logo_img">
+</div>
+</div>
+{@/if}
+</div>
+</script>
+<script type="text/template" id="mobile_btncolor_template">
+/*mobile css样式模板*/
+#next_button, .wjprogress_new .barbox, #confirm_verify_btn, .button, .question .radio_wrap .unstyled li.checked .checked_wrap>.ico_radio:before, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_radio:before, .question .topic_con .M_sorting .sort_item.selected .sort_num, .question .topic_score_slider .scoring_con_slider .ui-slider .ui-slider-handle, .question .topic_score_slider .scoring_con_slider .score_slider .ui-widget-header, .question .topic_score_slider .scoring_con_slider .score_slider .score_widget_tc, .question .topic_con_nps .optionBox .nps_score_list>span.checked,.question .topic_con_uploadfile .uploadfile_loading .uploadfile_bar, .question .topic_vote .fontVoteProgressBox .progressBox .progress_vote, .MobileServeyFooter .wjprogress_new .barbox>span,.question .unstyled li.checked .checked_wrap{
+background-color:&{data.style.btnsColor};
+}
+.question .unstyled li.checked .checked_wrap, .question .topic_con .M_sorting .sort_item.selected, .question .topic_con .ShowImgCon .simg.checked, .question .topic_con .topic_input.input_focus, .question .topic_con .phone_select select:focus+.placeholder_txt, .question .M_sorting .Ulist .U_select:focus+.placeholder_txt, .question .checkbox_wrap .unstyled li.checked .checked_wrap>.ico_checkbox, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_checkbox, .question .topic_con .M_sorting .sort_item.selected .sort_num, .question .topic_con_nps .optionBox .nps_score_list>span.checked, .question .radio_wrap .unstyled li.checked .checked_wrap>.ico_radio, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_radio, .question .checkbox_wrap .unstyled li.checked .checked_wrap>.ico_checkbox:before, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_checkbox:before{
+border-color:&{data.style.btnsColor};
+}
+.question .unstyled li.checked .checked_wrap, .question .topic_con .M_sorting .sort_item.selected, .question .topic_con .ShowImgCon .simg.checked, .question .topic_con .ShowImgCon .simg.checked .optionImg {
+background-color: &{sRgbColor};
+box-shadow: 0 2px 4px 0 &{sRgbColor};
+}
+body.change_body_color .phone_content_wrap, body .phone_content_wrap, body.change_body_color.hide_cover .phone_content_wrap, body.change_body_color.hide_appearset_cover .phone_content_wrap {
+background: &{wjbColor};
+}
+body.change_body_color .MobileServeyFooter .wjprogress_new {
+background-color: transparent;
+}
+/* topic font */
+.survey_cover .survey_cover_text .TopBgTitle,
+.assess_header_div .wj_title{
+font-size: &{data.font.topicFontStyle.fontSize/100}rem;
+font-weight: &{data.font.topicFontStyle.fontBold};
+font-style: &{data.font.topicFontStyle.fontItalic};
+text-decoration: &{data.font.topicFontStyle.fontUnderline};
+color: &{data.font.topicFontStyle.fontColor};
+}
+/* welcome font */
+#begin_content>.desc_begin{
+font-size: &{data.font.welcomeFontStyle.fontSize/100}rem;
+font-weight: &{data.font.welcomeFontStyle.fontBold};
+font-style: &{data.font.welcomeFontStyle.fontItalic};
+text-decoration: &{data.font.welcomeFontStyle.fontUnderline};
+color: &{data.font.welcomeFontStyle.fontColor};
+}
+/* quesiton font */
+.Phone_con .question[questiontype="70"] .topic_title,.Phone_con .question .topic_title_wrap .topic_title,.Phone_con .question .topic_title, .question .topic_title .t_multiple{
+font-size: &{data.font.quesitonFontStyle.fontSize/100}rem;
+font-weight: &{data.font.quesitonFontStyle.fontBold};
+font-style: &{data.font.quesitonFontStyle.fontItalic};
+text-decoration: &{data.font.quesitonFontStyle.fontUnderline};
+color: &{data.font.quesitonFontStyle.fontColor} !important;
+}
+/* option font */
+.question .unstyled li .checked_wrap,.Phone_con .question input, .Phone_con .question textarea,.question .unstyled li .checked_wrap, .Phone_con .question input, .Phone_con .question textarea, .Phone_con .question select,.Phone_zon .question .option_label,.question .unstyled li .checked_wrap, .Phone_con .question input, .Phone_con .question textarea, .Phone_con .question select,.question .topic_con .phone_select .placeholder_txt, .question .M_sorting .Ulist .placeholder_txt,.question .topic_con_date .topic_input .BlankDateOrTime span.placeholder, .question .topic_con_age .topic_input .BlankDateOrTime span.placeholder,.question .topic_con_date .topic_input .BlankDateOrTime span, .question .topic_con_age .topic_input .BlankDateOrTime span,.question .topic_con .ShowImgCon .simg .optionImg .img_txt,.question .topic_con .data_row>.optionBox_t .option_label,.question .topic_con.MatrixType .matrix_item .optionBox_t .option_label,.question .topic_score_default .matrixScore .optionBox_c .matrix_ul li .option_label,.question .topic_con .M_sorting .sort_item, .question .topic_con .M_sorting .sort_item.selected .option_txt, .M_topic .horz_blank, .question .matrix li .option_title {
+font-size: &{data.font.optionFontStyle.fontSize/100}rem;
+font-weight: &{data.font.optionFontStyle.fontBold};
+font-style: &{data.font.optionFontStyle.fontItalic};
+text-decoration: &{data.font.optionFontStyle.fontUnderline};
+color: &{data.font.optionFontStyle.fontColor} !important;
+}
+/* option font for 横向填空题*/
+.M_topic .horz_blank.underscore .ipt-wrap{
+border-color: &{data.font.optionFontStyle.fontColor};
+}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+input:-moz-placeholder,textarea:-moz-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+input::-moz-placeholder,textarea::-moz-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+/* endDesc font */
+.phone_end #end_desc{
+font-size: &{data.font.endDescFontStyle.fontSize/100}rem;
+font-weight: &{data.font.endDescFontStyle.fontBold};
+font-style: &{data.font.endDescFontStyle.fontItalic};
+text-decoration: &{data.font.endDescFontStyle.fontUnderline};
+color: &{data.font.endDescFontStyle.fontColor} !important;
+}
+.cover_btn button {
+color: &{data.cover.beginBtnTextColor};
+background-color: &{data.cover.beginBtnColor};
+}
+</script>
+<script type="text/template" id="pc_btncolor_template">
+/*pc font type css*/
+/* topic font */
+.wjtitle h1{
+font-size: &{data.font.topicFontStyle.fontSize}px;
+font-weight: &{data.font.topicFontStyle.fontBold};
+font-style: &{data.font.topicFontStyle.fontItalic};
+text-decoration: &{data.font.topicFontStyle.fontUnderline};
+color: &{data.font.topicFontStyle.fontColor};
+}
+/* welcome font */
+.wjintro, .wjintro{
+font-size: &{data.font.welcomeFontStyle.fontSize}px;
+font-weight: &{data.font.welcomeFontStyle.fontBold};
+font-style: &{data.font.welcomeFontStyle.fontItalic};
+text-decoration: &{data.font.welcomeFontStyle.fontUnderline};
+color: &{data.font.welcomeFontStyle.fontColor};
+}
+/* quesiton font */
+.question .title{
+font-size: &{data.font.quesitonFontStyle.fontSize}px;
+font-weight: &{data.font.quesitonFontStyle.fontBold};
+font-style: &{data.font.quesitonFontStyle.fontItalic};
+text-decoration: &{data.font.quesitonFontStyle.fontUnderline};
+color: &{data.font.quesitonFontStyle.fontColor};
+}
+/* option font */
+input, button, select, textarea,.w28,.option_label,.T_edit_min,.horz_blank,.horz_blank input,.matrix_scale_wrapper .option_label,.q_proportion .option_title{
+font-size: &{data.font.optionFontStyle.fontSize}px;
+font-weight: &{data.font.optionFontStyle.fontBold};
+font-style: &{data.font.optionFontStyle.fontItalic};
+text-decoration: &{data.font.optionFontStyle.fontUnderline};
+color: &{data.font.optionFontStyle.fontColor};
+}
+/* option font for 横向填空题*/
+.horz_blank.underscore .ipt-wrap{
+border-color: &{data.font.optionFontStyle.fontColor};
+}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+input:-moz-placeholder,textarea:-moz-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+input::-moz-placeholder,textarea::-moz-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{
+color: &{data.font.optionFontStyle.fontColor};
+}
+/* endDesc font */
+.conthank p{
+font-size: &{data.font.endDescFontStyle.fontSize}px;
+font-weight: &{data.font.endDescFontStyle.fontBold};
+font-style: &{data.font.endDescFontStyle.fontItalic};
+text-decoration: &{data.font.endDescFontStyle.fontUnderline};
+color: &{data.font.endDescFontStyle.fontColor};
+}
+.wjContent {
+background-color: &{wjbColor};
+}
+</script>
+
+
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/jquery_1.10.2.min.js?v=b62fe6d31abbd18c3f7eb34ddf470d63"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/tools.js?v=cc6b385113ffe5a315cf7ed66385e415"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/base_utils.js?v=791a1ae111313d2f935ec325edec6ff7"></script>
+<script type="text/javascript">
+// 全局数据对象
+var globalData = {
+platform: 'mobile',
+sceneType: 'survey',
+createClient: "None", // 账户创建于哪个客户端
+memberType: isNotEmpty(getCookie('mtc')) ? 3 : 2,
+adc_time: '1565175865',
+adc_sign: '874d093ca39f1f06e698758bbf4a6e6b',
+adUtils: { // 广告相关数据，为了获取mtc
+server: 'https://api.wenjuan.link/dmp/0.0.1/user/plant',
+token: 'd2VuanVhbiAxNTY1MTc0MDkzMDgzIGM2YWU5MmQxNzNmZjQ0ODcyYzI2N2QxOWJlOGQxOGI0N2M2YjY2MTU=',
+mid: '',
+},
+};
+var test_mode = window.location.href.indexOf("test=1") != -1 ? true : false;
+// 是否设置质量控制的无效答卷规则
+var qualityControl = "off";
+var project = {"last_updated": {"$date": 1555410214566}, "page_count": 1, "activated": {"$date": 1547205634121}, "scene": 0, "share_status": 1, "official_status": 2, "begin_desc": "\u611f\u8c22\u60a8\u80fd\u62bd\u51fa\u51e0\u5206\u949f\u65f6\u95f4\u6765\u53c2\u52a0\u672c\u6b21\u7b54\u9898\uff0c\u73b0\u5728\u6211\u4eec\u5c31\u9a6c\u4e0a\u5f00\u59cb\u5427\uff01\uff01", "appearance_id": "5c380af8d35780066d61d0b9", "short_id": "jUZJV3R", "is_struct_change": 1, "questionpage_id_list": ["5c23206ad357806028c7292f"], "project_func_id": "51dd234e9b9fbe6646bf4dcc", "questionpage_list": [{"updated": {"$date": 1545834730531}, "_id": {"$oid": "5c23206ad357806028c7292f"}, "question_id_list": ["5c23206ad357806028c72930", "5c23206ad357806028c72936", "5c23206ad357806028c7293b", "5c23206ad357806028c72942", "5c23206ad357806028c72948", "5c23206ad357806028c7294d", "5c23206ad357806028c72952", "5c23206ad357806028c72956", "5c23216992beb54b849fd844", "5c23206ad357806028c72963", "5c23206ad357806028c72969"], "question_list": [{"extra_option_list": [], "has_open_option": true, "_id": {"$oid": "5c23206ad357806028c72930"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72931", "5c23206ad357806028c72932", "5c23206ad357806028c72933", "5c23206ad357806028c72934", "5c23206ad357806028c72935"], "cid": "Q1", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u662f\u5927\u51e0\u7684\u5b66\u751f\uff1f ", "updated": {"$date": 1545834730538}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730540}, "cid": "A1", "title": "\u5927\u4e00", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72931"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72930"}, {"updated": {"$date": 1545834730545}, "cid": "A2", "title": "\u5927\u4e8c", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72932"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72930"}, {"updated": {"$date": 1545834730547}, "cid": "A3", "title": "\u5927\u4e09", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72933"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72930"}, {"updated": {"$date": 1545834730548}, "cid": "A4", "title": "\u5927\u56db", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72934"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72930"}, {"updated": {"$date": 1545834730550}, "cid": "A5", "title": "\u5176\u5b83", "is_open": true, "_id": {"$oid": "5c23206ad357806028c72935"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72930"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23206ad357806028c72936"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72937", "5c23206ad357806028c72938", "5c23206ad357806028c72939", "5c23206ad357806028c7293a"], "cid": "Q2", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u6bcf\u6708\u6d88\u8d39\u591a\u5c11\uff1f ", "updated": {"$date": 1545834730570}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730573}, "cid": "A1", "title": "400-800", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72937"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72936"}, {"updated": {"$date": 1545834730578}, "cid": "A2", "title": "800-1600", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72938"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72936"}, {"updated": {"$date": 1545834730580}, "cid": "A3", "title": "600-2400", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72939"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72936"}, {"updated": {"$date": 1545834730582}, "cid": "A4", "title": "2400\u4ee5\u4e0a", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7293a"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72936"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {"disp_type": ""}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": true, "_id": {"$oid": "5c23206ad357806028c7293b"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c7293c", "5c23206ad357806028c7293d", "5c23206ad357806028c7293e", "5c23206ad357806028c7293f", "5c23206ad357806028c72940", "5c23206ad357806028c72941", "5c23211d92beb5499b82a9da"], "cid": "Q3", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u7684\u6d88\u8d39\u96c6\u4e2d\u4e8e\uff1f ", "updated": {"$date": 1545834730600}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730603}, "cid": "A1", "title": "\u996d\u98df", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7293c"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}, {"updated": {"$date": 1545834730608}, "cid": "A2", "title": "\u901b\u8857", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7293d"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}, {"updated": {"$date": 1545834730610}, "cid": "A3", "title": "\u7f51\u4e0a\u8d2d\u7269", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7293e"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}, {"updated": {"$date": 1545834730612}, "cid": "A4", "title": "\u5a31\u4e50", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7293f"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}, {"updated": {"$date": 1545834730614}, "cid": "A5", "title": "\u996e\u6599\uff0c\u96f6\u98df\u7b49", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72940"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}, {"updated": {"$date": 1545834730616}, "cid": "A6", "title": "\u5bb5\u591c\u805a\u9910", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72941"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}, {"updated": {"$date": 1545834909915}, "cid": "A7", "title": "\u5176\u4ed6", "is_open": true, "_id": {"$oid": "5c23211d92beb5499b82a9da"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7293b"}], "jumpconstraint_id_list2": [], "question_type": 3, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": true, "_id": {"$oid": "5c23206ad357806028c72942"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72943", "5c23206ad357806028c72944", "5c23206ad357806028c72945", "5c23206ad357806028c72946", "5c23206ad357806028c72947"], "cid": "Q4", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u7684\u7ecf\u6d4e\u6765\u6e90\u4e8e\uff1f ", "updated": {"$date": 1545834730634}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730636}, "cid": "A1", "title": "\u7236\u6bcd", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72943"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72942"}, {"updated": {"$date": 1545834730641}, "cid": "A2", "title": "\u517c\u804c", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72944"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72942"}, {"updated": {"$date": 1545834730644}, "cid": "A3", "title": "\u9760\u95fa\u871c\u57fa\u53cb", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72945"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72942"}, {"updated": {"$date": 1545834730646}, "cid": "A4", "title": "\u5956\u5b66\u91d1", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72946"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72942"}, {"updated": {"$date": 1545834730648}, "cid": "A5", "title": "\u5176\u5b83 ", "is_open": true, "_id": {"$oid": "5c23206ad357806028c72947"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72942"}], "jumpconstraint_id_list2": [], "question_type": 3, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23206ad357806028c72948"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72949", "5c23206ad357806028c7294a", "5c23206ad357806028c7294b", "5c23206ad357806028c7294c"], "cid": "Q5", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u6bcf\u4e2a\u6708\u7236\u6bcd\u7ed9\u7684\u751f\u6d3b\u8d39\u6709\u591a\u5c11\uff1f ", "updated": {"$date": 1545834730666}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730669}, "cid": "A1", "title": "1000\u4ee5\u4e0b", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72949"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72948"}, {"updated": {"$date": 1545834730674}, "cid": "A2", "title": "1000-1800", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7294a"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72948"}, {"updated": {"$date": 1545834730676}, "cid": "A3", "title": "1800-2600", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7294b"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72948"}, {"updated": {"$date": 1545834730677}, "cid": "A4", "title": "2600\u4ee5\u4e0a", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7294c"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72948"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {"disp_type": ""}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23206ad357806028c7294d"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c7294e", "5c23206ad357806028c7294f", "5c23206ad357806028c72950", "5c23206ad357806028c72951"], "cid": "Q6", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u89c9\u5f97\u6bcf\u6708\u7236\u6bcd\u7ed9\u7684\u751f\u6d3b\u8d39\u7528\u4e8e\u5403\u996d\u65b9\u9762\u591f\u5417\uff1f ", "updated": {"$date": 1545834730696}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730699}, "cid": "A1", "title": "\u7ef0\u7ef0\u6709\u4f59", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7294e"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7294d"}, {"updated": {"$date": 1545834730705}, "cid": "A2", "title": "\u5927\u81f4\u591f\u4e86", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7294f"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7294d"}, {"updated": {"$date": 1545834730706}, "cid": "A3", "title": "\u6709\u4e9b\u7d27\u5f20", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72950"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7294d"}, {"updated": {"$date": 1545834730708}, "cid": "A4", "title": "\u8fdc\u8fdc\u4e0d\u591f", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72951"}, "custom_attr": {}, "question_id": "5c23206ad357806028c7294d"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {"disp_type": ""}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23206ad357806028c72952"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72953", "5c23206ad357806028c72954"], "cid": "Q7", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u6709\u7537\uff08\u5973\uff09\u670b\u53cb\u5417\uff1f", "updated": {"$date": 1545834730727}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730730}, "cid": "A1", "title": "\u6709", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72953"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72952"}, {"updated": {"$date": 1545834730735}, "cid": "A2", "title": "\u6ca1\u6709", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72954"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72952"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23206ad357806028c72956"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72957", "5c23206ad357806028c72958", "5c23206ad357806028c72959", "5c23206ad357806028c7295a", "5c23206ad357806028c7295b"], "cid": "Q8", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u6bcf\u6708\u4e3a\u4ed6\uff08\u5979\uff09\u652f\u51fa\u591a\u5c11\uff1f", "updated": {"$date": 1545834730755}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730758}, "cid": "A1", "title": "100\u4ee5\u4e0b", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72957"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72956"}, {"updated": {"$date": 1545834730763}, "cid": "A2", "title": "100-200", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72958"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72956"}, {"updated": {"$date": 1545834730764}, "cid": "A3", "title": "200-300", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72959"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72956"}, {"updated": {"$date": 1545834730767}, "cid": "A4", "title": "300-400", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7295a"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72956"}, {"updated": {"$date": 1545834730768}, "cid": "A5", "title": "\u5927\u4e8e400", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7295b"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72956"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": ["5c380b4292beb53f18706a72"], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {"condition_relation": 1}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23216992beb54b849fd844"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23216992beb54b849fd845"], "cid": "Q9", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u5bf9\u6bcf\u6708\u7684\u82b1\u8d39\u6ee1\u610f\u60c5\u51b5\u5982\u4f55\uff1f", "updated": {"$date": 1545834985514}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834985719}, "cid": "A1", "title": "\u9009\u98791", "is_open": false, "_id": {"$oid": "5c23216992beb54b849fd845"}, "custom_attr": {}, "question_id": "5c23216992beb54b849fd844"}], "jumpconstraint_id_list2": [], "question_type": 50, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {"max_answer_num": 5, "min_answer_num": 1, "desc_left": "\u975e\u5e38\u4e0d\u6ee1\u610f", "desc_right": "\u975e\u5e38\u6ee1\u610f"}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": true, "_id": {"$oid": "5c23206ad357806028c72963"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c72964", "5c23206ad357806028c72965", "5c23206ad357806028c72966", "5c23206ad357806028c72967", "5c23206ad357806028c72968"], "cid": "Q10", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u662f\u5426\u6709\u7406\u8d22\u7684\u4e60\u60ef\uff1f ", "updated": {"$date": 1545834730825}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730828}, "cid": "A1", "title": "\u6709\uff0c\u90fd\u653e\u4f59\u989d\u5b9d\u91cc\u9762\u4e86\uff01", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72964"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72963"}, {"updated": {"$date": 1545834730834}, "cid": "A2", "title": "\u6709\uff0c\u90fd\u653e\u94f6\u884c\u5361\u91cc\u9762\u4e86\uff01", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72965"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72963"}, {"updated": {"$date": 1545834730835}, "cid": "A3", "title": "\u6709\uff0c\u90fd\u653e\u94b1\u5305\u91cc\u9762\u4e86\uff01", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72966"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72963"}, {"updated": {"$date": 1545834730837}, "cid": "A4", "title": "\u6ca1\u6709\uff0c\u8981\u7528\u5c31\u62ff\uff01", "is_open": false, "_id": {"$oid": "5c23206ad357806028c72967"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72963"}, {"updated": {"$date": 1545834730839}, "cid": "A5", "title": "\u5176\u5b83 ", "is_open": true, "_id": {"$oid": "5c23206ad357806028c72968"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72963"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {"disp_type": ""}, "extra_option_id_list": []}, {"extra_option_list": [], "has_open_option": false, "_id": {"$oid": "5c23206ad357806028c72969"}, "jumpconstraint_id_list": [], "option_id_list": ["5c23206ad357806028c7296a", "5c23206ad357806028c7296b", "5c23206ad357806028c7296c", "5c23219e92beb54be0b7cea6"], "cid": "Q11", "questionpage_id": "5c23206ad357806028c7292f", "related_question_list": [], "title": "\u4f60\u6bcf\u9910\u5e73\u5747\u6d88\u8d39\u591a\u5c11\u91d1\u989d\uff1f ", "updated": {"$date": 1545834730868}, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{"updated": {"$date": 1545834730872}, "cid": "A1", "title": "10\u5143\u4e4b\u5185", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7296a"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72969"}, {"updated": {"$date": 1545834730879}, "cid": "A2", "title": "10-15\u5143", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7296b"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72969"}, {"updated": {"$date": 1545834730881}, "cid": "A3", "title": "15-20\u5143", "is_open": false, "_id": {"$oid": "5c23206ad357806028c7296c"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72969"}, {"updated": {"$date": 1545835038431}, "cid": "A5", "title": "20\u5143\u4ee5\u4e0a", "is_open": false, "_id": {"$oid": "5c23219e92beb54be0b7cea6"}, "custom_attr": {}, "question_id": "5c23206ad357806028c72969"}], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5c23206ad357806028c7292e", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": []}], "project_id": "5c23206ad357806028c7292e", "custom_attr": {}}], "version": 2, "question_count": 11, "end_desc": "<p style=\"text-align: center;\">\u60a8\u5df2\u5b8c\u6210\u672c\u6b21\u95ee\u5377\uff0c\u611f\u8c22\u60a8\u7684\u5e2e\u52a9\u4e0e\u652f\u6301</p>", "status": 0, "updated": {"$date": 1555410248807}, "displayconstraint_list": [{"project_id": "5c23206ad357806028c7292e", "condition": {"_id": {"$oid": "5c380b4292beb53f18706a70"}, "condition_item_list": [{"_id": {"$oid": "5c380b4292beb53f18706a71"}, "option_id": "5c23206ad357806028c72953", "score_range": {}, "operation_type": 1, "project_id": "5c23206ad357806028c7292e", "condition_id": "5c380b4292beb53f18706a70", "question_id": "5c23206ad357806028c72952"}], "condition_type": 3, "condition_item_id_list": ["5c380b4292beb53f18706a71"], "project_id": "5c23206ad357806028c7292e", "logic_relation": 2}, "id": "5c380b4292beb53f18706a72", "condition_id": "5c380b4292beb53f18706a70", "question_id": "5c23206ad357806028c72956"}], "scene_type": "brand", "first_create_for_member": false, "custom_attr": {"survey_share_pic_url": "/static/images/rspd_share_wenjuan.png", "ad": "on", "panelsite": "", "theme": "darkblue", "scrollbar": "on", "new_custom_style": {"TerminalStyle": {"PC": {"R_BgColor": "", "BgImagePosition": "", "backgroundRepeat": "repeat", "ImageURl": "", "BgColor": "#efefef", "WjBgColor": "#fff", "BgImageURl": "", "font": [{"bold": "", "color": "", "id": "QuesitonStyle", "italic": "", "font": "", "underline": "", "size": ""}, {"bold": "", "color": "", "id": "OptionsStyle", "italic": "", "font": "", "underline": "", "size": ""}, {"bold": "", "color": "", "id": "TopicStyle", "italic": "", "font": "", "underline": "", "size": ""}, {"bold": "", "color": "", "id": "WelcomeStyle", "italic": "", "font": "", "underline": "", "size": ""}, {"bold": "", "color": "", "id": "EndStyle", "italic": "", "font": "", "underline": "", "size": ""}], "OtherColor": "#53a4f4", "R_OtherColor": "#fff"}, "Phone": {"buttonSelectColor": "#2672FF", "titleBgColor": "#2672FF", "coverImgUrl": "", "titleBeginFontColor": "#FFFFFF", "beginFontSize": "14", "questionTitleFontColor": "#484848", "notCoverImg": true, "questionTitleFontSize": "20", "BgColor": "#F6F6F6", "theme": "22", "titleFontSize": "24", "questionOptionFontColor": "#484848"}}, "Language": "zh_CN", "Number": "true", "ProgressBar": "true", "logoPosition": "left", "logoURL": ""}, "show_seq": "on", "base_appear_id": "5bcf06b5d3578054358d4e17", "screenout_desc": "<p style=\"text-align: center;\">\u4e0d\u597d\u610f\u601d\uff0c\u60a8\u4e0d\u592a\u9002\u5408\u672c\u6b21\u8c03\u67e5\uff0c\u8c22\u8c22\u60a8\u7684\u65f6\u95f4</p>"}, "is_shared": false, "created": {"$date": 1545834730522}, "title": "<p style=\"text-align:center\">\u5927\u5b66\u751f\u5728\u6821\u6d88\u8d39\u8c03\u67e5\u8868</p>", "question_relation_list": [], "creator_id": "51dd234e9b9fbe6646bf4dd4", "_id": {"$oid": "5c23206ad357806028c7292e"}, "is_hdgc": false};
+var mobile_auth_queston_status = 2;
+
+var deviceWidth = document.documentElement.clientWidth || 375;
+var designWidth = 375;
+if (deviceWidth > designWidth) deviceWidth = designWidth;
+document.documentElement.style.fontSize = deviceWidth / designWidth * 100 + "px";
+var is_weixin_browser = false;
+var draw_ret;
+// 获取外观设置
+var appearanceData = {"_id": {"$oid": "5c380af8d35780066d61d0b9"}, "created": 1547176696, "theme_colors": [], "theme_styles": [], "p_types": [], "PC": {"style": {"btnsColor": "#593D30"}, "cover": {"coverSetting": "image", "titleShowOnCover": 1}, "headerImgUrl": "http://cdn1.wenjuan.com/appear-PC-\u5ba2\u6237 Copy 2.png", "background": {"bgImageUrl": "", "wjBgColor": "#fff", "bgRepeat": "repeat", "bgColor": "#f5f5f5", "bgOpacity": 1.0}, "submit_btn": {"submitBtnText": "\u63d0\u4ea4"}, "logo": {"logoPosition": "left", "logoUrl": ""}, "hidden": {"hideTitle": 0, "hideQuestionSeq": 0, "hideWelcome": 0}, "font": {"endDescFontStyle": {"fontSize": "18"}, "optionFontStyle": {"fontSize": "14"}, "quesitonFontStyle": {"fontSize": "16"}, "welcomeFontStyle": {"fontSize": "16"}, "topicFontStyle": {"fontSize": "18"}}}, "Phone": {"style": {"btnsColor": "#8ed1fc"}, "cover": {"coverImgUrl": "", "titleShowOnCover": 1, "beginBtnStyle": "begin_btn", "coverSetting": "image"}, "headerImgUrl": "http://cdn1.wenjuan.com/appear-M-\u5ba2\u6237 Copy 2.png", "background": {"bgCorlor": "#F6F6F6"}, "submit_btn": {"submitBtnText": "\u63d0\u4ea4"}, "logo": {"logoPosition": "left", "logoUrl": ""}, "hidden": {"hideTitle": 0, "hideQuestionSeq": 0, "hideWelcome": 0}, "font": {"endDescFontStyle": {"fontSize": "16"}, "optionFontStyle": {"fontSize": "16"}, "quesitonFontStyle": {"fontSize": "20"}, "welcomeFontStyle": {"fontSize": "18"}, "topicFontStyle": {"fontSize": "24"}}}, "language": "zh_CN"};
+/*
+* 广告平台对接
+*/
+var ad_mtc = "1d57c73731f5b3d15c0fefe91b69e603";
+var ad_token = "d2VuanVhbiAxNTY1MTc0MDkzMDgzIGM2YWU5MmQxNzNmZjQ0ODcyYzI2N2QxOWJlOGQxOGI0N2M2YjY2MTU=";
+var ad_ua = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1";
+var ad_remote_ip = "14.222.40.120";
+// 是否有题目缓存
+var use_cache = '0';
+// 缓存加盐
+var cache_salt = '0';
+// 是否从答题广场过来的问卷
+var isFromAnswerSquare = 'False';
+// 七牛域名
+var qiniu_host = 'https://cdn1.wenjuan.com';
+</script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/ad_api/pako.min.js?v=eea12309ba7953f4cbdb9a7944bfe1d1"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/jquery_ui/jquery_ui.ugligy.min.js?v=7f5a87403629c6eb843ce8699501ad59"></script>
+<script type="text/javascript" src="//webapi.amap.com/maps?v=1.4.6&key=6a92e68080ab6c0cd8973ddb90668c47&plugin=AMap.Geocoder"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/modernizr.js?v=6b699e7c918ab49f8a93ad65d1f3edcb"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/juicer.js?v=eddf2482fed75dc11f602a5f519435cb"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/jquery.cookie.js?v=d5528dde0006c78be04817327c2f9b6f"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/md5-min.js?v=0422005ea9630b5b74416281eecf24cb"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/json.js?v=2ba3e68501985816b26089f135e5b718"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/enums.js?v=99cd621eebaa4043b281a8df7a7be2a1"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/qiniu-2.4.0.min.js?v=cb1b432c0339e43c57e000297c87f630"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/build/js/translate/zh_CN/survey_mobile_main.js?v=5d41bd3e8687b73c8e04113a619a3e7f"></script>
+
+
+<script type="text/javascript" src="//138.wenjuan.com/device_type.js?time=1565175865.04" async="async"></script>
+
+<!-- 颜色值转换 -->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/color_exchange.js?v=4556870404d55f88188fe556c6c0e2b1"></script>
+<!-- 滑动触摸 -->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/swipe.js?v=e56193e27e534b0db18e52055ad2c707"></script>
+<script type="text/javascript">
+var hide_logo = false;
+
+var star_off = "https://cdn.wenjuan.com/static/images/lv_pt_off.png?v=e6dcac8ef8e5d94933092288acebf4a3";
+var star_on = "https://cdn.wenjuan.com/static/images/lv_pt_on.png?v=79f463a848f3bfd8038c9962a68d437b";
+var show_prev_btn = (project.custom_attr['show_prev_btn'] || window.location.search.indexOf("show_prev_btn=1")) != -1 ? true : false;
+var timestr = "2019-08-07 19:04:24";
+var ev = "1";
+var uuid = "e7a497dc6f0faa3028e041be737413e8";
+var is_iframe = "";
+var vote_count = {};
+var vote_unit = "票";
+var vote_change = false;
+var is_ios = true;
+var not_weixin_brower;
+var wx_user_info = {};
+var from_idy = false;
+// var from_idy = true;
+var verify_types = null;
+
+
+var luck_draw_ad_switch = "on";
+var super_account = "None";
+var has_lucky_money = '';
+var hide_logo = 'False';
+var site_rspd_url = 'http://www.wenjuan.com';
+var estimate_map = {"5c23206ad357806028c72942": 4, "5c23206ad357806028c7293b": 6, "5c23206ad357806028c72956": 6, "5c23206ad357806028c72969": 5, "5c23206ad357806028c72952": 3, "5c23206ad357806028c72948": 6, "5c23216992beb54b849fd844": 3, "5c23206ad357806028c72963": 7, "5c23206ad357806028c72930": 3, "5c23206ad357806028c72936": 5, "5c23206ad357806028c7294d": 5};
+var luck_money_rspd_time = +'';
+var luck_draw_rspd_time = +'';
+window.beginTime = '2019/08/07 19:04:24';
+var rand_int = 94;
+var s_func_id = "82";
+var vvv = "e0def64a287fe646a8b7a8ca59473d45";
+var func_name = "HcDEejRg";
+eval(eval("s1(10)+s1(102)+s1(117)+s1(110)+s1(99)+s1(116)+s1(105)+s1(111)+s1(110)+s1(32)+s1(72)+s1(99)+s1(68)+s1(69)+s1(101)+s1(106)+s1(82)+s1(103)+s1(40)+s1(112)+s1(52)+s1(52)+s1(53)+s1(41)+s1(32)+s1(123)+s1(10)+s1(32)+s1(32)+s1(32)+s1(32)+s1(114)+s1(101)+s1(116)+s1(117)+s1(114)+s1(110)+s1(32)+s1(49)+s1(43)+s1(51)+s1(42)+s1(56)+s1(43)+s1(57)+s1(43)+s1(49)+s1(48)+s1(45)+s1(53)+s1(42)+s1(52)+s1(43)+s1(112)+s1(52)+s1(52)+s1(53)+s1(59)+s1(10)+s1(125)+s1(10)"));
+var show_vcode = false;
+</script>
+<!--手机日期组件-->
+<script src="https://cdn.wenjuan.com/static/js/plug-in/mobiscroll/js/mobiscroll.ugligy.min.js?v=579610b0490e2924c69bffe4e0856a4a" type="text/javascript"></script>
+<script src="https://cdn.wenjuan.com/static/js/plug-in/mobiscroll/js/i18n/mobiscroll.i18n.zh.js?v=51c91aac0d2e88fe7c644e99ae02438e" type="text/javascript"></script>
+<!--加载提示-->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/plug-in/load/load.js?v=02fe2253bbbb60d82992737335d71a46"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/plug-in/toast/index.js?v=cdd0cd66d355a54f1846a7288804bc1e"></script>
+<!-- 颜色值转换 -->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/color_exchange.js?v=4556870404d55f88188fe556c6c0e2b1"></script>
+<!-- 滑动触摸 -->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/swipe.js?v=e56193e27e534b0db18e52055ad2c707"></script>
+<!-- 投票组件 -->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/radialIndicator.js?v=aa31122037ed1f44818e24696c4e5f36"></script>
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/public_mobile.js?v=1a8d1e78b6a18cf9690620a54ad621e0"></script>
+<!-- 动画组件 -->
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/survey_mobile/velocity.min.js?v=64da069aba987ea0512cf610600a56d1"></script>
+<script src="https://cdn.wenjuan.com/static/weixin/android.js?v=cac833b7d32536372448ac168feb0a16"></script>
+
+<script type="text/javascript">
+//判断底部信息位置
+var isH = $('.phone_content_wrap').height() - $(window).height();
+if (isH < 0) {
+$('.MobileServeyFooter').addClass('fixedBut');
+}
+else {
+$('.MobileServeyFooter').removeClass('fixedBut');
+}
+$(function () {
+if (isNotEmpty(is_iframe)) {
+setTimeout(function () {
+if (window.location.href.indexOf('wx=1') > 0) {
+get_iframe_height(-2);
+} else {
+get_iframe_height();
+}
+}, 100);
+}
+//防止触摸事件穿透
+stop_tap_mack();
+});
+// 外观设置页眉封面Logo字段
+var is_mobile = 'True';
+var project_checkpoints = "None";
+var project_id = '5c23206ad357806028c7292e';
+//防止触摸事件穿透
+function stop_tap_mack() {
+$('body').append('<div class="stop_tap_mack" style="width:100%;height:100%;position:fixed;top:0px;left:0px;z-index:9999;background-color:#fff;opacity:0;"></div>');
+setTimeout(function () { $('.stop_tap_mack').remove() }, 800);
+$('.stop_tap_mack').bind('tapone', function () { return false; });
+}
+//解决移动端:active伪类无效
+document.body.addEventListener('touchstart', function () { });
+</script>
+
+
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+var base_share_data = {};
+wxShareHandler(window.shareAnswerInfo);
+function wxShareHandler(shareInfo) {
+var wx_api_list = ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'hideAllNonBaseMenuItem', 'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'translateVoice'];
+var img_url = "/static/images/rspd_share_wenjuan.png";
+var reg = new RegExp('^http');
+if (!reg.test(img_url)) {
+img_url = 'https://cdn.wenjuan.com/static/images/rspd_share_wenjuan.png?v=f918e5c67478d2b734134a075483aa16';
+}
+var rawShareData = {
+wx_share_title: "",
+wx_share_desc: "",
+project_title: '大学生在校消费调查表',
+project_desc: '感谢您能抽出几分钟时间来参加本次答题，现在我们就马',
+survey_url: 'http://www.wenjuan.com/s/jUZJV3R/'
+}
+var shareData = getCustomShareMsg(rawShareData)
+base_share_data = {
+'link': shareData.survey_url,
+'desc': shareData.desc,
+'title': shareData.title,
+'imgUrl': img_url
+};
+shareInfo = shareInfo || {};
+base_share_data = $.extend(base_share_data, shareInfo);
+var forbid_wx_share_btn = '';
+jQuery(document).ready(function ($) {
+wx.config({
+debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+appId: "wx3bbdb7bd3dcf4283", // 必填，公众号的唯一标识
+timestamp: "1565175865", // 必填，生成签名的时间戳
+nonceStr: "TQSWYrqd", // 必填，生成签名的随机串
+signature: "c9bfaab4f1c726cff73b2f6d68edc756781cd8ba",// 必填，签名，见附录1
+jsApiList: wx_api_list // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+});
+wx.ready(function () {
+if (forbid_wx_share_btn) {
+forbid_wx_share();
+} else {
+registShareInfo();
+}
+});
+});
+}
+function forbid_wx_share() {
+wx.hideAllNonBaseMenuItem();
+}
+function registShareInfo() {
+//分享到朋友圈
+wx.onMenuShareTimeline({
+title: window.timeline_share_data ? window.timeline_share_data.title : base_share_data.title, // 分享标题
+link: window.timeline_share_data ? window.timeline_share_data.link : base_share_data.link, // 分享链接
+imgUrl: window.timeline_share_data ? window.timeline_share_data.imgUrl : base_share_data.imgUrl // 分享图标
+});
+//分享给朋友
+wx.onMenuShareAppMessage({
+title: base_share_data.title, // 分享标题
+desc: base_share_data.desc, // 分享描述
+link: base_share_data.link, // 分享链接
+imgUrl: base_share_data.imgUrl, // 分享图标
+type: 'link' // 分享类型,music、video或link，不填默认为link
+});
+//分享到QQ
+wx.onMenuShareQQ({
+title: base_share_data.title, // 分享标题
+desc: base_share_data.desc, // 分享描述
+link: base_share_data.link, // 分享链接
+imgUrl: base_share_data.imgUrl // 分享图标
+});
+//分享到腾讯微博
+wx.onMenuShareWeibo({
+title: base_share_data.title, // 分享标题
+desc: base_share_data.desc, // 分享描述
+link: base_share_data.link, // 分享链接
+imgUrl: base_share_data.imgUrl // 分享图标
+});
+}
+</script>
+
+
+
+<script type="text/javascript" src="https://cdn.wenjuan.com/static/js/survey_mobile/miniapp.vw.postfix.js?v=5748afb0bc52bb81c26a3adf2aebef03"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script>
+wx.miniProgram.getEnv((res) => {
+if (res.miniprogram) {
+var href = $('.jubao').attr('href');
+if (href.indexOf('?') >= 0) {
+$('.jubao').attr('href', $('.jubao').attr('href') + '&iswebview=1')
+} else {
+$('.jubao').attr('href', $('.jubao').attr('href') + '?iswebview=1')
+}
+}
+})
+</script>
+
+
+</body>
+</html>
