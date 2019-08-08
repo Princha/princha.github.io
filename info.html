@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-select.min.css" rel="stylesheet">
+    <style>
+        label.btn span {
+            font-size: 35px;
+        }
+
+        label input[type="radio"]~i.fa.fa-circle-o {
+            color: #c8c8c8;
+            display: inline;
+        }
+
+        label input[type="radio"]~i.fa.fa-dot-circle-o {
+            display: none;
+        }
+
+        label input[type="radio"]:checked~i.fa.fa-circle-o {
+            display: none;
+        }
+
+        label input[type="radio"]:checked~i.fa.fa-dot-circle-o {
+            color: #7AA3CC;
+            display: inline;
+        }
+
+        label:hover input[type="radio"]~i.fa {
+            color: #7AA3CC;
+        }
+
+        label input[type="checkbox"]~i.fa.fa-square-o {
+            color: #c8c8c8;
+            display: inline;
+        }
+
+        label input[type="checkbox"]~i.fa.fa-check-square-o {
+            display: none;
+        }
+
+        label input[type="checkbox"]:checked~i.fa.fa-square-o {
+            display: none;
+        }
+
+        label input[type="checkbox"]:checked~i.fa.fa-check-square-o {
+            color: #7AA3CC;
+            display: inline;
+        }
+
+        label:hover input[type="checkbox"]~i.fa {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label.active {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 2em;
+            text-align: left;
+            white-space: nowrap;
+            vertical-align: top;
+            cursor: pointer;
+            background-color: none;
+            border: 0px solid #c8c8c8;
+            border-radius: 3px;
+            color: #c8c8c8;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        div[data-toggle="buttons"] label:hover {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label:active,
+        div[data-toggle="buttons"] label.active {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .header_img {
+            height: auto;
+            width: 100%;
+        }
+
+        .container {
+            width: 800px;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .control-label {
+            font-size: 30px;
+        }
+
+        .must-label {
+            color: red;
+        }
+
+        .form-input {
+            width: 120%;
+            height: 55px;
+        }
+
+        .bootstrap-select>.dropdown-toggle{
+            height: 55px;
+        }
+
+        .next-button {
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+            width: 210px;
+            height: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .btn-group-vertical {
+            -webkit-box-sizing: unset;
+            box-sizing: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">姓名<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">手机<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type='number' pattern="[0-9]*" class="form-control form-input"
+                    placeholder="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">身份证<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">民族</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="password" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">政治面貌</label>
+            <div class="col-sm-6">
+                <select class="selectpicker" data-width="120%" data-height="55px" title="请选择">
+                    <option>党员</option>
+                    <option>团员</option>
+                    <option>群众</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">地址<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">户籍所在地</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="password" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">人事所在地</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="password" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">学校名称</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">师范专业</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">大学在读</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">学习形式</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="password" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">最高学历</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="password" class="form-control form-input"
+                    placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">固定电话</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input" placeholder="请输入固定电话">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">电子邮箱</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input" placeholder="请输入有效的电子邮箱">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">工作单位</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input" placeholder="请输入现在的工作单位">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">单位地址</label>
+            <div class="col-sm-6">
+                <input id="confirm-password-input" type="text" class="form-control form-input" placeholder="请输入单位所在地">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">Reset</label>
+            <div class="col-sm-6">
+                <button id="system-reset-button" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <script src="./js/jquery-3.2.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-select.min.js"></script>
+    <script src="./js/i18n/defaults-en_US.min.js"></script>
+    <script src="./js/i18n/defaults-zh_CN.min.js"></script>
+    <script src="./js/i18n/defaults-zh_TW.min.js"></script>
+    <script src="./js/i18n/defaults-jp_JP.min.js"></script>
+    <!-- </div> -->
+    <script>
+        $('#next-button').click(function () {
+            location.href = './info.html';
+        });
+    </script>
+</body>
+
+</html>

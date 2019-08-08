@@ -359,7 +359,7 @@
                 <br>
                 <br>
                 <br>
-                <button class="btn btn-info next-button">下一步</button>
+                <button id="next-button" class="btn btn-info next-button">下一步</button>
                 <br>
                 <br>
                 <br>
@@ -367,6 +367,11 @@
             </div>
         </div>
     </div>
+    <script>
+        $('#next-button').click(function(){
+            location.href = './info.html';
+        });
+    </script>
 </body>
 
 </html>
