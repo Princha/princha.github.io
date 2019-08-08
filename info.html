@@ -2,8 +2,9 @@
 <html>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge;IE=8;IE=9;IE=10;IE=11;" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
 <title>信息录入</title>
+
 <head>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/font-awesome.min.css" rel="stylesheet">
@@ -282,9 +283,10 @@
     <script src="./js/i18n/defaults-jp_JP.min.js"></script>
     <!-- </div> -->
     <script>
-        $('#next-button').click(function () {
-            location.href = './info.html';
-        });
+        document.addEventListener('touchmove',
+            function (e) {
+                e.preventDefault();
+            }, { passive: false });
     </script>
 </body>
 
