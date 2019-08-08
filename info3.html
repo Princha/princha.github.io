@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.2.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        label.btn span {
+            font-size: 50px;
+        }
+
+        label input[type="radio"]~i.fa.fa-circle-o {
+            color: #c8c8c8;
+            display: inline;
+        }
+
+        label input[type="radio"]~i.fa.fa-dot-circle-o {
+            display: none;
+        }
+
+        label input[type="radio"]:checked~i.fa.fa-circle-o {
+            display: none;
+        }
+
+        label input[type="radio"]:checked~i.fa.fa-dot-circle-o {
+            color: #7AA3CC;
+            display: inline;
+        }
+
+        label:hover input[type="radio"]~i.fa {
+            color: #7AA3CC;
+        }
+
+        label input[type="checkbox"]~i.fa.fa-square-o {
+            color: #c8c8c8;
+            display: inline;
+        }
+
+        label input[type="checkbox"]~i.fa.fa-check-square-o {
+            display: none;
+        }
+
+        label input[type="checkbox"]:checked~i.fa.fa-square-o {
+            display: none;
+        }
+
+        label input[type="checkbox"]:checked~i.fa.fa-check-square-o {
+            color: #7AA3CC;
+            display: inline;
+        }
+
+        label:hover input[type="checkbox"]~i.fa {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label.active {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 2em;
+            text-align: left;
+            white-space: nowrap;
+            vertical-align: top;
+            cursor: pointer;
+            background-color: none;
+            border: 0px solid #c8c8c8;
+            border-radius: 3px;
+            color: #c8c8c8;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        div[data-toggle="buttons"] label:hover {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label:active,
+        div[data-toggle="buttons"] label.active {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <br> Vertical radio:
+                <br>
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                    <label class="btn">
+                        <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i
+                            class="fa fa-dot-circle-o fa-2x"></i><span> Male</span>
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i
+                            class="fa fa-dot-circle-o fa-2x"></i><span> Female</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr> Vertical checkbox:
+                <br>
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                    <label class="btn active">
+                        <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i> <span> Marketing Email</span>
+                    </label>
+                    <label class="btn">
+                        <input type="checkbox" name='email2'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span> Alert Email</span>
+                    </label>
+                    <label class="btn">
+                        <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span> Account Email</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <hr> Horizontal radio:
+                <br>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn active">
+                        <input type="radio" name='gender2' checked><i class="fa fa-circle-o fa-2x"></i><i
+                            class="fa fa-check-circle-o fa-2x"></i><span> Male</span>
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name='gender2'><i class="fa fa-circle-o fa-2x"></i><i
+                            class="fa fa-check-circle-o fa-2x"></i><span> Female</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <hr> Horizontal checkbox:
+        <br>
+
+        <div class="btn-group btn-group" data-toggle="buttons">
+            <label class="btn active">
+                <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i
+                    class="fa fa-check-square-o fa-2x"></i><span> Marketing Email
+            </label>
+            <label class="btn">
+                <input type="checkbox" name='email2'><i class="fa fa-square-o fa-2x"></i><i
+                    class="fa fa-check-square-o fa-2x"></i><span> Alert Email</span>
+            </label>
+            <label class="btn">
+                <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i
+                    class="fa fa-check-square-o fa-2x"></i><span> Account Email</span>
+            </label>
+        </div>
+
+    </div>
+    </div>
+
+    <br>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.2.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        label.btn span {
+            font-size: 35px;
+        }
+
+        label input[type="radio"]~i.fa.fa-circle-o {
+            color: #c8c8c8;
+            display: inline;
+        }
+
+        label input[type="radio"]~i.fa.fa-dot-circle-o {
+            display: none;
+        }
+
+        label input[type="radio"]:checked~i.fa.fa-circle-o {
+            display: none;
+        }
+
+        label input[type="radio"]:checked~i.fa.fa-dot-circle-o {
+            color: #7AA3CC;
+            display: inline;
+        }
+
+        label:hover input[type="radio"]~i.fa {
+            color: #7AA3CC;
+        }
+
+        label input[type="checkbox"]~i.fa.fa-square-o {
+            color: #c8c8c8;
+            display: inline;
+        }
+
+        label input[type="checkbox"]~i.fa.fa-check-square-o {
+            display: none;
+        }
+
+        label input[type="checkbox"]:checked~i.fa.fa-square-o {
+            display: none;
+        }
+
+        label input[type="checkbox"]:checked~i.fa.fa-check-square-o {
+            color: #7AA3CC;
+            display: inline;
+        }
+
+        label:hover input[type="checkbox"]~i.fa {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label.active {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 2em;
+            text-align: left;
+            white-space: nowrap;
+            vertical-align: top;
+            cursor: pointer;
+            background-color: none;
+            border: 0px solid #c8c8c8;
+            border-radius: 3px;
+            color: #c8c8c8;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        div[data-toggle="buttons"] label:hover {
+            color: #7AA3CC;
+        }
+
+        div[data-toggle="buttons"] label:active,
+        div[data-toggle="buttons"] label.active {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .btn-group-vertical {
+            -webkit-box-sizing: unset;
+            box-sizing: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <hr>
+                <p class="title">请选择报考科目</p>
+                <br>
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                    <label class="btn">
+                        <input type="checkbox" name='option1'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>幼儿园-综合素质(幼儿园)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option2'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>幼儿园-保教知识与能力</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>小学-综合素质(小学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>小学-保教知综合能力(小学)(音体美专业)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>小学-教育教学知识与能力</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>小学-教育教学知识与能力(音体美专业)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-综合素质(中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-综合素质(中学)(音体美专业)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-教育教学知识与能力</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-教育教学知识与能力(音体美专业)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-语文学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-数学学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-英语学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-物理学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-化学学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-生物学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-思想品德学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-历史学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-地理学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-音乐学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-体育与健康学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-美术学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-信息技术学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-历史与社会学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-科学学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-综合素质(中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-综合素质(中学)(音体美专业)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-教育教学知识与能力</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-教育教学知识与能力(音体美专业)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-语文学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-数学学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-英语学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-物理学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-化学学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-生物学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-思想政治学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-历史学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-地理学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-音乐学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-体育与健康学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-美术学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-信息技术学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>高中-通用技术学科知识与教学能力(高级中学)</span>
+                    </label>
+                    <br>
+                    <label class="btn">
+                        <input type="checkbox" name='option3'><i class="fa fa-square-o fa-2x"></i><i
+                            class="fa fa-check-square-o fa-2x"></i><span>初中-科学学科知识与教学能力(初级中学)</span>
+                    </label>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1753 @@
+<html style="font-size: 100px;" class=" js ">
+
+<head>
+    <style type="text/css" class="AMap.style">
+        .vml {
+            behavior: url(#default#VML);
+            display: inline-block;
+            position: absolute
+        }
+
+        .amap-custom {
+            top: 0;
+            left: 0;
+            position: absolute
+        }
+
+        .amap-container img {
+            max-width: none !important;
+            max-height: none !important
+        }
+
+        .amap-container {
+            touch-action: none;
+            position: relative;
+            overflow: hidden;
+            background: #fcf9f2 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEX////////////////1pQ5zAAAABHRSTlMAgP/AWuZC2AAAAVhJREFUeAFiYGAQYGDEQjAB2rcDC4BiGIqiU7abdKlO2QkeIClyPsDHweMKtOPHIJ1Op6/w7Y4fdqfT6VpndzqdrnV2p9PpWmd3Oj3qWndSoKp+2J1Op7vr7E6n07XO7nQ6XevsTqfTtc7udPo4/f787E6n0911dqfT6VpndzqdrnV2p9PpWmd3Ot27Ce8m6HS6u85dR6fTtU7r6HS61mkdnU7XOrvT6XTvJuxOp9PddXan0+laZ3c6na51dDpd67SOTqd7N+HdBJ1Od9e56+h0utZpHZ1O1zq70+l0rbM7nU73bsLudDrdXWd3Ol3rtI5Op2ud1tHpdK3TOjqd7t2EdxN0Ot1dZ3c6na51dqfT6VpndzqdrnV2p9Pp3k3Q6XR3nbuOTqdrndbR6XSt0zo6na51Wken072bsDudTnfX2Z1Op2ud3el0utbZnU7XOq2j0+t0uncTD1gO4zoT5doZAAAAAElFTkSuQmCC);
+            -ms-touch-action: none
+        }
+
+        .amap-drags,
+        .amap-layers {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden
+        }
+
+        .amap-layer img {
+            pointer-events: none
+        }
+
+        .amap-e,
+        .amap-maps {
+            width: 100%;
+            height: 100%
+        }
+
+        .amap-maps,
+        .amap-e,
+        .amap-layers,
+        .amap-tile,
+        .amap-tile-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden
+        }
+
+        .amap-context {
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+
+        .amap-overlays,
+        .amap-markers,
+        .amap-marker {
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+
+        .amap-layers {
+            z-index: 0
+        }
+
+        .amap-overlays {
+            z-index: 110;
+            cursor: default
+        }
+
+        .amap-markers {
+            z-index: 120
+        }
+
+        .amap-controls {
+            z-index: 150
+        }
+
+        .amap-copyright {
+            position: absolute;
+            display: block !important;
+            left: 77px;
+            height: 16px;
+            bottom: 0;
+            padding-bottom: 3px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            z-index: 160
+        }
+
+        .amap-logo {
+            position: absolute;
+            bottom: 1px;
+            left: 1px;
+            z-index: 160;
+            height: 20px
+        }
+
+        .amap-logo img {
+            width: 73px !important;
+            height: 20px !important;
+            border: 0;
+            vertical-align: baseline !important
+        }
+
+        .amap-icon {
+            position: relative;
+            z-index: 1;
+            overflow: hidden
+        }
+
+        .amap-icon img {
+            position: absolute;
+            z-index: -1
+        }
+
+        .amap-marker-label {
+            position: absolute;
+            z-index: 2;
+            border: 1px solid blue;
+            background-color: white;
+            white-space: nowrap;
+            cursor: default;
+            padding: 3px;
+            font-size: 12px;
+            line-height: 14px
+        }
+
+        .amap-info {
+            position: absolute;
+            left: 0;
+            z-index: 140;
+            width: 320px
+        }
+
+        .amap-menu {
+            position: absolute;
+            z-index: 140;
+            _width: 100px
+        }
+
+        .amap-info-close {
+            position: absolute;
+            right: 5px;
+            _right: 12px;
+            +right: 11px;
+            top: 5px;
+            _top: 2px;
+            +top: 2px;
+            color: #c3c3c3;
+            text-decoration: none;
+            font: bold 16px/14px Tahoma, Verdana, sans-serif;
+            width: 14px;
+            height: 14px
+        }
+
+        .amap-info-outer,
+        .amap-menu-outer {
+            box-shadow: 0 3px 14px rgba(0, 0, 100, 0.6);
+            background: none repeat scroll 0 0 white;
+            border-radius: 2px;
+            padding: 1px;
+            text-align: left;
+            border: #c0c0c0 solid 1px
+        }
+
+        .amap-info-outer:hover,
+        .amap-menu-outer:hover {
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.75)
+        }
+
+        .amap-info-content {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px 18px 10px 10px;
+            +margin: 0 10px;
+            +padding: 10px 0;
+            line-height: 1.4;
+            overflow: auto
+        }
+
+        .amap-marker-content {
+            position: relative
+        }
+
+        .amap-info {
+            _width: 320px
+        }
+
+        .amap-menu {
+            _width: 100px
+        }
+
+        .amap-info-sharp {
+            height: 23px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            top: -1px;
+            width: 30px;
+            background-image: url(https://webapi.amap.com/theme/v1.3/sharp.png);
+            _background-image: url(https://webapi.amap.com/theme/v1.3/sharp.gif)
+        }
+
+        .amap-menu-outer {
+            margin: 0;
+            padding: 0;
+            list-style-type: none
+        }
+
+        ul.amap-menu-outer li {
+            cursor: pointer;
+            height: 35px;
+            line-height: 35px;
+            word-break: break-all;
+            padding: 0 10px;
+            font-size: 12px;
+            white-space: nowrap
+        }
+
+        ul.amap-menu-outer li a {
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 5px;
+            color: #000;
+            padding: 5px 5px
+        }
+
+        ul.amap-menu-outer li:hover {
+            background-color: #f3f3ee
+        }
+
+        .amap-overlay-text-container {
+            display: block;
+            width: auto;
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: #fff;
+            padding: 2px 3px;
+            border: 1px solid #ccc;
+            border-radius: 3px
+        }
+
+        .amap-overlay-text-container.amap-overlay-text-empty {
+            display: none
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" itemprop="description"
+        content="欢迎您参加此次的问卷调查，调查会占用您的宝贵几分钟时间，请您认真填写，您的信息将会用来统计分析，非常感谢您的参与！！">
+
+    <meta itemprop="image"
+        content="https://cdn.wenjuan.com/static/images/rspd_share_wenjuan.png?v=f918e5c67478d2b734134a075483aa16">
+
+    <title>个人资料</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.wenjuan.com/static/css/jquery-ui.css?v=1274298e82c469798e4b636ce4e36abc">
+    <link href="https://cdn.wenjuan.com/static/css/survey_mobile/style_v2.css?v=97adf6e3f9fe1ea77d60437775f93d89"
+        rel="stylesheet" type="text/css">
+    <link
+        href="https://cdn.wenjuan.com/static/js/plug-in/mobiscroll/css/mobiscroll.min.css?v=30dc425faa1744ee6d9e2f3900736da4"
+        rel="stylesheet" type="text/css">
+    <!--加载提示-->
+    <link type="text/css" rel="stylesheet"
+        href="https://cdn.wenjuan.com/static/js/plug-in/load/load.css?v=bf1fb60788943f2da66cad2f1a021043">
+    <link href="https://cdn.wenjuan.com/static/js/plug-in/toast/main.css?v=d5bfc4904fcdd5df301b17133c07e694"
+        rel="stylesheet" type="text/css">
+    <!--拖拽插件-->
+    <link href="https://cdn.wenjuan.com/static/css/dragula.css?v=bdba35ac8821cbb5d800088a8868c561" rel="stylesheet">
+    <script src="https://hm.baidu.com/hm.js?ad0624cf51ddee8ef3bd2513c2add79b"></script>
+    <script src="https://hawkeye.wenjuan.com/wj.hawkeye.js?v=1.2.0"></script>
+    <script defer="" src="https://cdn.wenjuan.com/static/js/dragula.js?v=b46d585a5ffb0829125970d16fe750b7"></script>
+    <!-- <script src="https://cdn.bootcss.com/Sortable/1.10.0-rc2/Sortable.min.js"></script> -->
+
+    <style type="text/css">
+        .amap-container {
+            cursor: url(https://webapi.amap.com/theme/v1.3/openhand.cur), default;
+        }
+
+        .amap-drag {
+            cursor: url(https://webapi.amap.com/theme/v1.3/closedhand.cur), default;
+        }
+    </style>
+</head>
+
+<body class="body_preview hide_cover surveyMobilePage" style="position: initial;">
+    <div id="appearset_cover"></div>
+    <div id="appearset_bg"></div>
+    <!-- 参数preview=new 用于 新版编辑预览手机页面可以显示题目 -->
+    <div class="phone_content_wrap">
+        <div class="cover_wrap">
+            <div style="display:none"><img alt="" src="/static/images/rspd_share_wenjuan.png"></div>
+            <!-- <div class="preview_model">
+                <p><a class="preview_close" title="关闭" href="javascript:;"></a>当前为预览页面，回答将不记入结果</p>
+            </div> -->
+            <div id="appearset_logo"></div>
+            <div id="appearset_header">
+                <div class="assess_header_div"> <img src="http://cdn1.wenjuan.com/appear-M-校园2.png" class="header_img">
+                </div>
+            </div>
+            <div class="survey_cover">
+                <div class="appear_header"></div>
+                <div class="TopBgLogo" style="display:none;">
+                </div>
+                <div class="survey_cover_text">
+                    <div class="TopBgTitle">
+                        <div class="wj_title">
+                            <p style="text-align: center;">个人资料</p>
+                        </div>
+                    </div>
+                    <div class="header clear project_title" id="begin_content">
+                        <div class="mtop desc_begin">请如实填写个人资料，该资料将用于报名提交之用</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="phone_content">
+            <div class="Phone_zon" id="survey_page">
+
+                <div class="Phone_con" id="question_box" data-use-cache="false">
+                    <!-- Append question's html code here. -->
+                    <div style="text-align: center; display: none;" id="loader_div" class="maxtop">
+                        <img alt=""
+                            src="https://cdn.wenjuan.com/static/img/survey_mobile/loader.gif?v=b256d80f54c1415d7a6a6fdec39769f4"
+                            width="31" height="31">
+                        <br>加载中...
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aad9b" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">1.</span> 你的性别？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aad9b" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadad">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadad">男</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadae">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadae">女</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aad9c" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">2.</span> 你所在的年级是？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aad9c" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadaf">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadaf">大一</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb0">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb0">大二</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb1">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb1">大三</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb2">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb2">大四</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aad9d" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">3.</span> 你认为目前普通大学生就业形势如何？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aad9d" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadb3">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb3">十分严峻，很难找到合适工作</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb4">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb4">有点严峻，但比其他低学历人群要容易&nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb5">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb5">
+                                            有点严峻，与其他低学历人群差不多&nbsp;&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb6">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb6">不了解</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aad9e" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">4.</span> 当你毕业时，你会选择</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aad9e" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadb7">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb7">先择业后就业&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb8">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb8">先就业后择业&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadb9">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadb9">继续深造&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadba">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadba">自主创业</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aad9f" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">5.</span> 你如何看待考研热？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aad9f" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadbb">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadbb">
+                                            继续深造，可以暂时躲避就业高峰，增加就业优势&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadbc">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadbc">研究生越来越多，就业形势依然严峻</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadbd">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadbd">其他</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada0" questiontype="3">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">6.</span> 你认为当前学哪些专业更易于找到工作？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div class="error_bar" id="tip_5cb5460f92beb56e5c1aada0"></div>
+                        <div class="topic_con checkbox_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadbe">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadbe">文史类&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadbf">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadbf">师范类</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc0">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc0">管理类</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc1">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc1">农林类</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc2">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc2">经济类</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc3">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc3">理工科类</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc4">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc4">其他</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada1" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">7.</span> 你如何看待专业与工作不对口的问题？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada1" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadc5">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc5">这种现象很普遍&nbsp;，容易适应&nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc6">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc6">给就业造成一定困难，但易于克服</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc7">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc7">专业与工作不对口，根本无法就业</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadc8">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc8">从未关注过这类现象</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada2" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">8.</span> 你现在的就业心态？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada2" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadc9">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadc9">自信能找到满意的工作，并积极准备</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadca">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadca">没多考虑，反正最后总会有工作</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadcb">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadcb">非常焦虑</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadcc">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadcc">很茫然&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadcd">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadcd">其他</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada3" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">9.</span> 你如何看待当前各大学扩招对就业形势的影响？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada3" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadce">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadce">好</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadcf">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadcf">不好</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd0">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd0">既是机遇，又是挑战</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd1">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd1">没考虑过</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada4" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">10.</span> 你是否可能会选择自主创业？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada4" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadd2">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd2">会</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd3">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd3">不会</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd4">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd4">会考虑</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada5" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">11.</span> 面对将来求职，你最担心的问题是什么？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada5" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadd5">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd5">英语，计算机水平不够好&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd6">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd6">专业课成绩不稳定</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd7">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd7">没工作经验</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadd8">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd8">对社会缺乏了解</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada6" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">12.</span> 你在就业过程中更注重什么？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada6" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadd9">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadd9">岗位&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadda">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadda">薪酬高低</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aaddb">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aaddb">公司名气</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aaddc">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aaddc">个人发展空间</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada7" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">13.</span> 你认为用人单位最关心毕业生的哪些素质？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada7" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aaddd">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aaddd">学校名气和社会实践经验</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadde">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadde">身高、相貌、学历及学习能力</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aaddf">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aaddf">工作交际能力&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade0">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade0">品德、特长爱好</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada8" questiontype="3">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">14.</span> 你认为在求职前必须具备的求职知识和能力是</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div class="error_bar" id="tip_5cb5460f92beb56e5c1aada8"></div>
+                        <div class="topic_con checkbox_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aade1">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade1">如何写专业简历</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade2">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade2">如何了解一个企业企业选人的标准&nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade3">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade3">如何面试</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade4">
+                                    <div class="checked_wrap"><i class="ico_checkbox"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade4">如何谈薪酬和福利</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aada9" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">15.</span> 你希望主要通过哪种求职途径找工作？</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aada9" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aade5">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade5">学校推荐</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade6">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade6">浏览人才网站</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade7">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade7">校园招聘会和社会招聘会</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade8">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade8">报纸、电视招聘广告</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aade9">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aade9">亲戚朋友关系介绍</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aadaa" questiontype="2">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">16.</span> 你就业会优先选择的地域是</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aadaa" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadea">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadea">出生本地</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadeb">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadeb">沿海城市</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadec">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadec">西部发展地区</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aaded">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aaded">其他&nbsp;</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aadab" questiontype="6">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">17.</span> 你能接受的月薪为</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aadab" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadee">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadee">1000—3000&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadef">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadef">3000—4000</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadf0">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadf0">4000—5000&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadf1">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadf1">5000以上&nbsp;</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aadab" questiontype="6">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">17-1.</span> 你能接受的月薪为</div>
+                            <div class="related-tip" style="display:none;"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aadab" class="error_bar"></div>
+                        <div class="topic_con radio_wrap">
+                            <ul class="unstyled">
+                                <li data-id="option_5cb5460f92beb56e5c1aadee" class="self-class">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadee">1000—3000&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadef" class="self-class">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadef">3000—4000</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadf0" class="self-class">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadf0">4000—5000&nbsp;</div>
+                                    </div>
+                                </li>
+                                <li data-id="option_5cb5460f92beb56e5c1aadf1" class="self-class">
+                                    <div class="checked_wrap"><i class="ico_radio"></i>
+                                        <div class="option_txt label_5cb5460f92beb56e5c1aadf1">5000以上&nbsp;</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="M_topic maxtop question" id="question_5cb5460f92beb56e5c1aadac" allow_null="1"
+                        questiontype="6">
+                        <div class="topic_title_wrap">
+                            <div class="topic_title wjNum"><span class="Qnum">18.</span> 对现在大学生就业状况有什么看法？</div>
+                            <div class="topic_desc"></div>
+                        </div>
+                        <div id="tip_5cb5460f92beb56e5c1aadac" class="error_bar"></div>
+                        <div class="topic_con" type="">
+                            <div class="topic_input input_vr_wrap">
+                                <div class="input_vr_icon" data-vr-id="5cb5460f92beb56e5c1aadf2"></div><textarea
+                                    class="option" type="text" value="" option_id="5cb5460f92beb56e5c1aadf2"
+                                    id="5cb5460f92beb56e5c1aadf2" cols="40" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="gt">
+                    <p class="bt">您需要完成以下验证才可提交</p>
+                </div>
+            </div>
+            <div class="Phone_bon" id="control_panel">
+                <span href="javascript:;" class="prev_button" id="prev_button" style="display:none;">上一页</span>
+                <span href="javascript:;" class="button WJ_an wj_color_gray" id="time_count"
+                    style="display:none;background: #cccccd; border-color: #cccccd;"></span>
+                <span href="javascript:;" class="button WJ_an" id="next_button" style="">提交</span>
+                <span href="javascript:;" class="button WJ_an" id="confirm_verify_btn" style="display:none;">确认</span>
+            </div>
+            <form action="#" method="post" id="upload_form">
+                <input type="hidden" name="_xsrf" value="a0393356d45445bf9a59769781c09c7c">
+                <input type="hidden" name="total_answers_str" id="total_answers_str">
+                <input type="hidden" name="finish_status" id="finish_status">
+                <input type="hidden" name="timestr" value="2019-08-08 10:35:17">
+                <input type="hidden" name="idy_uuid" value="5429821f8025d257904bb5cd4845aa69">
+                <input type="hidden" name="version" value="1">
+                <input type="hidden" name="s_func_id" value="15">
+                <input type="hidden" name="vvv" value="4fcf35a6354c32a1e6fdbbc8649a5674">
+                <input type="hidden" name="rand_int" value="95">
+                <input type="hidden" name="pconvert_data" id="pconvert_data">
+                <input type="hidden" name="svc" id="svc">
+                <input type="hidden" name="s_code" id="s_code">
+                <input type="hidden" name="from_form" value="1">
+            </form>
+            <div class="maxtop btns" style="display:none;" id="vcode_panel">
+                <img src="">
+                <input type="input" name="vcode" id="vcode">
+                <div class="WJButton" id="vcode_confirm">OK</div>
+            </div>
+            <div class="maxtop btns title" id="saver_div" style="display:none; text-align:center;">
+                <img src="https://cdn.wenjuan.com/static/img/survey_mobile/loader2.gif?v=138cfa779cd1d64a04315256dac636c5"
+                    alt="">
+                <br>
+                <div id="loader_text">正在保存...</div>
+            </div>
+            <div class="phone_end" id="end_page" style="display:none;">
+                <div class="enc_desc_wrap">
+                    <p id="end_desc" class="retract"></p>
+                    <div class="end-desc-layer"></div>
+                    <div class="end-desc-extend-wrapper">
+                        <div class="end-desc-extend"></div>
+                    </div>
+                    <p id="seq_content"></p>
+                    <!-- 查看结果 -->
+
+                    <div class="su_draw envelope_draw">
+                        <a target="_blank" class="su_create_btn" href=""></a>
+                    </div>
+                </div>
+                <!-- 问卷网抽奖 -->
+                <p class="luck_draw_tip" style="display:none;">真遗憾，红包与你擦肩而过</p>
+                <div class="wj_luck_draw" id="wj_luck_draw" style="display:none;">
+                </div>
+                <!--运气红包哭脸-->
+                <div class="envelope_draw" id="no_EnvelopeDiv_box" style="display: none;">
+                    <center><img
+                            src="https://cdn.wenjuan.com/static/images/plugin_center/no_money.png?v=f85696c34e24f8379cad69034f5e8c80"
+                            width="80%"></center>
+
+                    <a class="draw_btn" href="javascript:;">别灰心 再试一次</a>
+
+                </div>
+                <!-- 红包抽奖 抽奖 -->
+                <!-- <div class="envelope_draw red_weixin" id="lucydrawDiv" style="display:none;">
+    <p>恭喜！您获得 <span class="text_pink">1次</span> 抽奖机会</p>
+    <a class="red_code_btn" href="">立即抽奖</a>
+    </div> -->
+                <!-- 红包抽奖 wrap-->
+                <div class="envelope_draw red_wrap" id="envelopeZdiv" style="display:none;">
+                    <p>恭喜！您获得 <span class="text_pink">1个</span> 红包</p>
+                    <div class="red_code_box">
+                        <img src="" class="red_code" width="100%">
+                    </div>
+                    <div class="red_info">
+                        <p>1.请使用手机截屏保存本图</p>
+                        <p>2.在微信中打开 “扫一扫”</p>
+                        <p>3.点击右上角从 “相册” 选择本截图</p>
+                    </div>
+                </div>
+                <!-- 运气红包 -->
+                <div class="envelope_draw" id="envelopeDiv_box" style="display:none;">
+
+                    <center class="go_draw_btn_box"><img
+                            src="https://cdn.wenjuan.com/static/images/plugin_center/hongbao.png?v=b1a978c49df2b302e3892a416bce1159"
+                            width="100%"></center>
+
+                    <!-- <span>试试手气</span> -->
+                </div>
+            </div>
+            <!-- 转盘抽奖 iframe -->
+            <div class="envelope_draw red_weixin" id="lucydrawIframe" style="display:none;">
+                <button>按钮</button>
+                <iframe name="iframe" src="" frameborder="0" scrolling="no"></iframe>
+            </div>
+
+            <div style="display:none"><img alt="" src="/static/images/rspd_share_wenjuan.png"></div>
+
+            <div class="Error_message" id="error_msg_box" style="display:none;">
+                <span class="error_text">提交失败，错误类型</span>
+                <p class="error_code">(081)</p>
+                <a class="button white WJ_an" id="reupload_answer">重新提交</a>
+                <a href="tel:4006188166" class="button white WJ_an" id="fankui">马上联系我们</a>
+            </div>
+        </div>
+        <!-- <div class="MobileServeyFooter">
+            <div class="ma_auto">
+                <div class="footer_content">
+                    <a class="jubao" target="blank"
+                        href="/project/allegation/?project_id=5cb5460f92beb56e5c1aad99">举报</a>
+
+                    <div class="wjtext"><a href="http://www.wenjuan.com?utm_source=rspd_logo"
+                            target="_blank">问卷网提供技术支持</a></div>
+
+                    <a style="" class="btn_link_dc">关闭</a>
+                    <a target="_blank"
+                        href="https://www.wenjuan.com/?utm_source=rspd&amp;utm_shortid=ZNj6Bzhmsr=%E7%AD%94%E9%A2%98%E9%A1%B5&amp;hmpl=WAP&amp;hmcu=&amp;hmkw=&amp;hmci="
+                        class="end_create_btn inline-block new_create_style" style="display:none">我也要免费创建问卷</a>
+                </div>
+            </div>
+
+            <div class="wjprogress_new" id="progress_bar" style="display:none;">
+                <em class="progress_txt">100%</em>
+                <div class="barbox"><span style="width: 100%;"></span></div>
+            </div>
+        </div> -->
+        <div class="Error_message" id="error_msg_box" style="display:none;">
+            <span class="error_text">提交失败，错误类型</span>
+            <p class="error_code">(081)</p>
+            <a class="button white WJ_an" id="reupload_answer">重新提交</a>
+            <a href="tel:4006188166" class="button white WJ_an" id="fankui">马上联系我们</a>
+        </div>
+    </div>
+
+    <style>
+        .assess_header_div {
+            position: relative;
+        }
+
+        .header_img {
+            height: auto;
+            width: 100%
+        }
+
+        .cover_img {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background-size: cover;
+            background-position: center center;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/template" id="appearance_cover">
+
+    <div class="assess_header_div" style="height:100%">
+    {@if cover && cover.coverImgUrl && cover.coverSetting != 'color'}
+    <div style="background-image:url(&{cover.coverImgUrl})" class="cover_img"></div>
+    {@else if cover && cover.coverColor && cover.coverSetting == 'color'}
+    <div style="background-color:&{cover.coverColor}" class="cover_img"></div>
+    {@/if}
+    {@if logo && logo.logoUrl}
+    <div class="img_div">
+    <div class="logo_div" {@if logo.logoPosition=='right'}style="text-align:right"{@else if logo.logoPosition=='center'}style="left:50%;transform: translateX(-50%);text-align:center;"{@else}style="text-align:left"{@/if}>
+    <img src="&{logo.logoUrl}" class="logo_img">
+    </div>
+    </div>
+    {@/if}
+    {@if !cover || (cover && cover.beginBtnStyle != 'begin_btn')}
+    <div class="cover_div">
+    <div class="cover_title">上滑开始</div>
+    <i class="cover_slide_img"></i>
+    </div>
+    {@else}
+    <div class="cover_btn">
+    <button>{@if cover && cover.beginBtnText}&{cover.beginBtnText}{@else}立即开启{@/if}</button>
+    </div>
+    {@/if}
+    {@if cover && cover.titleShowOnCover == "1"}
+    <div class="wj_title{@if cover && cover.titlePosition} &{cover.titlePosition}{@else} upper{@/if}">
+    &&{porject_title}
+    </div>
+    {@/if}
+    </div>
+    </script>
+    <script type="text/template" id="appearance_header_template">
+
+    <div class="assess_header_div">
+    <img src="&{headerImgUrl}" class="header_img">
+    {@if ((!cover || (cover && (cover.coverSetting != 'color' && !cover.coverImgUrl) || (cover.coverSetting == 'color' && !cover.coverColor))) && logo && logo.logoUrl)}
+    <div class="img_div">
+    <div class="logo_div" {@if logo.logoPosition=='right'}style="text-align:right"{@else if logo.logoPosition=='center'}style="left:50%;transform: translateX(-50%);text-align:center;"{@else}style="text-align:left"{@/if}>
+    <img src="&{logo.logoUrl}" class="logo_img">
+    </div>
+    </div>
+    {@/if}
+    </div>
+    </script>
+    <script type="text/template" id="appearance_logo_template">
+
+    <div class="assess_header_div">
+    {@if logo && logo.logoUrl}
+    <div class="only_img_div">
+    <div class="logo_div"{@if logo.logoPosition=='right'}style="text-align:right"{@else if logo.logoPosition=='center'}style="left:50%;transform: translateX(-50%);text-align:center;"{@else}style="text-align:left"{@/if}>
+    <img src="&{logo.logoUrl}" class="logo_img">
+    </div>
+    </div>
+    {@/if}
+    </div>
+    </script>
+    <script type="text/template" id="mobile_btncolor_template">
+    /*mobile css样式模板*/
+    #next_button, .wjprogress_new .barbox, #confirm_verify_btn, .button, .question .radio_wrap .unstyled li.checked .checked_wrap>.ico_radio:before, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_radio:before, .question .topic_con .M_sorting .sort_item.selected .sort_num, .question .topic_score_slider .scoring_con_slider .ui-slider .ui-slider-handle, .question .topic_score_slider .scoring_con_slider .score_slider .ui-widget-header, .question .topic_score_slider .scoring_con_slider .score_slider .score_widget_tc, .question .topic_con_nps .optionBox .nps_score_list>span.checked,.question .topic_con_uploadfile .uploadfile_loading .uploadfile_bar, .question .topic_vote .fontVoteProgressBox .progressBox .progress_vote, .MobileServeyFooter .wjprogress_new .barbox>span,.question .unstyled li.checked .checked_wrap{
+    background-color:&{data.style.btnsColor};
+    }
+    .question .unstyled li.checked .checked_wrap, .question .topic_con .M_sorting .sort_item.selected, .question .topic_con .ShowImgCon .simg.checked, .question .topic_con .topic_input.input_focus, .question .topic_con .phone_select select:focus+.placeholder_txt, .question .M_sorting .Ulist .U_select:focus+.placeholder_txt, .question .checkbox_wrap .unstyled li.checked .checked_wrap>.ico_checkbox, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_checkbox, .question .topic_con .M_sorting .sort_item.selected .sort_num, .question .topic_con_nps .optionBox .nps_score_list>span.checked, .question .radio_wrap .unstyled li.checked .checked_wrap>.ico_radio, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_radio, .question .checkbox_wrap .unstyled li.checked .checked_wrap>.ico_checkbox:before, .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_checkbox:before{
+    border-color:&{data.style.btnsColor};
+    }
+    .question .unstyled li.checked .checked_wrap, .question .topic_con .M_sorting .sort_item.selected, .question .topic_con .ShowImgCon .simg.checked, .question .topic_con .ShowImgCon .simg.checked .optionImg {
+    background-color: &{sRgbColor};
+    box-shadow: 0 2px 4px 0 &{sRgbColor};
+    }
+    body.change_body_color .phone_content_wrap, body .phone_content_wrap, body.change_body_color.hide_cover .phone_content_wrap, body.change_body_color.hide_appearset_cover .phone_content_wrap {
+    background: &{wjbColor};
+    }
+    body.change_body_color .MobileServeyFooter .wjprogress_new {
+    background-color: transparent;
+    }
+    /* topic font */
+    .survey_cover .survey_cover_text .TopBgTitle,
+    .assess_header_div .wj_title{
+    font-size: &{data.font.topicFontStyle.fontSize/100}rem;
+    font-weight: &{data.font.topicFontStyle.fontBold};
+    font-style: &{data.font.topicFontStyle.fontItalic};
+    text-decoration: &{data.font.topicFontStyle.fontUnderline};
+    color: &{data.font.topicFontStyle.fontColor};
+    }
+    /* welcome font */
+    #begin_content>.desc_begin{
+    font-size: &{data.font.welcomeFontStyle.fontSize/100}rem;
+    font-weight: &{data.font.welcomeFontStyle.fontBold};
+    font-style: &{data.font.welcomeFontStyle.fontItalic};
+    text-decoration: &{data.font.welcomeFontStyle.fontUnderline};
+    color: &{data.font.welcomeFontStyle.fontColor};
+    }
+    /* quesiton font */
+    .Phone_con .question[questiontype="70"] .topic_title,.Phone_con .question .topic_title_wrap .topic_title,.Phone_con .question .topic_title, .question .topic_title .t_multiple{
+    font-size: &{data.font.quesitonFontStyle.fontSize/100}rem;
+    font-weight: &{data.font.quesitonFontStyle.fontBold};
+    font-style: &{data.font.quesitonFontStyle.fontItalic};
+    text-decoration: &{data.font.quesitonFontStyle.fontUnderline};
+    color: &{data.font.quesitonFontStyle.fontColor} !important;
+    }
+    /* option font */
+    .question .unstyled li .checked_wrap,.Phone_con .question input, .Phone_con .question textarea,.question .unstyled li .checked_wrap, .Phone_con .question input, .Phone_con .question textarea, .Phone_con .question select,.Phone_zon .question .option_label,.question .unstyled li .checked_wrap, .Phone_con .question input, .Phone_con .question textarea, .Phone_con .question select,.question .topic_con .phone_select .placeholder_txt, .question .M_sorting .Ulist .placeholder_txt,.question .topic_con_date .topic_input .BlankDateOrTime span.placeholder, .question .topic_con_age .topic_input .BlankDateOrTime span.placeholder,.question .topic_con_date .topic_input .BlankDateOrTime span, .question .topic_con_age .topic_input .BlankDateOrTime span,.question .topic_con .ShowImgCon .simg .optionImg .img_txt,.question .topic_con .data_row>.optionBox_t .option_label,.question .topic_con.MatrixType .matrix_item .optionBox_t .option_label,.question .topic_score_default .matrixScore .optionBox_c .matrix_ul li .option_label,.question .topic_con .M_sorting .sort_item, .question .topic_con .M_sorting .sort_item.selected .option_txt, .M_topic .horz_blank, .question .matrix li .option_title {
+    font-size: &{data.font.optionFontStyle.fontSize/100}rem;
+    font-weight: &{data.font.optionFontStyle.fontBold};
+    font-style: &{data.font.optionFontStyle.fontItalic};
+    text-decoration: &{data.font.optionFontStyle.fontUnderline};
+    color: &{data.font.optionFontStyle.fontColor} !important;
+    }
+    /* option font for 横向填空题*/
+    .M_topic .horz_blank.underscore .ipt-wrap{
+    border-color: &{data.font.optionFontStyle.fontColor};
+    }
+    input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    input:-moz-placeholder,textarea:-moz-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    input::-moz-placeholder,textarea::-moz-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    input:-ms-input-placeholder,textarea:-ms-input-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    /* endDesc font */
+    .phone_end #end_desc{
+    font-size: &{data.font.endDescFontStyle.fontSize/100}rem;
+    font-weight: &{data.font.endDescFontStyle.fontBold};
+    font-style: &{data.font.endDescFontStyle.fontItalic};
+    text-decoration: &{data.font.endDescFontStyle.fontUnderline};
+    color: &{data.font.endDescFontStyle.fontColor} !important;
+    }
+    .cover_btn button {
+    color: &{data.cover.beginBtnTextColor};
+    background-color: &{data.cover.beginBtnColor};
+    }
+    </script>
+    <script type="text/template" id="pc_btncolor_template">
+    /*pc font type css*/
+    /* topic font */
+    .wjtitle h1{
+    font-size: &{data.font.topicFontStyle.fontSize}px;
+    font-weight: &{data.font.topicFontStyle.fontBold};
+    font-style: &{data.font.topicFontStyle.fontItalic};
+    text-decoration: &{data.font.topicFontStyle.fontUnderline};
+    color: &{data.font.topicFontStyle.fontColor};
+    }
+    /* welcome font */
+    .wjintro, .wjintro{
+    font-size: &{data.font.welcomeFontStyle.fontSize}px;
+    font-weight: &{data.font.welcomeFontStyle.fontBold};
+    font-style: &{data.font.welcomeFontStyle.fontItalic};
+    text-decoration: &{data.font.welcomeFontStyle.fontUnderline};
+    color: &{data.font.welcomeFontStyle.fontColor};
+    }
+    /* quesiton font */
+    .question .title{
+    font-size: &{data.font.quesitonFontStyle.fontSize}px;
+    font-weight: &{data.font.quesitonFontStyle.fontBold};
+    font-style: &{data.font.quesitonFontStyle.fontItalic};
+    text-decoration: &{data.font.quesitonFontStyle.fontUnderline};
+    color: &{data.font.quesitonFontStyle.fontColor};
+    }
+    /* option font */
+    input, button, select, textarea,.w28,.option_label,.T_edit_min,.horz_blank,.horz_blank input,.matrix_scale_wrapper .option_label,.q_proportion .option_title{
+    font-size: &{data.font.optionFontStyle.fontSize}px;
+    font-weight: &{data.font.optionFontStyle.fontBold};
+    font-style: &{data.font.optionFontStyle.fontItalic};
+    text-decoration: &{data.font.optionFontStyle.fontUnderline};
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    /* option font for 横向填空题*/
+    .horz_blank.underscore .ipt-wrap{
+    border-color: &{data.font.optionFontStyle.fontColor};
+    }
+    input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    input:-moz-placeholder,textarea:-moz-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    input::-moz-placeholder,textarea::-moz-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    input:-ms-input-placeholder,textarea:-ms-input-placeholder{
+    color: &{data.font.optionFontStyle.fontColor};
+    }
+    /* endDesc font */
+    .conthank p{
+    font-size: &{data.font.endDescFontStyle.fontSize}px;
+    font-weight: &{data.font.endDescFontStyle.fontBold};
+    font-style: &{data.font.endDescFontStyle.fontItalic};
+    text-decoration: &{data.font.endDescFontStyle.fontUnderline};
+    color: &{data.font.endDescFontStyle.fontColor};
+    }
+    .wjContent {
+    background-color: &{wjbColor};
+    }
+    </script>
+
+
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/jquery_1.10.2.min.js?v=b62fe6d31abbd18c3f7eb34ddf470d63"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/tools.js?v=cc6b385113ffe5a315cf7ed66385e415"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/base_utils.js?v=791a1ae111313d2f935ec325edec6ff7"></script>
+    <script type="text/javascript">
+        // 全局数据对象
+        var globalData = {
+            platform: 'mobile',
+            sceneType: 'survey',
+            createClient: "pc", // 账户创建于哪个客户端
+            memberType: isNotEmpty(getCookie('mtc')) ? 3 : 2,
+            adc_time: '1565231717',
+            adc_sign: '285f6642c3084e16042de829c4731f59',
+            adUtils: { // 广告相关数据，为了获取mtc
+                server: 'https://api.wenjuan.link/dmp/0.0.1/user/plant',
+                token: 'd2VuanVhbiAxNTY1MjMwMDkzNTU2IDU5NTM2ZGZhMjdhNTUwZDVkOTZiZGNmYWViM2E1ZjU5OTExNWZjNTc=',
+                mid: '',
+            },
+        };
+        var test_mode = window.location.href.indexOf("test=1") != -1 ? true : false;
+        // 是否设置质量控制的无效答卷规则
+        var qualityControl = "off";
+        var project = { "last_updated": { "$date": 1409934186196 }, "page_count": 1, "copy_from_pid": "540a3448f7405b416f3ddb7f", "share_status": 2, "official_status": 2, "begin_desc": "\u6b22\u8fce\u60a8\u53c2\u52a0\u6b64\u6b21\u7684\u95ee\u5377\u8c03\u67e5\uff0c\u8c03\u67e5\u4f1a\u5360\u7528\u60a8\u7684\u5b9d\u8d35\u51e0\u5206\u949f\u65f6\u95f4\uff0c\u8bf7\u60a8\u8ba4\u771f\u586b\u5199\uff0c\u60a8\u7684\u4fe1\u606f\u5c06\u4f1a\u7528\u6765\u7edf\u8ba1\u5206\u6790\uff0c\u975e\u5e38\u611f\u8c22\u60a8\u7684\u53c2\u4e0e\uff01\uff01", "appearance_id": "5bcf06b5d3578054358d4e36", "short_id": "ZNj6Bz", "is_struct_change": 1, "questionpage_id_list": ["5cb5460f92beb56e5c1aad9a"], "project_func_id": "51dd234e9b9fbe6646bf4dd2", "questionpage_list": [{ "updated": { "$date": 1555412623433 }, "_id": { "$oid": "5cb5460f92beb56e5c1aad9a" }, "question_id_list": ["5cb5460f92beb56e5c1aad9b", "5cb5460f92beb56e5c1aad9c", "5cb5460f92beb56e5c1aad9d", "5cb5460f92beb56e5c1aad9e", "5cb5460f92beb56e5c1aad9f", "5cb5460f92beb56e5c1aada0", "5cb5460f92beb56e5c1aada1", "5cb5460f92beb56e5c1aada2", "5cb5460f92beb56e5c1aada3", "5cb5460f92beb56e5c1aada4", "5cb5460f92beb56e5c1aada5", "5cb5460f92beb56e5c1aada6", "5cb5460f92beb56e5c1aada7", "5cb5460f92beb56e5c1aada8", "5cb5460f92beb56e5c1aada9", "5cb5460f92beb56e5c1aadaa", "5cb5460f92beb56e5c1aadab", "5cb5460f92beb56e5c1aadac"], "question_list": [{ "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aad9b" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadad", "5cb5460f92beb56e5c1aadae"], "cid": "Q1", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u7684\u6027\u522b\uff1f", "updated": { "$date": 1555412623484 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623544 }, "cid": "A1", "title": "\u7537", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadad" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9b" }, { "updated": { "$date": 1555412623546 }, "cid": "A2", "title": "\u5973", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadae" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9b" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": { "disp_type": "vertical", "column_count": "2" }, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aad9c" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadaf", "5cb5460f92beb56e5c1aadb0", "5cb5460f92beb56e5c1aadb1", "5cb5460f92beb56e5c1aadb2"], "cid": "Q2", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u6240\u5728\u7684\u5e74\u7ea7\u662f\uff1f", "updated": { "$date": 1555412623487 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623559 }, "cid": "A1", "title": "\u5927\u4e00", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadaf" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9c" }, { "updated": { "$date": 1555412623563 }, "cid": "A2", "title": "\u5927\u4e8c", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb0" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9c" }, { "updated": { "$date": 1555412623565 }, "cid": "A3", "title": "\u5927\u4e09", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb1" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9c" }, { "updated": { "$date": 1555412623568 }, "cid": "A4", "title": "\u5927\u56db", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb2" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9c" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": { "disp_type": "vertical", "column_count": "2" }, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aad9d" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadb3", "5cb5460f92beb56e5c1aadb4", "5cb5460f92beb56e5c1aadb5", "5cb5460f92beb56e5c1aadb6"], "cid": "Q3", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u8ba4\u4e3a\u76ee\u524d\u666e\u901a\u5927\u5b66\u751f\u5c31\u4e1a\u5f62\u52bf\u5982\u4f55\uff1f", "updated": { "$date": 1555412623491 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623582 }, "cid": "A1", "title": "\u5341\u5206\u4e25\u5cfb\uff0c\u5f88\u96be\u627e\u5230\u5408\u9002\u5de5\u4f5c", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb3" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9d" }, { "updated": { "$date": 1555412623585 }, "cid": "A2", "title": "\u6709\u70b9\u4e25\u5cfb\uff0c\u4f46\u6bd4\u5176\u4ed6\u4f4e\u5b66\u5386\u4eba\u7fa4\u8981\u5bb9\u6613&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb4" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9d" }, { "updated": { "$date": 1555412623588 }, "cid": "A3", "title": "\u6709\u70b9\u4e25\u5cfb\uff0c\u4e0e\u5176\u4ed6\u4f4e\u5b66\u5386\u4eba\u7fa4\u5dee\u4e0d\u591a&nbsp;&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb5" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9d" }, { "updated": { "$date": 1555412623591 }, "cid": "A4", "title": "\u4e0d\u4e86\u89e3", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb6" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9d" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aad9e" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadb7", "5cb5460f92beb56e5c1aadb8", "5cb5460f92beb56e5c1aadb9", "5cb5460f92beb56e5c1aadba"], "cid": "Q4", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u5f53\u4f60\u6bd5\u4e1a\u65f6\uff0c\u4f60\u4f1a\u9009\u62e9", "updated": { "$date": 1555412623494 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623600 }, "cid": "A1", "title": "\u5148\u62e9\u4e1a\u540e\u5c31\u4e1a&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb7" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9e" }, { "updated": { "$date": 1555412623602 }, "cid": "A2", "title": "\u5148\u5c31\u4e1a\u540e\u62e9\u4e1a&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb8" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9e" }, { "updated": { "$date": 1555412623606 }, "cid": "A3", "title": "\u7ee7\u7eed\u6df1\u9020&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadb9" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9e" }, { "updated": { "$date": 1555412623609 }, "cid": "A4", "title": "\u81ea\u4e3b\u521b\u4e1a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadba" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9e" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aad9f" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadbb", "5cb5460f92beb56e5c1aadbc", "5cb5460f92beb56e5c1aadbd"], "cid": "Q5", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u5982\u4f55\u770b\u5f85\u8003\u7814\u70ed\uff1f", "updated": { "$date": 1555412623497 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623622 }, "cid": "A1", "title": "\u7ee7\u7eed\u6df1\u9020\uff0c\u53ef\u4ee5\u6682\u65f6\u8eb2\u907f\u5c31\u4e1a\u9ad8\u5cf0\uff0c\u589e\u52a0\u5c31\u4e1a\u4f18\u52bf&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadbb" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9f" }, { "updated": { "$date": 1555412623624 }, "cid": "A2", "title": "\u7814\u7a76\u751f\u8d8a\u6765\u8d8a\u591a\uff0c\u5c31\u4e1a\u5f62\u52bf\u4f9d\u7136\u4e25\u5cfb", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadbc" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9f" }, { "updated": { "$date": 1555412623626 }, "cid": "A3", "title": "\u5176\u4ed6", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadbd" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aad9f" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada0" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadbe", "5cb5460f92beb56e5c1aadbf", "5cb5460f92beb56e5c1aadc0", "5cb5460f92beb56e5c1aadc1", "5cb5460f92beb56e5c1aadc2", "5cb5460f92beb56e5c1aadc3", "5cb5460f92beb56e5c1aadc4"], "cid": "Q6", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u8ba4\u4e3a\u5f53\u524d\u5b66\u54ea\u4e9b\u4e13\u4e1a\u66f4\u6613\u4e8e\u627e\u5230\u5de5\u4f5c\uff1f", "updated": { "$date": 1555412623500 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623640 }, "cid": "A1", "title": "\u6587\u53f2\u7c7b&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadbe" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }, { "updated": { "$date": 1555412623642 }, "cid": "A2", "title": "\u5e08\u8303\u7c7b", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadbf" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }, { "updated": { "$date": 1555412623643 }, "cid": "A3", "title": "\u7ba1\u7406\u7c7b", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc0" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }, { "updated": { "$date": 1555412623645 }, "cid": "A4", "title": "\u519c\u6797\u7c7b", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc1" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }, { "updated": { "$date": 1555412623647 }, "cid": "A5", "title": "\u7ecf\u6d4e\u7c7b", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc2" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }, { "updated": { "$date": 1555412623649 }, "cid": "A6", "title": "\u7406\u5de5\u79d1\u7c7b", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc3" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }, { "updated": { "$date": 1555412623651 }, "cid": "A7", "title": "\u5176\u4ed6", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc4" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada0" }], "jumpconstraint_id_list2": [], "question_type": 3, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": { "disp_type": "transverse", "column_count": "2" }, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada1" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadc5", "5cb5460f92beb56e5c1aadc6", "5cb5460f92beb56e5c1aadc7", "5cb5460f92beb56e5c1aadc8"], "cid": "Q7", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u5982\u4f55\u770b\u5f85\u4e13\u4e1a\u4e0e\u5de5\u4f5c\u4e0d\u5bf9\u53e3\u7684\u95ee\u9898\uff1f", "updated": { "$date": 1555412623503 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623660 }, "cid": "A1", "title": "\u8fd9\u79cd\u73b0\u8c61\u5f88\u666e\u904d&nbsp;\uff0c\u5bb9\u6613\u9002\u5e94&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc5" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada1" }, { "updated": { "$date": 1555412623662 }, "cid": "A2", "title": "\u7ed9\u5c31\u4e1a\u9020\u6210\u4e00\u5b9a\u56f0\u96be\uff0c\u4f46\u6613\u4e8e\u514b\u670d", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc6" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada1" }, { "updated": { "$date": 1555412623664 }, "cid": "A3", "title": "\u4e13\u4e1a\u4e0e\u5de5\u4f5c\u4e0d\u5bf9\u53e3\uff0c\u6839\u672c\u65e0\u6cd5\u5c31\u4e1a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc7" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada1" }, { "updated": { "$date": 1555412623666 }, "cid": "A4", "title": "\u4ece\u672a\u5173\u6ce8\u8fc7\u8fd9\u7c7b\u73b0\u8c61", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc8" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada1" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada2" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadc9", "5cb5460f92beb56e5c1aadca", "5cb5460f92beb56e5c1aadcb", "5cb5460f92beb56e5c1aadcc", "5cb5460f92beb56e5c1aadcd"], "cid": "Q8", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u73b0\u5728\u7684\u5c31\u4e1a\u5fc3\u6001\uff1f", "updated": { "$date": 1555412623506 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623676 }, "cid": "A1", "title": "\u81ea\u4fe1\u80fd\u627e\u5230\u6ee1\u610f\u7684\u5de5\u4f5c\uff0c\u5e76\u79ef\u6781\u51c6\u5907", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadc9" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada2" }, { "updated": { "$date": 1555412623678 }, "cid": "A2", "title": "\u6ca1\u591a\u8003\u8651\uff0c\u53cd\u6b63\u6700\u540e\u603b\u4f1a\u6709\u5de5\u4f5c", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadca" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada2" }, { "updated": { "$date": 1555412623680 }, "cid": "A3", "title": "\u975e\u5e38\u7126\u8651", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadcb" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada2" }, { "updated": { "$date": 1555412623682 }, "cid": "A4", "title": "\u5f88\u832b\u7136&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadcc" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada2" }, { "updated": { "$date": 1555412623684 }, "cid": "A5", "title": "\u5176\u4ed6", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadcd" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada2" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada3" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadce", "5cb5460f92beb56e5c1aadcf", "5cb5460f92beb56e5c1aadd0", "5cb5460f92beb56e5c1aadd1"], "cid": "Q9", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u5982\u4f55\u770b\u5f85\u5f53\u524d\u5404\u5927\u5b66\u6269\u62db\u5bf9\u5c31\u4e1a\u5f62\u52bf\u7684\u5f71\u54cd\uff1f", "updated": { "$date": 1555412623509 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623693 }, "cid": "A1", "title": "\u597d", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadce" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada3" }, { "updated": { "$date": 1555412623695 }, "cid": "A2", "title": "\u4e0d\u597d", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadcf" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada3" }, { "updated": { "$date": 1555412623697 }, "cid": "A3", "title": "\u65e2\u662f\u673a\u9047\uff0c\u53c8\u662f\u6311\u6218", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd0" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada3" }, { "updated": { "$date": 1555412623700 }, "cid": "A4", "title": "\u6ca1\u8003\u8651\u8fc7", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd1" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada3" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada4" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadd2", "5cb5460f92beb56e5c1aadd3", "5cb5460f92beb56e5c1aadd4"], "cid": "Q10", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u662f\u5426\u53ef\u80fd\u4f1a\u9009\u62e9\u81ea\u4e3b\u521b\u4e1a\uff1f", "updated": { "$date": 1555412623511 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623711 }, "cid": "A1", "title": "\u4f1a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd2" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada4" }, { "updated": { "$date": 1555412623713 }, "cid": "A2", "title": "\u4e0d\u4f1a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd3" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada4" }, { "updated": { "$date": 1555412623717 }, "cid": "A3", "title": "\u4f1a\u8003\u8651", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd4" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada4" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada5" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadd5", "5cb5460f92beb56e5c1aadd6", "5cb5460f92beb56e5c1aadd7", "5cb5460f92beb56e5c1aadd8"], "cid": "Q11", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u9762\u5bf9\u5c06\u6765\u6c42\u804c\uff0c\u4f60\u6700\u62c5\u5fc3\u7684\u95ee\u9898\u662f\u4ec0\u4e48\uff1f", "updated": { "$date": 1555412623514 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623727 }, "cid": "A1", "title": "\u82f1\u8bed\uff0c\u8ba1\u7b97\u673a\u6c34\u5e73\u4e0d\u591f\u597d&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd5" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada5" }, { "updated": { "$date": 1555412623729 }, "cid": "A2", "title": "\u4e13\u4e1a\u8bfe\u6210\u7ee9\u4e0d\u7a33\u5b9a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd6" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada5" }, { "updated": { "$date": 1555412623731 }, "cid": "A3", "title": "\u6ca1\u5de5\u4f5c\u7ecf\u9a8c", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd7" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada5" }, { "updated": { "$date": 1555412623733 }, "cid": "A4", "title": "\u5bf9\u793e\u4f1a\u7f3a\u4e4f\u4e86\u89e3", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd8" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada5" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada6" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadd9", "5cb5460f92beb56e5c1aadda", "5cb5460f92beb56e5c1aaddb", "5cb5460f92beb56e5c1aaddc"], "cid": "Q12", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u5728\u5c31\u4e1a\u8fc7\u7a0b\u4e2d\u66f4\u6ce8\u91cd\u4ec0\u4e48\uff1f", "updated": { "$date": 1555412623518 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623746 }, "cid": "A1", "title": "\u5c97\u4f4d&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadd9" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada6" }, { "updated": { "$date": 1555412623749 }, "cid": "A2", "title": "\u85aa\u916c\u9ad8\u4f4e", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadda" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada6" }, { "updated": { "$date": 1555412623752 }, "cid": "A3", "title": "\u516c\u53f8\u540d\u6c14", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aaddb" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada6" }, { "updated": { "$date": 1555412623755 }, "cid": "A4", "title": "\u4e2a\u4eba\u53d1\u5c55\u7a7a\u95f4", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aaddc" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada6" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada7" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aaddd", "5cb5460f92beb56e5c1aadde", "5cb5460f92beb56e5c1aaddf", "5cb5460f92beb56e5c1aade0"], "cid": "Q13", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u8ba4\u4e3a\u7528\u4eba\u5355\u4f4d\u6700\u5173\u5fc3\u6bd5\u4e1a\u751f\u7684\u54ea\u4e9b\u7d20\u8d28\uff1f", "updated": { "$date": 1555412623521 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623768 }, "cid": "A1", "title": "\u5b66\u6821\u540d\u6c14\u548c\u793e\u4f1a\u5b9e\u8df5\u7ecf\u9a8c", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aaddd" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada7" }, { "updated": { "$date": 1555412623771 }, "cid": "A2", "title": "\u8eab\u9ad8\u3001\u76f8\u8c8c\u3001\u5b66\u5386\u53ca\u5b66\u4e60\u80fd\u529b", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadde" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada7" }, { "updated": { "$date": 1555412623774 }, "cid": "A3", "title": "\u5de5\u4f5c\u4ea4\u9645\u80fd\u529b&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aaddf" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada7" }, { "updated": { "$date": 1555412623776 }, "cid": "A4", "title": "\u54c1\u5fb7\u3001\u7279\u957f\u7231\u597d", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade0" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada7" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada8" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aade1", "5cb5460f92beb56e5c1aade2", "5cb5460f92beb56e5c1aade3", "5cb5460f92beb56e5c1aade4"], "cid": "Q14", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u8ba4\u4e3a\u5728\u6c42\u804c\u524d\u5fc5\u987b\u5177\u5907\u7684\u6c42\u804c\u77e5\u8bc6\u548c\u80fd\u529b\u662f", "updated": { "$date": 1555412623524 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623789 }, "cid": "A1", "title": "\u5982\u4f55\u5199\u4e13\u4e1a\u7b80\u5386", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade1" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada8" }, { "updated": { "$date": 1555412623791 }, "cid": "A2", "title": "\u5982\u4f55\u4e86\u89e3\u4e00\u4e2a\u4f01\u4e1a\u4f01\u4e1a\u9009\u4eba\u7684\u6807\u51c6&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade2" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada8" }, { "updated": { "$date": 1555412623792 }, "cid": "A3", "title": "\u5982\u4f55\u9762\u8bd5", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade3" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada8" }, { "updated": { "$date": 1555412623794 }, "cid": "A4", "title": "\u5982\u4f55\u8c08\u85aa\u916c\u548c\u798f\u5229", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade4" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada8" }], "jumpconstraint_id_list2": [], "question_type": 3, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": { "disp_type": "vertical", "column_count": "2" }, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aada9" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aade5", "5cb5460f92beb56e5c1aade6", "5cb5460f92beb56e5c1aade7", "5cb5460f92beb56e5c1aade8", "5cb5460f92beb56e5c1aade9"], "cid": "Q15", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u5e0c\u671b\u4e3b\u8981\u901a\u8fc7\u54ea\u79cd\u6c42\u804c\u9014\u5f84\u627e\u5de5\u4f5c\uff1f", "updated": { "$date": 1555412623527 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623812 }, "cid": "A1", "title": "\u5b66\u6821\u63a8\u8350", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade5" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada9" }, { "updated": { "$date": 1555412623815 }, "cid": "A2", "title": "\u6d4f\u89c8\u4eba\u624d\u7f51\u7ad9", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade6" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada9" }, { "updated": { "$date": 1555412623818 }, "cid": "A3", "title": "\u6821\u56ed\u62db\u8058\u4f1a\u548c\u793e\u4f1a\u62db\u8058\u4f1a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade7" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada9" }, { "updated": { "$date": 1555412623821 }, "cid": "A4", "title": "\u62a5\u7eb8\u3001\u7535\u89c6\u62db\u8058\u5e7f\u544a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade8" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada9" }, { "updated": { "$date": 1555412623824 }, "cid": "A5", "title": "\u4eb2\u621a\u670b\u53cb\u5173\u7cfb\u4ecb\u7ecd", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aade9" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aada9" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadaa" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadea", "5cb5460f92beb56e5c1aadeb", "5cb5460f92beb56e5c1aadec", "5cb5460f92beb56e5c1aaded"], "cid": "Q16", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u5c31\u4e1a\u4f1a\u4f18\u5148\u9009\u62e9\u7684\u5730\u57df\u662f", "updated": { "$date": 1555412623531 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623839 }, "cid": "A1", "title": "\u51fa\u751f\u672c\u5730", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadea" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadaa" }, { "updated": { "$date": 1555412623841 }, "cid": "A2", "title": "\u6cbf\u6d77\u57ce\u5e02", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadeb" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadaa" }, { "updated": { "$date": 1555412623844 }, "cid": "A3", "title": "\u897f\u90e8\u53d1\u5c55\u5730\u533a", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadec" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadaa" }, { "updated": { "$date": 1555412623847 }, "cid": "A4", "title": "\u5176\u4ed6&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aaded" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadaa" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadab" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadee", "5cb5460f92beb56e5c1aadef", "5cb5460f92beb56e5c1aadf0", "5cb5460f92beb56e5c1aadf1"], "cid": "Q17", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u4f60\u80fd\u63a5\u53d7\u7684\u6708\u85aa\u4e3a", "updated": { "$date": 1555412623534 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623863 }, "cid": "A1", "title": "1000\u20143000&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadee" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadab" }, { "updated": { "$date": 1555412623865 }, "cid": "A2", "title": "3000\u20144000", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadef" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadab" }, { "updated": { "$date": 1555412623866 }, "cid": "A3", "title": "4000\u20145000&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadf0" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadab" }, { "updated": { "$date": 1555412623868 }, "cid": "A4", "title": "5000\u4ee5\u4e0a&nbsp;", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadf1" }, "custom_attr": {}, "question_id": "5cb5460f92beb56e5c1aadab" }], "jumpconstraint_id_list2": [], "question_type": 2, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": {}, "extra_option_id_list": [] }, { "extra_option_list": [], "has_open_option": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadac" }, "jumpconstraint_id_list": [], "option_id_list": ["5cb5460f92beb56e5c1aadf2"], "cid": "Q18", "questionpage_id": "5cb5460f92beb56e5c1aad9a", "related_question_list": [], "title": "\u5bf9\u73b0\u5728\u5927\u5b66\u751f\u5c31\u4e1a\u72b6\u51b5\u6709\u4ec0\u4e48\u770b\u6cd5\uff1f", "updated": { "$date": 1555412623537 }, "matrixrow_list": [], "matrixrow_id_list": [], "option_list": [{ "updated": { "$date": 1555412623875 }, "cid": "A1", "title": "\u9009\u98791", "is_open": false, "_id": { "$oid": "5cb5460f92beb56e5c1aadf2" }, "custom_attr": { "text_row": "1", "text_col": "20" }, "question_id": "5cb5460f92beb56e5c1aadac" }], "jumpconstraint_id_list2": [], "question_type": 6, "displayconstraint_id_list2": [], "project_id": "5cb5460f92beb56e5c1aad99", "displayconstraint_id_list": [], "custom_attr": { "allow_null": "on" }, "extra_option_id_list": [] }], "project_id": "5cb5460f92beb56e5c1aad99", "custom_attr": {} }], "version": 1, "question_count": 19, "end_desc": "\u60a8\u5df2\u5b8c\u6210\u672c\u6b21\u95ee\u5377\uff0c\u611f\u8c22\u60a8\u7684\u5e2e\u52a9\u4e0e\u652f\u6301", "status": 0, "updated": { "$date": 1555412655425 }, "scene": 0, "scene_type": "opinion", "first_create_for_member": true, "custom_attr": { "create_client": "pc", "language": "zh_CN", "panelsite": "101", "force_get_weixinuserinfo_btn": "on", "scrollbar": "on", "suspected_words": 3, "new_custom_style": { "TerminalStyle": { "PC": { "R_BgColor": "rgb(250,250,250)", "BgImagePosition": "", "backgroundRepeat": "repeat", "ImageURl": "", "WjBgColor": "rgb(255, 255, 255)", "BgColor": "rgb(102, 102, 102)", "theme": "8", "BgImageURl": "", "font": [{ "bold": "", "color": "", "id": "QuesitonStyle", "italic": "", "font": "", "underline": "", "size": "" }, { "bold": "", "color": "", "id": "OptionsStyle", "italic": "", "font": "", "underline": "", "size": "" }, { "bold": "", "color": "", "id": "TopicStyle", "italic": "", "font": "", "underline": "", "size": "" }, { "bold": "", "color": "", "id": "WelcomeStyle", "italic": "", "font": "", "underline": "", "size": "" }, { "bold": "", "color": "", "id": "EndStyle", "italic": "", "font": "", "underline": "", "size": "" }], "OtherColor": "#30659b", "R_OtherColor": "rgb(250,250,250)" }, "Phone": { "TopBgColor": "#85c8ff", "BgColor": "rgb(204, 204, 204)", "theme": "7", "R_TopBgColor": "rgb(250,250,250)", "OtherColor": "#85C8FF", "R_OtherColor": "rgb(250,250,250)" } }, "Language": "zh_CN", "Number": "false", "ProgressBar": "true", "logoPosition": "left", "logoURL": "" }, "base_appear_id": "5bcf06b5d3578054358d4e36", "screenout_desc": "\u4e0d\u597d\u610f\u601d\uff0c\u60a8\u4e0d\u592a\u9002\u5408\u672c\u6b21\u8c03\u67e5\uff0c\u8c22\u8c22\u60a8\u7684\u65f6\u95f4" }, "is_shared": false, "created": { "$date": 1555412623394 }, "title": "<p style=\"text-align: center;\">\u5927\u5b66\u751f\u5c31\u4e1a\u521b\u4e1a\u610f\u613f\u3001\u73b0\u72b6\u3001\u95ee\u9898\u4e0e\u5bf9\u7b56\u8c03\u67e5</p>", "question_relation_list": [], "creator_id": "51dd234e9b9fbe6646bf4dd4", "_id": { "$oid": "5cb5460f92beb56e5c1aad99" }, "is_hdgc": false };
+        var mobile_auth_queston_status = 2;
+
+        var deviceWidth = document.documentElement.clientWidth || 375;
+        var designWidth = 375;
+        if (deviceWidth > designWidth) deviceWidth = designWidth;
+        document.documentElement.style.fontSize = deviceWidth / designWidth * 100 + "px";
+        var is_weixin_browser = false;
+        var draw_ret;
+        // 获取外观设置
+        var appearanceData = { "_id": { "$oid": "5bcf06b5d3578054358d4e36" }, "name": "\u6821\u56ed2", "theme_num": "", "created": 1540294325, "theme_colors": ["#EAEAEA"], "theme_styles": ["school", "commerce"], "p_types": [], "thumbnail": "http://cdn1.wenjuan.com/appear-S-\u6821\u56ed2.png", "is_public_theme": true, "status": 1, "sequence": 17, "PC": { "style": { "btnsColor": "#20586C" }, "cover": {}, "headerImgUrl": "http://cdn1.wenjuan.com/appear-PC-\u6821\u56ed2.png", "submit_btn": { "submitBtnText": "\u63d0\u4ea4" }, "logo": {}, "hidden": { "hideTitle": 0, "hideQuestionSeq": 0, "hideWelcome": 0 }, "font": { "endDescFontStyle": { "fontSize": "18" }, "optionFontStyle": { "fontSize": "14" }, "quesitonFontStyle": { "fontSize": "16" }, "welcomeFontStyle": { "fontSize": "16" }, "topicFontStyle": { "fontSize": "18" } } }, "Phone": { "style": { "btnsColor": "#20586C" }, "cover": { "coverSetting": "image", "beginBtnStyle": "begin_btn", "titleShowOnCover": 1 }, "headerImgUrl": "http://cdn1.wenjuan.com/appear-M-\u6821\u56ed2.png", "submit_btn": { "submitBtnText": "\u63d0\u4ea4" }, "logo": {}, "hidden": { "hideTitle": 0, "hideQuestionSeq": 0, "hideWelcome": 0 }, "font": { "endDescFontStyle": { "fontSize": "16" }, "optionFontStyle": { "fontSize": "16" }, "quesitonFontStyle": { "fontSize": "20" }, "welcomeFontStyle": { "fontSize": "18" }, "topicFontStyle": { "fontSize": "24" } } }, "language": "zh_CN" };
+        /*
+        * 广告平台对接
+        */
+        var ad_mtc = "0e944270bb2878645ce852a591a31753";
+        var ad_token = "d2VuanVhbiAxNTY1MjMwMDkzNTU2IDU5NTM2ZGZhMjdhNTUwZDVkOTZiZGNmYWViM2E1ZjU5OTExNWZjNTc=";
+        var ad_ua = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1";
+        var ad_remote_ip = "116.6.209.147";
+        // 是否有题目缓存
+        var use_cache = '0';
+        // 缓存加盐
+        var cache_salt = 'g3k6Svr2cL4lRY9QCV0pOexITG5jPEAb';
+        // 是否从答题广场过来的问卷
+        var isFromAnswerSquare = 'False';
+        // 七牛域名
+        var qiniu_host = 'https://cdn1.wenjuan.com';
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/ad_api/pako.min.js?v=eea12309ba7953f4cbdb9a7944bfe1d1"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/jquery_ui/jquery_ui.ugligy.min.js?v=7f5a87403629c6eb843ce8699501ad59"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.6&amp;key=6a92e68080ab6c0cd8973ddb90668c47&amp;plugin=AMap.Geocoder"></script>
+    <script crossorigin="anonymous" id="amap_plus_js"
+        src="https://webapi.amap.com/maps/modules?v=1.4.6&amp;key=6a92e68080ab6c0cd8973ddb90668c47&amp;vrs=1536672475634&amp;m=touch,vectorlayer,overlay,wgl,AMap.Geocoder,sync"
+        type="text/javascript"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/modernizr.js?v=6b699e7c918ab49f8a93ad65d1f3edcb"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/juicer.js?v=eddf2482fed75dc11f602a5f519435cb"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/jquery.cookie.js?v=d5528dde0006c78be04817327c2f9b6f"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/md5-min.js?v=0422005ea9630b5b74416281eecf24cb"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/json.js?v=2ba3e68501985816b26089f135e5b718"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/enums.js?v=99cd621eebaa4043b281a8df7a7be2a1"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/qiniu-2.4.0.min.js?v=cb1b432c0339e43c57e000297c87f630"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/build/js/translate/zh_CN/survey_mobile_main.js?v=5d41bd3e8687b73c8e04113a619a3e7f"></script>
+
+
+    <script type="text/javascript" src="https://138.wenjuan.com/device_type.js?time=1565231717.58"
+        async="async"></script>
+
+    <!-- 颜色值转换 -->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/color_exchange.js?v=4556870404d55f88188fe556c6c0e2b1"></script>
+    <!-- 滑动触摸 -->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/swipe.js?v=e56193e27e534b0db18e52055ad2c707"></script>
+    <script type="text/javascript">
+        var hide_logo = false;
+
+        var star_off = "https://cdn.wenjuan.com/static/images/lv_pt_off.png?v=e6dcac8ef8e5d94933092288acebf4a3";
+        var star_on = "https://cdn.wenjuan.com/static/images/lv_pt_on.png?v=79f463a848f3bfd8038c9962a68d437b";
+        var show_prev_btn = (project.custom_attr['show_prev_btn'] || window.location.search.indexOf("show_prev_btn=1")) != -1 ? true : false;
+        var timestr = "2019-08-08 10:35:17";
+        var ev = "1";
+        var uuid = "5429821f8025d257904bb5cd4845aa69";
+        var is_iframe = "";
+        var vote_count = {};
+        var vote_unit = "票";
+        var vote_change = false;
+        var is_ios = true;
+        var not_weixin_brower;
+        var wx_user_info = {};
+        var from_idy = false;
+        // var from_idy = true;
+        var verify_types = null;
+
+
+        var luck_draw_ad_switch = "None";
+        var super_account = "None";
+        var has_lucky_money = '';
+        var hide_logo = 'False';
+        var site_rspd_url = 'http://www.wenjuan.com';
+        var estimate_map = { "5cb5460f92beb56e5c1aad9c": 3, "5cb5460f92beb56e5c1aad9b": 2, "5cb5460f92beb56e5c1aad9f": 6, "5cb5460f92beb56e5c1aad9e": 5, "5cb5460f92beb56e5c1aad9d": 8, "5cb5460f92beb56e5c1aadac": 11, "5cb5460f92beb56e5c1aadab": 6, "5cb5460f92beb56e5c1aadaa": 4, "5cb5460f92beb56e5c1aada9": 7, "5cb5460f92beb56e5c1aada8": 7, "5cb5460f92beb56e5c1aada3": 5, "5cb5460f92beb56e5c1aada2": 6, "5cb5460f92beb56e5c1aada1": 8, "5cb5460f92beb56e5c1aada0": 6, "5cb5460f92beb56e5c1aada7": 7, "5cb5460f92beb56e5c1aada6": 4, "5cb5460f92beb56e5c1aada5": 6, "5cb5460f92beb56e5c1aada4": 3 };
+        var luck_money_rspd_time = +'';
+        var luck_draw_rspd_time = +'';
+        window.beginTime = '2019/08/08 10:35:17';
+        var rand_int = 95;
+        var s_func_id = "15";
+        var vvv = "4fcf35a6354c32a1e6fdbbc8649a5674";
+        var func_name = "mhcRCXjG";
+        eval(eval("s1(10)+s1(102)+s1(117)+s1(110)+s1(99)+s1(116)+s1(105)+s1(111)+s1(110)+s1(32)+s1(109)+s1(104)+s1(99)+s1(82)+s1(67)+s1(88)+s1(106)+s1(71)+s1(40)+s1(112)+s1(53)+s1(49)+s1(51)+s1(41)+s1(32)+s1(123)+s1(10)+s1(32)+s1(32)+s1(32)+s1(32)+s1(114)+s1(101)+s1(116)+s1(117)+s1(114)+s1(110)+s1(32)+s1(55)+s1(45)+s1(54)+s1(43)+s1(49)+s1(42)+s1(57)+s1(45)+s1(49)+s1(48)+s1(42)+s1(56)+s1(45)+s1(53)+s1(42)+s1(51)+s1(43)+s1(112)+s1(53)+s1(49)+s1(51)+s1(59)+s1(10)+s1(125)+s1(10)"));
+        var show_vcode = false;
+    </script>
+    <!--手机日期组件-->
+    <script
+        src="https://cdn.wenjuan.com/static/js/plug-in/mobiscroll/js/mobiscroll.ugligy.min.js?v=579610b0490e2924c69bffe4e0856a4a"
+        type="text/javascript"></script>
+    <script
+        src="https://cdn.wenjuan.com/static/js/plug-in/mobiscroll/js/i18n/mobiscroll.i18n.zh.js?v=51c91aac0d2e88fe7c644e99ae02438e"
+        type="text/javascript"></script>
+    <!--加载提示-->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/plug-in/load/load.js?v=02fe2253bbbb60d82992737335d71a46"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/plug-in/toast/index.js?v=cdd0cd66d355a54f1846a7288804bc1e"></script>
+    <!-- 颜色值转换 -->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/color_exchange.js?v=4556870404d55f88188fe556c6c0e2b1"></script>
+    <!-- 滑动触摸 -->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/swipe.js?v=e56193e27e534b0db18e52055ad2c707"></script>
+    <!-- 投票组件 -->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/radialIndicator.js?v=aa31122037ed1f44818e24696c4e5f36"></script>
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/public_mobile.js?v=1a8d1e78b6a18cf9690620a54ad621e0"></script>
+    <!-- 动画组件 -->
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/survey_mobile/velocity.min.js?v=64da069aba987ea0512cf610600a56d1"></script>
+    <script src="https://cdn.wenjuan.com/static/weixin/android.js?v=cac833b7d32536372448ac168feb0a16"></script>
+
+    <script type="text/javascript">
+        //判断底部信息位置
+        var isH = $('.phone_content_wrap').height() - $(window).height();
+        if (isH < 0) {
+            $('.MobileServeyFooter').addClass('fixedBut');
+        }
+        else {
+            $('.MobileServeyFooter').removeClass('fixedBut');
+        }
+        $(function () {
+            if (isNotEmpty(is_iframe)) {
+                setTimeout(function () {
+                    if (window.location.href.indexOf('wx=1') > 0) {
+                        get_iframe_height(-2);
+                    } else {
+                        get_iframe_height();
+                    }
+                }, 100);
+            }
+            //防止触摸事件穿透
+            stop_tap_mack();
+        });
+        // 外观设置页眉封面Logo字段
+        var is_mobile = 'True';
+        var project_checkpoints = "None";
+        var project_id = '5cb5460f92beb56e5c1aad99';
+        //防止触摸事件穿透
+        function stop_tap_mack() {
+            $('body').append('<div class="stop_tap_mack" style="width:100%;height:100%;position:fixed;top:0px;left:0px;z-index:9999;background-color:#fff;opacity:0;"></div>');
+            setTimeout(function () { $('.stop_tap_mack').remove() }, 800);
+            $('.stop_tap_mack').bind('tapone', function () { return false; });
+        }
+        //解决移动端:active伪类无效
+        document.body.addEventListener('touchstart', function () { });
+    </script>
+
+
+    <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script type="text/javascript">
+        var base_share_data = {};
+        wxShareHandler(window.shareAnswerInfo);
+        function wxShareHandler(shareInfo) {
+            var wx_api_list = ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'hideAllNonBaseMenuItem', 'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'translateVoice'];
+            var img_url = "None";
+            var reg = new RegExp('^http');
+            if (!reg.test(img_url)) {
+                img_url = 'https://cdn.wenjuan.com/static/images/rspd_share_wenjuan.png?v=f918e5c67478d2b734134a075483aa16';
+            }
+            var rawShareData = {
+                wx_share_title: "",
+                wx_share_desc: "",
+                project_title: '大学生就业创业意愿、现状、问题与对策调查',
+                project_desc: '欢迎您参加此次的问卷调查，调查会占用您的宝贵几分钟',
+                survey_url: 'http://www.wenjuan.com/s/ZNj6Bz/'
+            }
+            var shareData = getCustomShareMsg(rawShareData)
+            base_share_data = {
+                'link': shareData.survey_url,
+                'desc': shareData.desc,
+                'title': shareData.title,
+                'imgUrl': img_url
+            };
+            shareInfo = shareInfo || {};
+            base_share_data = $.extend(base_share_data, shareInfo);
+            var forbid_wx_share_btn = '';
+            jQuery(document).ready(function ($) {
+                wx.config({
+                    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    appId: "wx3bbdb7bd3dcf4283", // 必填，公众号的唯一标识
+                    timestamp: "1565231717", // 必填，生成签名的时间戳
+                    nonceStr: "YnLEGVeJ", // 必填，生成签名的随机串
+                    signature: "b1cfdbcf58ee71f000708924d15fbf59efbdc33e",// 必填，签名，见附录1
+                    jsApiList: wx_api_list // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                });
+                wx.ready(function () {
+                    if (forbid_wx_share_btn) {
+                        forbid_wx_share();
+                    } else {
+                        registShareInfo();
+                    }
+                });
+            });
+        }
+        function forbid_wx_share() {
+            wx.hideAllNonBaseMenuItem();
+        }
+        function registShareInfo() {
+            //分享到朋友圈
+            wx.onMenuShareTimeline({
+                title: window.timeline_share_data ? window.timeline_share_data.title : base_share_data.title, // 分享标题
+                link: window.timeline_share_data ? window.timeline_share_data.link : base_share_data.link, // 分享链接
+                imgUrl: window.timeline_share_data ? window.timeline_share_data.imgUrl : base_share_data.imgUrl // 分享图标
+            });
+            //分享给朋友
+            wx.onMenuShareAppMessage({
+                title: base_share_data.title, // 分享标题
+                desc: base_share_data.desc, // 分享描述
+                link: base_share_data.link, // 分享链接
+                imgUrl: base_share_data.imgUrl, // 分享图标
+                type: 'link' // 分享类型,music、video或link，不填默认为link
+            });
+            //分享到QQ
+            wx.onMenuShareQQ({
+                title: base_share_data.title, // 分享标题
+                desc: base_share_data.desc, // 分享描述
+                link: base_share_data.link, // 分享链接
+                imgUrl: base_share_data.imgUrl // 分享图标
+            });
+            //分享到腾讯微博
+            wx.onMenuShareWeibo({
+                title: base_share_data.title, // 分享标题
+                desc: base_share_data.desc, // 分享描述
+                link: base_share_data.link, // 分享链接
+                imgUrl: base_share_data.imgUrl // 分享图标
+            });
+        }
+    </script>
+
+
+
+    <script type="text/javascript"
+        src="https://cdn.wenjuan.com/static/js/survey_mobile/miniapp.vw.postfix.js?v=5748afb0bc52bb81c26a3adf2aebef03"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script>
+        wx.miniProgram.getEnv((res) => {
+            if (res.miniprogram) {
+                var href = $('.jubao').attr('href');
+                if (href.indexOf('?') >= 0) {
+                    $('.jubao').attr('href', $('.jubao').attr('href') + '&iswebview=1')
+                } else {
+                    $('.jubao').attr('href', $('.jubao').attr('href') + '?iswebview=1')
+                }
+            }
+        })
+    </script>
+
+    <script>
+        $('.self-class').click(function(){
+            
+        });
+    </script>
+
+    <style id="appearset_style">
+        /*mobile css样式模板*/
+        #next_button,
+        .wjprogress_new .barbox,
+        #confirm_verify_btn,
+        .button,
+        .question .radio_wrap .unstyled li.checked .checked_wrap>.ico_radio:before,
+        .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_radio:before,
+        .question .topic_con .M_sorting .sort_item.selected .sort_num,
+        .question .topic_score_slider .scoring_con_slider .ui-slider .ui-slider-handle,
+        .question .topic_score_slider .scoring_con_slider .score_slider .ui-widget-header,
+        .question .topic_score_slider .scoring_con_slider .score_slider .score_widget_tc,
+        .question .topic_con_nps .optionBox .nps_score_list>span.checked,
+        .question .topic_con_uploadfile .uploadfile_loading .uploadfile_bar,
+        .question .topic_vote .fontVoteProgressBox .progressBox .progress_vote,
+        .MobileServeyFooter .wjprogress_new .barbox>span,
+        .question .unstyled li.checked .checked_wrap {
+            background-color: #20586C;
+        }
+
+        .question .unstyled li.checked .checked_wrap,
+        .question .topic_con .M_sorting .sort_item.selected,
+        .question .topic_con .ShowImgCon .simg.checked,
+        .question .topic_con .topic_input.input_focus,
+        .question .topic_con .phone_select select:focus+.placeholder_txt,
+        .question .M_sorting .Ulist .U_select:focus+.placeholder_txt,
+        .question .checkbox_wrap .unstyled li.checked .checked_wrap>.ico_checkbox,
+        .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_checkbox,
+        .question .topic_con .M_sorting .sort_item.selected .sort_num,
+        .question .topic_con_nps .optionBox .nps_score_list>span.checked,
+        .question .radio_wrap .unstyled li.checked .checked_wrap>.ico_radio,
+        .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_radio,
+        .question .checkbox_wrap .unstyled li.checked .checked_wrap>.ico_checkbox:before,
+        .question .topic_con .ShowImgCon .simg.checked .optionImg .ico_checkbox:before {
+            border-color: #20586C;
+        }
+
+        .question .unstyled li.checked .checked_wrap,
+        .question .topic_con .M_sorting .sort_item.selected,
+        .question .topic_con .ShowImgCon .simg.checked,
+        .question .topic_con .ShowImgCon .simg.checked .optionImg {
+            background-color: rgba(32, 88, 108, 0.2);
+            box-shadow: 0 2px 4px 0 rgba(32, 88, 108, 0.2);
+        }
+
+        body.change_body_color .phone_content_wrap,
+        body .phone_content_wrap,
+        body.change_body_color.hide_cover .phone_content_wrap,
+        body.change_body_color.hide_appearset_cover .phone_content_wrap {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        body.change_body_color .MobileServeyFooter .wjprogress_new {
+            background-color: transparent;
+        }
+
+        /* topic font */
+        .survey_cover .survey_cover_text .TopBgTitle,
+        .assess_header_div .wj_title {
+            font-size: 0.24rem;
+            font-weight: ;
+            font-style: ;
+            text-decoration: ;
+            color: ;
+        }
+
+        /* welcome font */
+        #begin_content>.desc_begin {
+            font-size: 0.18rem;
+            font-weight: ;
+            font-style: ;
+            text-decoration: ;
+            color: ;
+        }
+
+        /* quesiton font */
+        .Phone_con .question[questiontype="70"] .topic_title,
+        .Phone_con .question .topic_title_wrap .topic_title,
+        .Phone_con .question .topic_title,
+        .question .topic_title .t_multiple {
+            font-size: 0.2rem;
+            font-weight: ;
+            font-style: ;
+            text-decoration: ;
+            color:  !important;
+        }
+
+        /* option font */
+        .question .unstyled li .checked_wrap,
+        .Phone_con .question input,
+        .Phone_con .question textarea,
+        .question .unstyled li .checked_wrap,
+        .Phone_con .question input,
+        .Phone_con .question textarea,
+        .Phone_con .question select,
+        .Phone_zon .question .option_label,
+        .question .unstyled li .checked_wrap,
+        .Phone_con .question input,
+        .Phone_con .question textarea,
+        .Phone_con .question select,
+        .question .topic_con .phone_select .placeholder_txt,
+        .question .M_sorting .Ulist .placeholder_txt,
+        .question .topic_con_date .topic_input .BlankDateOrTime span.placeholder,
+        .question .topic_con_age .topic_input .BlankDateOrTime span.placeholder,
+        .question .topic_con_date .topic_input .BlankDateOrTime span,
+        .question .topic_con_age .topic_input .BlankDateOrTime span,
+        .question .topic_con .ShowImgCon .simg .optionImg .img_txt,
+        .question .topic_con .data_row>.optionBox_t .option_label,
+        .question .topic_con.MatrixType .matrix_item .optionBox_t .option_label,
+        .question .topic_score_default .matrixScore .optionBox_c .matrix_ul li .option_label,
+        .question .topic_con .M_sorting .sort_item,
+        .question .topic_con .M_sorting .sort_item.selected .option_txt,
+        .M_topic .horz_blank,
+        .question .matrix li .option_title {
+            font-size: 0.16rem;
+            font-weight: ;
+            font-style: ;
+            text-decoration: ;
+            color:  !important;
+        }
+
+        /* option font for 横向填空题*/
+        .M_topic .horz_blank.underscore .ipt-wrap {
+            border-color: ;
+        }
+
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            color: ;
+        }
+
+        input:-moz-placeholder,
+        textarea:-moz-placeholder {
+            color: ;
+        }
+
+        input::-moz-placeholder,
+        textarea::-moz-placeholder {
+            color: ;
+        }
+
+        input:-ms-input-placeholder,
+        textarea:-ms-input-placeholder {
+            color: ;
+        }
+
+        /* endDesc font */
+        .phone_end #end_desc {
+            font-size: 0.16rem;
+            font-weight: ;
+            font-style: ;
+            text-decoration: ;
+            color:  !important;
+        }
+
+        .cover_btn button {
+            color: ;
+            background-color: ;
+        }
+    </style>
+</body>
+
+</html>
