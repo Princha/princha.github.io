@@ -43,8 +43,7 @@
             width: 90%;
             height: 50px;
             vertical-align: middle;
-            font-size: 25px;
-            border-radius: 10px;
+            font-size: 25px
         }
 
         .form-control {
@@ -99,6 +98,14 @@
         </div>
         <br>
         <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">手机<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="cellphone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
+                    placeholder="手机号码">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
             <label for="password" class="col-sm-4 control-label">身份证<label class="must-label">*</label></label>
             <div class="col-sm-6">
                 <input id="id-number-input" type="text" class="form-control form-input" placeholder="身份证号码">
@@ -106,18 +113,7 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">性别<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <select class="form-control form-input">
-                    <option style='display: none'>请选择</option>
-                    <option>男</option>
-                    <option>女</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">民族<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">民族</label>
             <div class="col-sm-6">
                 <select class="form-control form-input">
                     <option style='display: none'>请选择</option>
@@ -182,7 +178,7 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">政治面貌<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">政治面貌</label>
             <div class="col-sm-6">
                 <select class="form-control form-input">
                     <option style='display: none'>请选择</option>
@@ -204,9 +200,9 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">出生日期<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">地址<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <input id="id-number-input" type="date" class="form-control form-input" placeholder="出生日期">
+                <input id="home-address-input" type="text" class="form-control form-input" placeholder="家庭住址">
             </div>
         </div>
         <br>
@@ -218,54 +214,9 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">有无居住证<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">人事所在地<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <select class="form-control form-input">
-                    <option style='display: none'>请选择</option>
-                    <option>有</option>
-                    <option>无</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">居住证申领地<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="human-affairs-address-input" type="text" class="form-control form-input"
-                    placeholder="居住证申领地">
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">电子邮箱<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="email-input" type="email" class="form-control form-input" placeholder="请输入有效的电子邮箱">
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">手机<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="cellphone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
-                    placeholder="手机号码">
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">地址<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="home-address-input" type="text" class="form-control form-input" placeholder="家庭住址">
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">大学在读<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <select class="form-control form-input">
-                    <option style='display: none'>请选择</option>
-                    <option>是</option>
-                    <option>否</option>
-                </select>
+                <input id="census-address-input" type="text" class="form-control form-input" placeholder="人事所在地">
             </div>
         </div>
         <br>
@@ -277,6 +228,14 @@
         </div>
         <br>
         <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">学校代码<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="cellphone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
+                    placeholder="请输入学校代码">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
             <label for="password" class="col-sm-4 control-label">师范专业<label class="must-label">*</label></label>
             <div class="col-sm-6">
                 <select class="form-control form-input">
@@ -284,6 +243,53 @@
                     <option>是</option>
                     <option>否</option>
                 </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">大学在读<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <select id="in-school-select" class="form-control form-input">
+                    <option style='display: none'>请选择</option>
+                    <option value="yes">是</option>
+                    <option value="no">否</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div id="edu-length-form-group" class="form-group">
+            <label for="password" class="col-sm-4 control-label">学制<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <select id="edu-length-select" class="form-control form-input" disabled>
+                    <option style='display: none'>请选择</option>
+                    <option>一年</option>
+                    <option>二年</option>
+                    <option>三年</option>
+                    <option>四年</option>
+                    <option>五年</option>
+                    <option>六年</option>
+                    <option>七年</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div id="class-now-form-group" class="form-group">
+            <label for="password" class="col-sm-4 control-label">当前年级<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <select id="class-now-select" class="form-control form-input" disabled>
+                    <option style='display: none'>请选择</option>
+                    <option>一年级</option>
+                    <option>二年级</option>
+                    <option>三年级</option>
+                    <option>四年级</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div id="profession-form-group" class="form-group">
+            <label for="password" class="col-sm-4 control-label">专业</label>
+            <div class="col-sm-6">
+                <input id="profession-input" type="text" class="form-control form-input" placeholder="请输入现在的专业" disabled>
             </div>
         </div>
         <br>
@@ -316,128 +322,36 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">入校年份<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">有无学信网学历证书编号<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <select class="form-control form-input">
+                <select id="xxw-number-select" class="form-control form-input">
                     <option style='display: none'>请选择</option>
-                    <option>1970</option>
-                    <option>1971</option>
-                    <option>1972</option>
-                    <option>1973</option>
-                    <option>1974</option>
-                    <option>1975</option>
-                    <option>1976</option>
-                    <option>1977</option>
-                    <option>1978</option>
-                    <option>1979</option>
-                    <option>1980</option>
-                    <option>1981</option>
-                    <option>1982</option>
-                    <option>1983</option>
-                    <option>1984</option>
-                    <option>1985</option>
-                    <option>1986</option>
-                    <option>1987</option>
-                    <option>1988</option>
-                    <option>1989</option>
-                    <option>1990</option>
-                    <option>1991</option>
-                    <option>1992</option>
-                    <option>1993</option>
-                    <option>1994</option>
-                    <option>1995</option>
-                    <option>1996</option>
-                    <option>1997</option>
-                    <option>1998</option>
-                    <option>1999</option>
-                    <option>2000</option>
-                    <option>2001</option>
-                    <option>2002</option>
-                    <option>2003</option>
-                    <option>2004</option>
-                    <option>2005</option>
-                    <option>2006</option>
-                    <option>2007</option>
-                    <option>2008</option>
-                    <option>2009</option>
-                    <option>2010</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                    <option>2017</option>
-                    <option>2018</option>
-                    <option>2019</option>
+                    <option value="yes">有</option>
+                    <option value="no">无</option>
                 </select>
             </div>
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">学制<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">最高学历证书编号<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <select class="form-control form-input">
-                    <option style='display: none'>请选择</option>
-                    <option>四年</option>
-                    <option>三年</option>
-                </select>
+                <input id="diploma-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
+                    placeholder="请输入最高学历证书编号" disabled>
             </div>
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">当前年级<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <select class="form-control form-input">
-                    <option style='display: none'>请选择</option>
-                    <option>四年级</option>
-                    <option>三年级</option>
-                    <option>二年级</option>
-                    <option>一年级</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">院系<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="home-phone-number-input" type="text" class="form-control form-input"
-                    placeholder="院系">
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">专业<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="home-phone-number-input" type="text" class="form-control form-input"
-                    placeholder="专业">
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">有无学信网学籍学号<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <select class="form-control form-input">
-                    <option style='display: none'>请选择</option>
-                    <option>有</option>
-                    <option>无</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">学籍学号<label class="must-label">*</label></label>
-            <div class="col-sm-6">
-                <input id="home-phone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
-                    placeholder="专业">
-            </div>
-        </div>
-        <br>
-        <!-- <div class="form-group">
             <label for="password" class="col-sm-4 control-label">固定电话</label>
             <div class="col-sm-6">
                 <input id="home-phone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
                     placeholder="请输入固定电话">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">电子邮箱<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="email-input" type="email" class="form-control form-input" placeholder="请输入有效的电子邮箱">
             </div>
         </div>
         <br>
@@ -454,7 +368,26 @@
                 <input id="company-address-input" type="text" class="form-control form-input" placeholder="请输入单位所在地">
             </div>
         </div>
-        <br> -->
+        <br>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">有无居住证<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <select id="human-affairs-select" class="form-control form-input">
+                    <option style='display: none'>请选择</option>
+                    <option value="yes">有</option>
+                    <option value="no">无</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">居住证申领地<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="human-affairs-address-input" type="text" class="form-control form-input" placeholder="居住证申领地"
+                    disabled>
+            </div>
+        </div>
+        <br>
         <div class="form-group">
             <label for="photo" class="col-sm-4 control-label">免冠正面证件照<label class="must-label">*</label></label>
             <div class="view" id="view">
@@ -478,6 +411,36 @@
     <script src="./js/i18n/defaults-jp_JP.min.js"></script>
     <!-- </div> -->
     <script>
+        //select script
+        $('#human-affairs-select').change(function () {
+            if ($('#human-affairs-select').val() == 'yes') {
+                $('#human-affairs-address-input').attr("disabled", false);
+            } else {
+                $('#human-affairs-address-input').attr("disabled", true);
+            }
+        });
+
+        $('#in-school-select').change(function () {
+            if ($('#in-school-select').val() == 'yes') {
+                $('#edu-length-select').attr("disabled", false);
+                $('#class-now-select').attr("disabled", false);
+                $('#profession-input').attr("disabled", false);
+            } else {
+                $('#edu-length-select').attr("disabled", true);
+                $('#class-now-select').attr("disabled", true);
+                $('#profession-input').attr("disabled", true);
+            }
+        });
+
+        $('#xxw-number-select').change(function () {
+            if ($('#human-affairs-select').val() == 'yes') {
+                $('#diploma-number-input').attr("disabled", false);
+            } else {
+                $('#diploma-number-input').attr("disabled", true);
+            }
+        });
+
+        //photo
         var oFile = document.getElementById("photo-input")
         var oView = document.getElementById("view")
         var obj = {}    //创建对象
