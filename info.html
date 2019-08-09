@@ -97,17 +97,20 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">手机<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">身份证<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <input id="cellphone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
-                    placeholder="手机号码">
+                <input id="id-number-input" type="text" class="form-control form-input" placeholder="身份证号码">
             </div>
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">身份证<label class="must-label">*</label></label>
+            <label for="password" class="col-sm-4 control-label">性别<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <input id="id-number-input" type="text" class="form-control form-input" placeholder="身份证号码">
+                <select class="form-control form-input">
+                    <option style='display: none'>请选择</option>
+                    <option>男</option>
+                    <option>女</option>
+                </select>
             </div>
         </div>
         <br>
@@ -181,10 +184,27 @@
             <div class="col-sm-6">
                 <select class="form-control form-input">
                     <option style='display: none'>请选择</option>
-                    <option>党员</option>
-                    <option>团员</option>
+                    <option>中共党员</option>
+                    <option>中共预备党员</option>
+                    <option>共青团员</option>
+                    <option>民革党员</option>
+                    <option>民盟盟员</option>
+                    <option>民建会员</option>
+                    <option>民进会员</option>
+                    <option>农工党党员</option>
+                    <option>致公党党员</option>
+                    <option>九三学社社员</option>
+                    <option>台盟盟员</option>
+                    <option>无党派人士</option>
                     <option>群众</option>
                 </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">出生日期<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="id-number-input" type="date" class="form-control form-input" placeholder="出生日期">
             </div>
         </div>
         <br>
@@ -199,6 +219,14 @@
             <label for="password" class="col-sm-4 control-label">户籍所在地</label>
             <div class="col-sm-6">
                 <input id="census-address-input" type="text" class="form-control form-input" placeholder="户籍所在地">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">手机<label class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <input id="cellphone-number-input" type='number' pattern="[0-9]*" class="form-control form-input"
+                    placeholder="手机号码">
             </div>
         </div>
         <br>
@@ -323,16 +351,16 @@
             var reader = new FileReader()  //接口
             reader.onload = function () {    //onload 事件会在页面或图像加载完成后立即发生
                 oView.style.display = "block"  //块状
-                    var oImg = document.createElement("img")   ////通过指定名称创建一个元素
-                    var oDiv = document.createElement("div")
-                    oDiv.className = "item"
-                    oImg.src = this.result
-                    while (oView.hasChildNodes()) {
-                        oView.removeChild(oView.firstChild);
-                    }
-                    oDiv.appendChild(oImg)    //向节点添加最后一个子节点
-                    oView.appendChild(oDiv)
-                    obj[this.result] = this.result
+                var oImg = document.createElement("img")   ////通过指定名称创建一个元素
+                var oDiv = document.createElement("div")
+                oDiv.className = "item"
+                oImg.src = this.result
+                while (oView.hasChildNodes()) {
+                    oView.removeChild(oView.firstChild);
+                }
+                oDiv.appendChild(oImg)    //向节点添加最后一个子节点
+                oView.appendChild(oDiv)
+                obj[this.result] = this.result
             }
             reader.onprogress = function () {   //onprogress 事件在浏览器下载指定的视频/音频（audio/video）时触发
                 console.log("正在读取")
