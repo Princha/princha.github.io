@@ -107,6 +107,21 @@
             text-align: center;
         }
 
+        .tips {
+            font-size: 10px;
+            color: red;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .checkbox-list-div {
+            width: 100%;
+        }
+
+        .discipline-code {
+            float: right;
+        }
+
         .next-button {
             font-size: 30px;
             font-weight: bolder;
@@ -132,19 +147,25 @@
                 <!-- <hr> -->
                 <br><br>
                 <p class="title">请选择报考层次</p>
+                <p class="tips">温馨提示：考生可根据报考资格层次，自行勾选报考科目。</p>
+                <br>
                 <button type="button" class="btn btn-block btn-info" data-toggle="collapse"
                     data-target="#kindergarten-select-list-div">幼儿园</button>
                 <div id="kindergarten-select-list-div" class="collapse" style="margin-top:5px;">
-                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" name='option1'><i
-                                class="fa fa-square-o kindergarten-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>综合素质(幼儿园)</span>
+                    <div class="btn-group btn-group-vertical checkbox-list-div" data-toggle="buttons">
+                        <label class="btn kindergarten-select kindergarten-default-select">
+                            <input type="checkbox" name='option1'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质(幼儿园)</span>
+                            <span class="discipline-code">101</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option2'><i
-                                class="fa fa-square-o kindergarten-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>保教知识与能力</span>
+                        <label class="btn kindergarten-select kindergarten-default-select">
+                            <input type="checkbox" name='option2'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>保教知识与能力</span>
+                            <span class="discipline-code">102</span>
                         </label>
                     </div>
                 </div>
@@ -152,24 +173,34 @@
                 <button type="button" class="btn btn-block btn-info" data-toggle="collapse"
                     data-target="#primary-school-select-list-div">小学</button>
                 <div id="primary-school-select-list-div" class="collapse" style="margin-top:5px;">
-                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o primary-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>综合素质(小学)</span>
+                    <div class="btn-group btn-group-vertical checkbox-list-div" data-toggle="buttons">
+                        <label class="btn primary-school-select primary-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质(小学)</span>
+                            <span class="discipline-code">201</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>保教知综合能力(小学)(音体美专业)</span>
+                        <label class="btn primary-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>保教知综合能力(小学)(音体美专业)</span>
+                            <span class="discipline-code">201A</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o primary-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>教育教学知识与能力</span>
+                        <label class="btn primary-school-select primary-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力</span>
+                            <span class="discipline-code">202</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>教育教学知识与能力(音体美专业)</span>
+                        <label class="btn primary-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力(音体美专业)</span>
+                            <span class="discipline-code">202A</span>
                         </label>
                     </div>
                 </div>
@@ -177,85 +208,139 @@
                 <button type="button" class="btn btn-block btn-info" data-toggle="collapse"
                     data-target="#junior-high-school-select-list-div">初中</button>
                 <div id="junior-high-school-select-list-div" class="collapse" style="margin-top:5px;">
-                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o junior-high-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>综合素质(中学)</span>
+                    <div class="btn-group btn-group-vertical checkbox-list-div" data-toggle="buttons">
+                        <label class="btn junior-high-school-select junior-high-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质(中学)</span>
+                            <span class="discipline-code">301</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>综合素质(中学)(音体美专业)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质(中学)(音体美专业)</span>
+                            <span class="discipline-code">301A</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o junior-high-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>教育教学知识与能力</span>
+                        <label class="btn junior-high-school-select junior-high-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力</span>
+                            <span class="discipline-code">302</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>教育教学知识与能力(音体美专业)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力(音体美专业)</span>
+                            <span class="discipline-code">302A</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o junior-high-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>语文学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select junior-high-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>语文学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">303</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>数学学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>数学学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">304</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>英语学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>英语学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">305</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>物理学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>物理学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">306</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>化学学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>化学学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">307</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>生物学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>生物学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">308</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>思想品德学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>思想品德学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">309</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>历史学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>历史学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">310</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>地理学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>地理学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">311</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>音乐学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>音乐学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">312</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>体育与健康学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>体育与健康学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">313</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>美术学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>美术学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">314</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>信息技术学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>信息技术学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">315</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>历史与社会学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>历史与社会学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">316</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>科学学科知识与教学能力(初级中学)</span>
+                        <label class="btn junior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>科学学科知识与教学能力(初级中学)</span>
+                            <span class="discipline-code">317</span>
                         </label>
                     </div>
                 </div>
@@ -263,81 +348,159 @@
                 <button type="button" class="btn btn-block btn-info" data-toggle="collapse"
                     data-target="#senior-high-school-select-list-div">高中</button>
                 <div id="senior-high-school-select-list-div" class="collapse" style="margin-top:5px;">
-                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o senior-high-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>综合素质(中学)</span>
+                    <div class="btn-group btn-group-vertical checkbox-list-div" data-toggle="buttons">
+                        <label class="btn senior-high-school-select senior-high-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质(中学)</span>
+                            <span class="discipline-code">301</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>综合素质(中学)(音体美专业)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质(中学)(音体美专业)</span>
+                            <span class="discipline-code">301A</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o senior-high-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>教育教学知识与能力</span>
+                        <label class="btn senior-high-school-select senior-high-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力</span>
+                            <span class="discipline-code">302</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>教育教学知识与能力(音体美专业)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力(音体美专业)</span>
+                            <span class="discipline-code">302A</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i
-                                class="fa fa-square-o senior-high-school-default-select"></i><i
-                                class="fa fa-check-square-o"></i><span>语文学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select senior-high-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>语文学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">403</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>数学学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>数学学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">404</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>英语学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>英语学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">405</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>物理学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>物理学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">406</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>化学学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>化学学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">407</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>生物学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>生物学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">408</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>思想政治学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>思想政治学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">409</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>历史学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>历史学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">410</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>地理学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>地理学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">411</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>音乐学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>音乐学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">412</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>体育与健康学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>体育与健康学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">413</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>美术学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>美术学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">414</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>信息技术学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>信息技术学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">415</span>
                         </label>
-                        <label class="btn">
-                            <input type="checkbox" name='option3'><i class="fa fa-square-o"></i><i
-                                class="fa fa-check-square-o"></i><span>通用技术学科知识与教学能力(高级中学)</span>
+                        <label class="btn senior-high-school-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>通用技术学科知识与教学能力(高级中学)</span>
+                            <span class="discipline-code">418</span>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-block btn-info" data-toggle="collapse"
+                    data-target="#intermediate-vocational-school-select-list-div">中职</button>
+                <div id="intermediate-vocational-school-select-list-div" class="collapse" style="margin-top:5px;">
+                    <div class="btn-group btn-group-vertical checkbox-list-div" data-toggle="buttons">
+                        <label class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>综合素质</span>
+                            <span class="discipline-code">301</span>
+                        </label>
+                        <label class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>教育教学知识与能力</span>
+                            <span class="discipline-code">302</span>
+                        </label>
+                        <label class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
+                            <input type="checkbox" name='option3'>
+                            <i class="fa fa-square-o"></i>
+                            <i class="fa fa-check-square-o"></i>
+                            <span>专业知识与教学能力</span>
                         </label>
                     </div>
                 </div>
@@ -348,9 +511,84 @@
         </div>
     </div>
     <script>
+        jQuery.fn.selectList = function (value) {
+            for (var i = 0; i < this.length; i++) {
+                if (value == true) {
+                    var jqueryObj = $(this[i]);
+                    if (!jqueryObj.hasClass('active')) {
+                        jqueryObj.click();
+                    }
+                } else {
+                    var jqueryObj = $(this[i]);
+                    if (jqueryObj.hasClass('active')) {
+                        jqueryObj.click();
+                    }
+                }
+            }
+        }
+        //弹窗事件
+        $('#kindergarten-select-list-div').on('show.bs.collapse', function () {
+            $('.kindergarten-default-select').selectList(true);
+            $('.primary-school-select').selectList(false);
+            $('.junior-high-school-select').selectList(false);
+            $('.senior-high-school-select').selectList(false);
+            $('.intermediate-vocational-school-select').selectList(false);
+            $('#primary-school-select-list-div').collapse('hide');
+            $('#junior-high-school-select-list-div').collapse('hide');
+            $('#senior-high-school-select-list-div').collapse('hide');
+            $('#intermediate-vocational-school-select-list-div').collapse('hide');
+        });
+        $('#primary-school-select-list-div').on('show.bs.collapse', function () {
+            $('.primary-school-default-select').selectList(true)
+            $('.kindergarten-select').selectList(false);
+            $('.junior-high-school-select').selectList(false);
+            $('.senior-high-school-select').selectList(false);
+            $('.intermediate-vocational-school-select').selectList(false);
+            $('#kindergarten-select-list-div').collapse('hide');
+            $('#junior-high-school-select-list-div').collapse('hide');
+            $('#senior-high-school-select-list-div').collapse('hide');
+            $('#intermediate-vocational-school-select-list-div').collapse('hide');
+        });
+        $('#junior-high-school-select-list-div').on('show.bs.collapse', function () {
+            $('.junior-high-school-default-select').selectList(true);
+            $('.kindergarten-select').selectList(false);
+            $('.primary-school-select').selectList(false);
+            $('.senior-high-school-select').selectList(false);
+            $('.intermediate-vocational-school-select').selectList(false);
+            $('#kindergarten-select-list-div').collapse('hide');
+            $('#primary-school-select-list-div').collapse('hide');
+            $('#senior-high-school-select-list-div').collapse('hide');
+            $('#intermediate-vocational-school-select-list-div').collapse('hide');
+        });
+        $('#senior-high-school-select-list-div').on('show.bs.collapse', function () {
+            $('.senior-high-school-default-select').selectList(true);
+            $('.kindergarten-select').selectList(false);
+            $('.primary-school-select').selectList(false);
+            $('.junior-high-school-select').selectList(false);
+            $('.intermediate-vocational-school-select').selectList(false);
+            $('#kindergarten-select-list-div').collapse('hide');
+            $('#primary-school-select-list-div').collapse('hide');
+            $('#junior-high-school-select-list-div').collapse('hide');
+            $('#intermediate-vocational-school-select-list-div').collapse('hide');
+        });
+        $('#intermediate-vocational-school-select-list-div').on('show.bs.collapse', function () {
+            $('.intermediate-vocational-school-default-select').selectList(true);
+            $('.kindergarten-select').selectList(false);
+            $('.primary-school-select').selectList(false);
+            $('.junior-high-school-select').selectList(false);
+            $('.senior-high-school-select').selectList(false);
+            $('#kindergarten-select-list-div').collapse('hide');
+            $('#primary-school-select-list-div').collapse('hide');
+            $('#junior-high-school-select-list-div').collapse('hide');
+            $('#senior-high-school-select-list-div').collapse('hide');
+        });
+
         $('#next-button').click(function () {
             location.href = './info.html';
         });
+
+        // console.log($('.kindergarten-default-select'));
+        
     </script>
 </body>
 
