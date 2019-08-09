@@ -54,19 +54,25 @@
             margin-left: 0px;
         }
 
-        .next-button {
-            font-size: 50px;
-            font-weight: bolder;
-            text-align: center;
-            width: 210px;
-            height: 100px;
-            margin: 0 auto;
-            display: block;
-        }
-
         .btn-group-vertical {
             -webkit-box-sizing: unset;
             box-sizing: unset;
+        }
+
+        .view img {
+            width: 80%;
+            margin-left: 10%;
+            /* height: 120px; */
+        }
+
+        .submit-button {
+            font-size: 30px;
+            font-weight: bolder;
+            text-align: center;
+            width: 180px;
+            height: 60px;
+            margin: 0 auto;
+            display: block;
         }
     </style>
 </head>
@@ -283,18 +289,17 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">免冠正面证件照<label class="must-label">*</label></label>
+            <label for="photo" class="col-sm-4 control-label">免冠正面证件照<label class="must-label">*</label></label>
+            <div class="view" id="view">
+            </div>
             <div class="col-sm-6">
-                <input id="company-address-input" accept="image/*" type="file" class="form-control form-input" placeholder="请输入单位所在地">
+                <input id="photo-input" accept="image/*" type="file" class="form-control form-input"
+                    placeholder="请输入单位所在地">
             </div>
         </div>
-        <br>
-        <div class="form-group">
-            <label for="password" class="col-sm-4 control-label">Reset</label>
-            <div class="col-sm-6">
-                <button id="system-reset-button" type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
+        <br><br><br>
+        <button id="system-reset-button" type="submit" class="btn btn-primary submit-button">提交</button>
+        <br><br>
     </form>
     <script src="./js/jquery-3.2.0.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
@@ -305,6 +310,30 @@
     <script src="./js/i18n/defaults-jp_JP.min.js"></script>
     <!-- </div> -->
     <script>
+        var oFile = document.getElementById("photo-input")
+        var oView = document.getElementById("view")
+        var obj = {}    //创建对象
+        oFile.addEventListener("change", function () {     //监听
+            var fs = this.files[0]
+            var reader = new FileReader()  //接口
+            reader.onload = function () {    //onload 事件会在页面或图像加载完成后立即发生
+                oView.style.display = "block"  //块状
+                    var oImg = document.createElement("img")   ////通过指定名称创建一个元素
+                    var oDiv = document.createElement("div")
+                    oDiv.className = "item"
+                    oImg.src = this.result
+                    while (oView.hasChildNodes()) {
+                        oView.removeChild(oView.firstChild);
+                    }
+                    oDiv.appendChild(oImg)    //向节点添加最后一个子节点
+                    oView.appendChild(oDiv)
+                    obj[this.result] = this.result
+            }
+            reader.onprogress = function () {   //onprogress 事件在浏览器下载指定的视频/音频（audio/video）时触发
+                console.log("正在读取")
+            }
+            reader.readAsDataURL(fs)  //地址
+        })
     </script>
 </body>
 
