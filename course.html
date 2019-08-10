@@ -482,21 +482,24 @@
                     data-target="#intermediate-vocational-school-select-list-div">中职</button>
                 <div id="intermediate-vocational-school-select-list-div" class="collapse" style="margin-top:5px;">
                     <div class="btn-group btn-group-vertical checkbox-list-div" data-toggle="buttons">
-                        <label class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
+                        <label
+                            class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
                             <input type="checkbox" name='option3'>
                             <i class="fa fa-square-o"></i>
                             <i class="fa fa-check-square-o"></i>
                             <span>综合素质</span>
                             <span class="discipline-code">301</span>
                         </label>
-                        <label class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
+                        <label
+                            class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
                             <input type="checkbox" name='option3'>
                             <i class="fa fa-square-o"></i>
                             <i class="fa fa-check-square-o"></i>
                             <span>教育教学知识与能力</span>
                             <span class="discipline-code">302</span>
                         </label>
-                        <label class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
+                        <label
+                            class="btn intermediate-vocational-school-select intermediate-vocational-school-default-select">
                             <input type="checkbox" name='option3'>
                             <i class="fa fa-square-o"></i>
                             <i class="fa fa-check-square-o"></i>
@@ -516,16 +519,39 @@
                 if (value == true) {
                     var jqueryObj = $(this[i]);
                     if (!jqueryObj.hasClass('active')) {
-                        jqueryObj.click();
+                        jqueryObj.button('toggle');
                     }
                 } else {
                     var jqueryObj = $(this[i]);
                     if (jqueryObj.hasClass('active')) {
-                        jqueryObj.click();
+                        jqueryObj.button('toggle');
                     }
                 }
             }
         }
+
+        jQuery.fn.selectLimit = function (number) {
+            var This = this;
+            this.click(function () {
+                var select = 0;
+                setTimeout(function () {
+                    for (var i = 0; i < This.length; i++) {
+                        var jqueryObj = $(This[i]);
+                        if (jqueryObj.hasClass('active')) {
+                            console.log(This[i]);
+                            select++;
+                            if (select > number) {
+                                jqueryObj.button('toggle');
+                                alert('该层次最多选择' + number + '个课程');
+                                break;
+                            }
+                        }
+                    }
+                    console.log(select);
+                }, 10);
+            });
+        }
+
         //弹窗事件
         $('#kindergarten-select-list-div').on('show.bs.collapse', function () {
             $('.kindergarten-default-select').selectList(true);
@@ -583,12 +609,18 @@
             $('#senior-high-school-select-list-div').collapse('hide');
         });
 
+        $('.kindergarten-select').selectLimit(3);
+        $('.primary-school-select').selectLimit(3);
+        $('.junior-high-school-select').selectLimit(3);
+        $('.senior-high-school-select').selectLimit(3);
+        $('.intermediate-vocational-school-select').selectLimit(3);
+
         $('#next-button').click(function () {
             location.href = './info.html';
         });
 
         // console.log($('.kindergarten-default-select'));
-        
+
     </script>
 </body>
 
