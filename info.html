@@ -37,7 +37,7 @@
             color: red;
         }
 
-        .col-sm-6{
+        .col-sm-6 {
             padding-left: 0px;
             padding-right: 0px;
         }
@@ -279,7 +279,8 @@
         <div id="profession-form-group" class="form-group">
             <label for="password" class="col-sm-4 control-label">专业</label>
             <div class="col-sm-6">
-                <input id="profession-input" type="text" class="form-control form-input" placeholder="请输入现在的专业" disabled>
+                <input id="profession-input" type="text" class="form-control form-input" placeholder="请输入现在的专业"
+                    disabled>
             </div>
         </div>
         <div class="form-group">
@@ -390,6 +391,16 @@
     <script src="./js/i18n/defaults-jp_JP.min.js"></script>
     <!-- </div> -->
     <script>
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+
         //select script
         $('#human-affairs-select').change(function () {
             if ($('#human-affairs-select').val() == 'yes') {
@@ -412,7 +423,7 @@
         });
 
         $('#xxw-number-select').change(function () {
-            if ($('#human-affairs-select').val() == 'yes') {
+            if ($('#xxw-number-select').val() == 'yes') {
                 $('#diploma-number-input').attr("disabled", false);
             } else {
                 $('#diploma-number-input').attr("disabled", true);
