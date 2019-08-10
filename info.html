@@ -107,6 +107,9 @@
                 <select class="form-control form-input">
                     <option style='display: none'>请选择</option>
                     <option>身份证</option>
+                    <option>港澳台居民通行证</option>
+                    <option>港澳居民来往内地通行证</option>
+                    <option>台湾居民来往大陆通行证</option>
                 </select>
             </div>
         </div>
@@ -405,7 +408,14 @@
         <div class="form-group">
             <label for="password" class="col-sm-4 control-label">教师证等级<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <input type="text" class="form-control form-input" placeholder="教师证等级">
+                <select id="xxw-number-select" class="form-control form-input">
+                    <option style='display: none'>请选择</option>
+                    <option value="yes">正高级</option>
+                    <option value="no">高级</option>
+                    <option value="no">一级</option>
+                    <option value="no">二级</option>
+                    <option value="no">三级</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
