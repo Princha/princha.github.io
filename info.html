@@ -376,6 +376,65 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">入学年份(最初进入大学的年份)<label
+                    class="must-label">*</label></label>
+            <div class="col-sm-6">
+                <select class="form-control form-input">
+                    <option style='display: none'>请选择</option>
+                    <option>1970</option>
+                    <option>1971</option>
+                    <option>1972</option>
+                    <option>1973</option>
+                    <option>1974</option>
+                    <option>1975</option>
+                    <option>1976</option>
+                    <option>1977</option>
+                    <option>1978</option>
+                    <option>1979</option>
+                    <option>1980</option>
+                    <option>1981</option>
+                    <option>1982</option>
+                    <option>1983</option>
+                    <option>1984</option>
+                    <option>1985</option>
+                    <option>1986</option>
+                    <option>1987</option>
+                    <option>1988</option>
+                    <option>1989</option>
+                    <option>1990</option>
+                    <option>1991</option>
+                    <option>1992</option>
+                    <option>1993</option>
+                    <option>1994</option>
+                    <option>1995</option>
+                    <option>1996</option>
+                    <option>1997</option>
+                    <option>1998</option>
+                    <option>1999</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="password" class="col-sm-4 control-label">有无学信网学历证书编号<label class="must-label">*</label></label>
             <div class="col-sm-6">
                 <select id="xxw-number-select" class="form-control form-input">
@@ -408,8 +467,8 @@
         <div class="form-group">
             <label for="password" class="col-sm-4 control-label">教师证等级<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <select id="xxw-number-select" class="form-control form-input">
-                    <option style='display: none'>请选择</option>
+                <select class="form-control form-input">
+                    <option>无</option>
                     <option value="yes">正高级</option>
                     <option value="no">高级</option>
                     <option value="no">一级</option>
@@ -427,7 +486,11 @@
         <div class="form-group">
             <label for="password" class="col-sm-4 control-label">考试地区<label class="must-label">*</label></label>
             <div class="col-sm-6">
-                <input type="text" class="form-control form-input" placeholder="考试地区">
+                <select class="form-control form-input">
+                    <option>东莞</option>
+                    <option value="yes">深圳</option>
+                    <option value="no">广州</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -470,8 +533,9 @@
             var class_select_array = [];
             for (var i = 1; i <= 3; i++) {
                 var classNumParam = getQueryVariable('class' + i);
-                if (classNumParam) {
-                    class_select_array.push(decodeURI(classNumParam));
+                var classCodeNumParam = getQueryVariable('classcode' + i);
+                if (classNumParam && classCodeNumParam) {
+                    class_select_array.push({ 'name': decodeURI(classNumParam), 'code': decodeURI(classCodeNumParam) });
                 } else {
                     break;
                 }
@@ -547,7 +611,7 @@
             location.href = './course.html';
         }
         for (var i = 0; i < classSelectArray.length; i++) {
-            $('#select-class-list-div').append('<p>' + (i + 1) + '.' + classSelectArray[i] + '</p>')
+            $('#select-class-list-div').append('<p><span>' + (i + 1) + '.' + classSelectArray[i].name + '</span><span style="float:right;padding-right:3%;">' + classSelectArray[i].code + '</span></p>');
         }
 
         console.log(classSelectArray);

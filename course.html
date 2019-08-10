@@ -628,10 +628,12 @@
                 var selectJqArray = $('.kindergarten-select').getSelect();
                 for (var i = 0; i < selectJqArray.length; i++) {
                     paramString += '&class' + num + '=';
-                    num++;
                     // paramString += selectJqArray[i].attr("id");
-                    console.log(selectJqArray[i].children('span')[0]);
-                    paramString += selectJqArray[i].children('span')[0].textContent ;
+                    // console.log(selectJqArray[i].children('span')[0]);
+                    paramString += selectJqArray[i].children('span')[0].textContent;
+                    paramString += '&classcode' + num + '=';
+                    paramString += selectJqArray[i].children('span')[1].textContent;
+                    num++;
                 }
                 location.href = './info.html' + paramString;
             } else if ($('#primary-school-select-list-div').hasClass('in')) {
@@ -639,10 +641,12 @@
                 var num = 1;
                 var selectJqArray = $('.primary-school-select').getSelect();
                 for (var i = 0; i < selectJqArray.length; i++) {
-                    paramString += '&class' + num + '=';
-                    num++;
+                    paramString += '&class' + num + '=';             
                     // paramString += selectJqArray[i].attr("id");
                     paramString += selectJqArray[i].children('span')[0].textContent;
+                    paramString += '&classcode' + num + '=';
+                    paramString += selectJqArray[i].children('span')[1].textContent;
+                    num++;
                 }
                 location.href = './info.html' + paramString;
             } else if ($('#junior-high-school-select-list-div').hasClass('in')) {
@@ -651,9 +655,11 @@
                 var selectJqArray = $('.junior-high-school-select').getSelect();
                 for (var i = 0; i < selectJqArray.length; i++) {
                     paramString += '&class' + num + '=';
-                    num++;
                     // paramString += selectJqArray[i].attr("id");
                     paramString += selectJqArray[i].children('span')[0].textContent;
+                    paramString += '&classcode' + num + '=';
+                    paramString += selectJqArray[i].children('span')[1].textContent;
+                    num++;
                 }
                 location.href = './info.html' + paramString;
             } else if ($('#senior-high-school-select-list-div').hasClass('in')) {
@@ -662,9 +668,11 @@
                 var selectJqArray = $('.senior-high-school-select').getSelect();
                 for (var i = 0; i < selectJqArray.length; i++) {
                     paramString += '&class' + num + '=';
-                    num++;
                     // paramString += selectJqArray[i].attr("id");
                     paramString += selectJqArray[i].children('span')[0].textContent;
+                    paramString += '&classcode' + num + '=';
+                    paramString += selectJqArray[i].children('span')[1].textContent;
+                    num++;
                 }
                 location.href = './info.html' + paramString;
             } else if ($('#intermediate-vocational-school-select-list-div').hasClass('in')) {
@@ -673,9 +681,11 @@
                 var selectJqArray = $('.intermediate-vocational-school-select').getSelect();
                 for (var i = 0; i < selectJqArray.length; i++) {
                     paramString += '&class' + num + '=';
-                    num++;
                     // paramString += selectJqArray[i].attr("id");
                     paramString += selectJqArray[i].children('span')[0].textContent;
+                    paramString += '&classcode' + num + '=';
+                    paramString += selectJqArray[i].children('span')[1].textContent;
+                    num++;
                 }
                 location.href = './info.html' + paramString;
             } else {
