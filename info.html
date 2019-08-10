@@ -388,7 +388,7 @@
     <script src="./js/i18n/defaults-en_US.min.js"></script>
     <script src="./js/i18n/defaults-zh_CN.min.js"></script>
     <script src="./js/i18n/defaults-zh_TW.min.js"></script>
-    <script src="./js/i18n/defaults-jp_JP.min.js"></script>
+    <!-- <script src="./js/i18n/defaults-jp_JP.min.js"></script> -->
     <!-- </div> -->
     <script>
         function getQueryVariable(variable) {
@@ -399,6 +399,19 @@
                 if (pair[0] == variable) { return pair[1]; }
             }
             return (false);
+        }
+
+        function getClassArray(){
+            var class_select_array = [];
+            for (var i = 1; i <= 3; i++) {
+                var classNumParam = getQueryVariable('class' + i);
+                if (classNumParam) {
+                    class_select_array.push(decodeURI(classNumParam));
+                } else {
+                    break;
+                }
+            }
+            return class_select_array;
         }
 
         //select script
@@ -455,6 +468,16 @@
             }
             reader.readAsDataURL(fs)  //地址
         })
+
+        var classParam = getQueryVariable('class');
+        var classSelectArray = [];
+        if (classParam) {
+            classSelectArray = getClassArray();
+        } else {
+            alert('没有选择课程');
+            location.href = './course.html';
+        }
+        console.log(classSelectArray);
     </script>
 </body>
 
