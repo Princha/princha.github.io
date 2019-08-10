@@ -503,7 +503,7 @@
                             <input type="checkbox" name='option3'>
                             <i class="fa fa-square-o"></i>
                             <i class="fa fa-check-square-o"></i>
-                            <span>专业知识与教学能力</span>
+                            <span>专业知识与教学能力(结合面试环节考核)</span>
                         </label>
                     </div>
                 </div>
@@ -552,24 +552,16 @@
             });
         }
 
-        //弹窗事件
+        //弹出事件
         $('#kindergarten-select-list-div').on('show.bs.collapse', function () {
             $('.kindergarten-default-select').selectList(true);
-            $('.primary-school-select').selectList(false);
-            $('.junior-high-school-select').selectList(false);
-            $('.senior-high-school-select').selectList(false);
-            $('.intermediate-vocational-school-select').selectList(false);
             $('#primary-school-select-list-div').collapse('hide');
             $('#junior-high-school-select-list-div').collapse('hide');
             $('#senior-high-school-select-list-div').collapse('hide');
             $('#intermediate-vocational-school-select-list-div').collapse('hide');
         });
         $('#primary-school-select-list-div').on('show.bs.collapse', function () {
-            $('.primary-school-default-select').selectList(true)
-            $('.kindergarten-select').selectList(false);
-            $('.junior-high-school-select').selectList(false);
-            $('.senior-high-school-select').selectList(false);
-            $('.intermediate-vocational-school-select').selectList(false);
+            $('.primary-school-default-select').selectList(true);
             $('#kindergarten-select-list-div').collapse('hide');
             $('#junior-high-school-select-list-div').collapse('hide');
             $('#senior-high-school-select-list-div').collapse('hide');
@@ -577,10 +569,6 @@
         });
         $('#junior-high-school-select-list-div').on('show.bs.collapse', function () {
             $('.junior-high-school-default-select').selectList(true);
-            $('.kindergarten-select').selectList(false);
-            $('.primary-school-select').selectList(false);
-            $('.senior-high-school-select').selectList(false);
-            $('.intermediate-vocational-school-select').selectList(false);
             $('#kindergarten-select-list-div').collapse('hide');
             $('#primary-school-select-list-div').collapse('hide');
             $('#senior-high-school-select-list-div').collapse('hide');
@@ -588,10 +576,6 @@
         });
         $('#senior-high-school-select-list-div').on('show.bs.collapse', function () {
             $('.senior-high-school-default-select').selectList(true);
-            $('.kindergarten-select').selectList(false);
-            $('.primary-school-select').selectList(false);
-            $('.junior-high-school-select').selectList(false);
-            $('.intermediate-vocational-school-select').selectList(false);
             $('#kindergarten-select-list-div').collapse('hide');
             $('#primary-school-select-list-div').collapse('hide');
             $('#junior-high-school-select-list-div').collapse('hide');
@@ -599,14 +583,26 @@
         });
         $('#intermediate-vocational-school-select-list-div').on('show.bs.collapse', function () {
             $('.intermediate-vocational-school-default-select').selectList(true);
-            $('.kindergarten-select').selectList(false);
-            $('.primary-school-select').selectList(false);
-            $('.junior-high-school-select').selectList(false);
-            $('.senior-high-school-select').selectList(false);
             $('#kindergarten-select-list-div').collapse('hide');
             $('#primary-school-select-list-div').collapse('hide');
             $('#junior-high-school-select-list-div').collapse('hide');
             $('#senior-high-school-select-list-div').collapse('hide');
+        });
+        //收缩事件
+        $('#kindergarten-select-list-div').on('hide.bs.collapse', function () {
+            $('.kindergarten-select').selectList(false);
+        });
+        $('#primary-school-select-list-div').on('hide.bs.collapse', function () {
+            $('.primary-school-select').selectList(false);
+        });
+        $('#junior-high-school-select-list-div').on('hide.bs.collapse', function () {
+            $('.junior-high-school-select').selectList(false);
+        });
+        $('#senior-high-school-select-list-div').on('hide.bs.collapse', function () {
+            $('.senior-high-school-select').selectList(false);
+        });
+        $('#intermediate-vocational-school-select-list-di').on('hide.bs.collapse', function () {
+            $('.intermediate-vocational-school-select').selectList(false);
         });
 
         $('.kindergarten-select').selectLimit(3);
