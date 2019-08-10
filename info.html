@@ -70,10 +70,26 @@
             box-sizing: unset;
         }
 
+        .view {
+            position: relative;
+        }
+
         .view img {
-            width: 80%;
-            margin-left: 10%;
-            /* height: 120px; */
+            width: 40%;
+            margin-left: 5%;
+            /* height: 210px; */
+        }
+
+        .photo-input {
+            display: none;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            width: 40%;
+            height: 210px;
+            position: absolute;
+            top: 0;
+            left: 5%;
+            z-index: 9;
         }
 
         .submit-button {
@@ -495,15 +511,26 @@
         </div>
         <div class="form-group">
             <label for="photo" class="col-sm-4 control-label">免冠正面证件照<label class="must-label">*</label></label>
-            <div class="view" id="view">
-            </div>
-            <br>
-            <div class="col-sm-6">
-                <input id="photo-input" accept="image/*" type="file" class="form-control form-input"
-                    placeholder="请输入单位所在地">
+            <div id="face-photo-div" class="view col-sm-6">
+                <input id="face-photo-input" accept="image/*" type="file" class="form-control form-input photo-input">
+                <img id="face-photo-view" src="images/faceimg.jpg">
             </div>
         </div>
-
+        <div class="form-group">
+            <label for="photo" class="col-sm-4 control-label">报名人身份证照片<label class="must-label">*</label></label>
+            <div id="id-photo-div" class="view col-sm-6">
+                <input id="id-photo-input" accept="image/*" type="file" class="form-control form-input photo-input">
+                <img id="id-photo-view" src="images/faceimg.jpg">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="photo" class="col-sm-4 control-label">毕业证照片<label class="must-label">*</label></label>
+            <div id="diploma-photo-div" class="view col-sm-6">
+                <input id="diploma-photo-input" accept="image/*" type="file"
+                    class="form-control form-input photo-input">
+                <img id="diploma-photo-view" src="images/faceimg.jpg">
+            </div>
+        </div>
         <br><br>
         <button id="save-button" type="button" class="btn btn-primary submit-button">保存草稿</button>
         <br>
@@ -572,30 +599,95 @@
             }
         });
 
-        //photo
-        var oFile = document.getElementById("photo-input")
-        var oView = document.getElementById("view")
-        var obj = {}    //创建对象
-        oFile.addEventListener("change", function () {     //监听
-            var fs = this.files[0]
-            var reader = new FileReader()  //接口
-            reader.onload = function () {    //onload 事件会在页面或图像加载完成后立即发生
-                oView.style.display = "block"  //块状
-                var oImg = document.createElement("img")   ////通过指定名称创建一个元素
-                var oDiv = document.createElement("div")
-                oDiv.className = "item"
-                oImg.src = this.result
-                while (oView.hasChildNodes()) {
-                    oView.removeChild(oView.firstChild);
+        //face photo
+        var facePhotoInput = document.getElementById("face-photo-input");
+        // var obj = {}    //创建对象
+        facePhotoInput.addEventListener("change", function () {     //监听
+            var fs = this.files[0];
+            if (!fs.type == 'image/jpeg' && !fs.type == 'image/jpg') {
+                alert('文件格式必须为jpeg或者jpg');
+            } else if (fs.size > 204800) {
+                alert('文件大小必须小于200K');
+            } else {
+                var reader = new FileReader()  //接口
+                reader.onload = function (e) {    //onload 事件会在页面或图像加载完成后立即发生
+                    // console.log(this);
+                    var image = new Image();    //创建图片对象
+                    image.onload = function () {
+                        // console.log(this.width, this.height);
+                        // facePhotoView.style.display = "block";  //块状
+                        // var oDiv = document.createElement("div");
+                        // oDiv.className = "item";
+                        // while (facePhotoView.hasChildNodes()) {
+                        //     facePhotoView.removeChild(facePhotoView.firstChild);
+                        // }
+                        // oDiv.appendChild(image);    //向节点添加最后一个子节点
+                        // facePhotoView.appendChild(oDiv);
+                        // obj[this.result] = this.result;
+                        var facePhotoView = document.getElementById("face-photo-view");
+                        var facePhotoDiv = document.getElementById("face-photo-div");
+                        facePhotoView.src = image.src;
+                        facePhotoInput.style.height = ((0.4 * facePhotoDiv.offsetWidth * this.height) / this.width) + 'px';
+                    };
+                    image.src = this.result;
                 }
-                oDiv.appendChild(oImg)    //向节点添加最后一个子节点
-                oView.appendChild(oDiv)
-                obj[this.result] = this.result
+                reader.onprogress = function () {   //onprogress 事件在浏览器下载指定的视频/音频（audio/video）时触发
+                    console.log("正在读取")
+                }
+                reader.readAsDataURL(fs)  //地址
             }
-            reader.onprogress = function () {   //onprogress 事件在浏览器下载指定的视频/音频（audio/video）时触发
-                console.log("正在读取")
+        });
+        //ID photo
+        var idPhotoInput = document.getElementById("id-photo-input");
+        // var obj = {}    //创建对象
+        idPhotoInput.addEventListener("change", function () {     //监听
+            var fs = this.files[0];
+            if (!fs.type == 'image/jpeg' && !fs.type == 'image/jpg') {
+                alert('文件格式必须为jpeg或者jpg');
+            } else {
+                var reader = new FileReader()  //接口
+                reader.onload = function (e) {    //onload 事件会在页面或图像加载完成后立即发生
+                    // console.log(this);
+                    var image = new Image();    //创建图片对象
+                    image.onload = function () {
+                        var idPhotoView = document.getElementById("id-photo-view");
+                        var idPhotoDiv = document.getElementById("id-photo-div");
+                        idPhotoView.src = image.src;
+                        idPhotoInput.style.height = ((0.4 * idPhotoDiv.offsetWidth * this.height) / this.width) + 'px';
+                    };
+                    image.src = this.result;
+                }
+                reader.onprogress = function () {   //onprogress 事件在浏览器下载指定的视频/音频（audio/video）时触发
+                    console.log("正在读取")
+                }
+                reader.readAsDataURL(fs)  //地址
             }
-            reader.readAsDataURL(fs)  //地址
+        });
+        //diploma photo
+        var diplomaPhotoInput = document.getElementById("diploma-photo-input");
+        // var obj = {}    //创建对象
+        diplomaPhotoInput.addEventListener("change", function () {     //监听
+            var fs = this.files[0];
+            if (!fs.type == 'image/jpeg' && !fs.type == 'image/jpg') {
+                alert('文件格式必须为jpeg或者jpg');
+            } else {
+                var reader = new FileReader()  //接口
+                reader.onload = function (e) {    //onload 事件会在页面或图像加载完成后立即发生
+                    // console.log(this);
+                    var image = new Image();    //创建图片对象
+                    image.onload = function () {
+                        var diplomaPhotoView = document.getElementById("diploma-photo-view");
+                        var diplomaPhotoDiv = document.getElementById("diploma-photo-div");
+                        diplomaPhotoView.src = image.src;
+                        diplomaPhotoInput.style.height = ((0.4 * diplomaPhotoDiv.offsetWidth * this.height) / this.width) + 'px';
+                    };
+                    image.src = this.result;
+                }
+                reader.onprogress = function () {   //onprogress 事件在浏览器下载指定的视频/音频（audio/video）时触发
+                    console.log("正在读取")
+                }
+                reader.readAsDataURL(fs)  //地址
+            }
         });
 
         $('#save-button').click(function () {
@@ -613,8 +705,6 @@
         for (var i = 0; i < classSelectArray.length; i++) {
             $('#select-class-list-div').append('<p><span>' + (i + 1) + '.' + classSelectArray[i].name + '</span><span style="float:right;padding-right:3%;">' + classSelectArray[i].code + '</span></p>');
         }
-
-        console.log(classSelectArray);
     </script>
 </body>
 
