@@ -116,6 +116,11 @@
             margin: 0 auto;
             display: block;
         }
+
+        .webpage-floor {
+            text-align: center;
+            color: rgb(192, 192, 192);
+        }
     </style>
 </head>
 
@@ -529,6 +534,7 @@
                     <p>2.电子照片格式以及大小:JPG/JPEG格式，不大于200K</p>
                     <p>3.照片中显示考生的头部和肩的上部，不允许戴帽子、头巾、发带、墨镜</p>
                     <p>4.此照片将用于准考证以及考试合格证明，请考生上传图片时慎重选用</p>
+                    <p>PS：点击样图，上传图片</p>
                 </div>
             </div>
         </div>
@@ -537,6 +543,9 @@
             <div id="id-photo-div" class="view col-sm-6">
                 <input id="id-photo-input" accept="image/*" type="file" class="form-control form-input photo-input">
                 <img id="id-photo-view" src="images/idimg.jpg">
+                <div class="face-photo-guide-div">
+                    <p>PS：点击样图，上传图片</p>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -545,6 +554,9 @@
                 <input id="diploma-photo-input" accept="image/*" type="file"
                     class="form-control form-input photo-input">
                 <img id="diploma-photo-view" src="images/diplomaimg.jpg">
+                <div class="face-photo-guide-div">
+                    <p>PS：点击样图，上传图片</p>
+                </div>
             </div>
         </div>
         <br><br>
@@ -553,6 +565,9 @@
         <button id="submit-button" type="button" class="btn btn-success submit-button">提交</button>
         <br><br>
     </form>
+    <div class="webpage-floor">
+        <p>云礼科技有限公司®技术支持</p>
+    </div>
     <script src="./js/jquery-3.2.0.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap-select.min.js"></script>
