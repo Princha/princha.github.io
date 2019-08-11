@@ -92,6 +92,14 @@
             z-index: 9;
         }
 
+        .face-photo-guide-div {
+            color: red;
+            float: right;
+            width: 50%;
+            font-size: 10px;
+            margin-right: 2%;
+        }
+
         .submit-button {
             /* font-size: 30px; */
             font-weight: bolder;
@@ -514,13 +522,20 @@
             <div id="face-photo-div" class="view col-sm-6">
                 <input id="face-photo-input" accept="image/*" type="file" class="form-control form-input photo-input">
                 <img id="face-photo-view" src="images/faceimg.jpg">
+                <div class="face-photo-guide-div">
+                    <p>照片要求:</p>
+                    <p>1.本人近6个月以内的免冠正面彩色证件照，白色背景为佳</p>
+                    <p>2.电子照片格式以及大小:JPG/JPEG格式，不大于200K</p>
+                    <p>3.照片中显示考生的头部和肩的上部，不允许戴帽子、头巾、发带、墨镜</p>
+                    <p>4.此照片将用于准考证以及考试合格证明，请考生上传图片时慎重选用</p>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="photo" class="col-sm-4 control-label">报名人身份证照片<label class="must-label">*</label></label>
             <div id="id-photo-div" class="view col-sm-6">
                 <input id="id-photo-input" accept="image/*" type="file" class="form-control form-input photo-input">
-                <img id="id-photo-view" src="images/faceimg.jpg">
+                <img id="id-photo-view" src="images/idimg.jpg">
             </div>
         </div>
         <div class="form-group">
@@ -528,13 +543,13 @@
             <div id="diploma-photo-div" class="view col-sm-6">
                 <input id="diploma-photo-input" accept="image/*" type="file"
                     class="form-control form-input photo-input">
-                <img id="diploma-photo-view" src="images/faceimg.jpg">
+                <img id="diploma-photo-view" src="images/diplomaimg.jpg">
             </div>
         </div>
         <br><br>
         <button id="save-button" type="button" class="btn btn-primary submit-button">保存草稿</button>
         <br>
-        <button id="system-reset-button" type="button" class="btn btn-success submit-button">提交</button>
+        <button id="submit-button" type="button" class="btn btn-success submit-button">提交</button>
         <br><br>
     </form>
     <script src="./js/jquery-3.2.0.min.js"></script>
@@ -692,6 +707,23 @@
 
         $('#save-button').click(function () {
             alert('资料已保存');
+        });
+
+        $('#submit-button').click(function () {
+            paramString = '';
+            paramString += '?class=';
+            paramString += classParam;
+            for (var i = 0; i < classSelectArray.length; i++) {
+                paramString += '&class';
+                paramString += (i + 1);
+                paramString += '=';
+                paramString += classSelectArray[i].name;
+                paramString += '&classcode';
+                paramString += (i + 1);
+                paramString += '=';
+                paramString += classSelectArray[i].code;
+            }
+            location.href = './payment.html' + paramString;
         });
 
         var classParam = getQueryVariable('class');
